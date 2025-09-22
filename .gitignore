@@ -22,8 +22,8 @@ build/
 out/
 target/
 
-# Database files
-*.db
+# Database files (keep our main database)
+# *.db
 *.sqlite
 *.sqlite3
 
