@@ -1,0 +1,32 @@
+P1105 - Atmospheric Pressure Sensor In Control Module
+P1220 - Fuel Quantity Actuator Y231
+P1221 - CAN Communication ETC Or ETS Interrupted
+P1222 - IFI Accelerator Pedal Position Sensor R252
+P1223 - Fuel Rack Position Sensor Y2311
+P1335 - CKP Sensor IFI
+P1350 - Injection Sensor Solenoid
+P1351 - Injection Sensor Circuit
+P1352 - Needle Lift Sensor
+P1401 - EGR Lifting Sender B283
+P1404 - EGR Control
+P1465 - EPW Power
+P1470 - Pressure Control Flap Vacuum Transducer Y312
+P1475 - Resonance Intake Line Switchover Valve Y227
+P1476 - Resonance Intake Manifold Switchover Valve Y226
+P1480 - Preglow Control
+P1481 - Glow Plug Failure
+P1482 - Preglow Control Module N142
+P1520 - Cruise Control Switch S40
+P1610 - Voltage Supply Missing Or Relay Module K40
+P1611 - IFI Control Module N37
+P1612 - IFI Control Module N37 Voltage Circuit 15
+P1613 - IFI Control Module N37
+P1614 - IFI Control Module N37 Voltage Or Fuel Metering Actuator Y231K1 Or Fuel Rack Position Sensor Y2311
+P1615 - IFI Control Module N37 Supply Voltage
+P1617 - Control Module Fault Or Control Module Not Coded
+P1622 - Electrohydraulic Shut-Off Actuator Y11
+P1625 - Check Engine MIL
+P1630 - Drive Authorization Signal
+P1705 - Starter Lock-Out Backup Lamp Switch S161
+P1780 - Modulation Pressure Switchover Valve ATCC Y34 Or Upshift Delay Switchover Valve ATCC Y35
+P1781 - Upshift Delay Switchover Valve ATCC Y35

@@ -9,7 +9,7 @@ Email: aquataze@yahoo.com
 
 import sqlite3
 import os
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -45,7 +45,7 @@ class DTCDatabase:
     def __init__(self, db_path: Optional[str] = None):
         """Initialize database connection"""
         if db_path is None:
-            db_path = os.path.join(os.path.dirname(__file__), '..', 'dtc_codes.db')
+            db_path = os.path.join(os.path.dirname(__file__), '..', 'dtc_definitions.db')
 
         self.db_path = db_path
         self.conn = None
@@ -64,7 +64,7 @@ class DTCDatabase:
 
         # Create table
         cursor.execute('''
-            CREATE TABLE IF NOT EXISTS dtc_codes (
+            CREATE TABLE IF NOT EXISTS dtc_definitions (
                 code TEXT PRIMARY KEY,
                 description TEXT NOT NULL,
                 type TEXT,
@@ -110,7 +110,7 @@ class DTCDatabase:
                                 code_type = code[0] if code else '?'
 
                             cursor.execute(
-                                'INSERT OR REPLACE INTO dtc_codes VALUES (?, ?, ?, ?)',
+                                'INSERT OR REPLACE INTO dtc_definitions VALUES (?, ?, ?, ?)',
                                 (code, desc, code_type, manufacturer)
                             )
 
@@ -134,7 +134,7 @@ class DTCDatabase:
             return None
         cursor = self.conn.cursor()
         cursor.execute(
-            'SELECT description FROM dtc_codes WHERE code = ?',
+            'SELECT description FROM dtc_definitions WHERE code = ?',
             (code,)
         )
         result = cursor.fetchone()
@@ -163,7 +163,7 @@ class DTCDatabase:
             return None
         cursor = self.conn.cursor()
         cursor.execute(
-            'SELECT * FROM dtc_codes WHERE code = ?',
+            'SELECT * FROM dtc_definitions WHERE code = ?',
             (code,)
         )
         result = cursor.fetchone()
@@ -212,7 +212,7 @@ class DTCDatabase:
         search_term = f'%{keyword}%'
 
         cursor.execute('''
-            SELECT * FROM dtc_codes
+            SELECT * FROM dtc_definitions
             WHERE code LIKE ? OR description LIKE ?
             LIMIT ?
         ''', (search_term, search_term, limit))
@@ -243,7 +243,7 @@ class DTCDatabase:
             return []
         cursor = self.conn.cursor()
         cursor.execute(
-            'SELECT * FROM dtc_codes WHERE type = ? LIMIT ?',
+            'SELECT * FROM dtc_definitions WHERE type = ? LIMIT ?',
             (code_type.upper(), limit)
         )
 
@@ -273,7 +273,7 @@ class DTCDatabase:
             return []
         cursor = self.conn.cursor()
         cursor.execute(
-            'SELECT * FROM dtc_codes WHERE manufacturer = ? LIMIT ?',
+            'SELECT * FROM dtc_definitions WHERE manufacturer = ? LIMIT ?',
             (manufacturer.lower(), limit)
         )
 
@@ -302,20 +302,20 @@ class DTCDatabase:
         stats = {}
 
         # Total count
-        cursor.execute('SELECT COUNT(*) FROM dtc_codes')
+        cursor.execute('SELECT COUNT(*) FROM dtc_definitions')
         stats['total'] = cursor.fetchone()[0]
 
         # Count by type
         for code_type in ['P', 'B', 'C', 'U']:
             cursor.execute(
-                'SELECT COUNT(*) FROM dtc_codes WHERE type = ?',
+                'SELECT COUNT(*) FROM dtc_definitions WHERE type = ?',
                 (code_type,)
             )
             stats[f'type_{code_type}'] = cursor.fetchone()[0]
 
         # Count manufacturer-specific
         cursor.execute(
-            'SELECT COUNT(*) FROM dtc_codes WHERE manufacturer IS NOT NULL'
+            'SELECT COUNT(*) FROM dtc_definitions WHERE manufacturer IS NOT NULL'
         )
         stats['manufacturer_specific'] = cursor.fetchone()[0]
 
@@ -333,6 +333,7 @@ class DTCDatabase:
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Context manager exit"""
         self.close()
+        return False
 
 
 # Example usage

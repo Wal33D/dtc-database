@@ -14,30 +14,30 @@ import java.util.concurrent.ConcurrentHashMap;
  * @email aquataze@yahoo.com
  */
 public class DTCDatabaseCore {
-    private static final String DB_NAME = "dtc_codes.db";
+    private static final String DB_NAME = "dtc_definitions.db";
     private Connection connection;
     private final Map<String, String> cache = new ConcurrentHashMap<>();
     private static DTCDatabaseCore instance;
 
     // SQL queries
     private static final String CREATE_TABLE =
-        "CREATE TABLE IF NOT EXISTS dtc_codes (" +
+        "CREATE TABLE IF NOT EXISTS dtc_definitions (" +
         "code TEXT PRIMARY KEY, " +
         "description TEXT NOT NULL, " +
         "type TEXT, " +
         "manufacturer TEXT)";
 
     private static final String INSERT_CODE =
-        "INSERT OR REPLACE INTO dtc_codes VALUES (?, ?, ?, ?)";
+        "INSERT OR REPLACE INTO dtc_definitions VALUES (?, ?, ?, ?)";
 
     private static final String SELECT_DESCRIPTION =
-        "SELECT description FROM dtc_codes WHERE code = ?";
+        "SELECT description FROM dtc_definitions WHERE code = ?";
 
     private static final String SELECT_BY_TYPE =
-        "SELECT * FROM dtc_codes WHERE type = ? LIMIT ?";
+        "SELECT * FROM dtc_definitions WHERE type = ? LIMIT ?";
 
     private static final String SEARCH_CODES =
-        "SELECT * FROM dtc_codes WHERE code LIKE ? OR description LIKE ? LIMIT ?";
+        "SELECT * FROM dtc_definitions WHERE code LIKE ? OR description LIKE ? LIMIT ?";
 
     /**
      * Singleton instance getter
@@ -97,7 +97,7 @@ public class DTCDatabaseCore {
      * Check if database is empty
      */
     private boolean isDatabaseEmpty() throws SQLException {
-        String query = "SELECT COUNT(*) FROM dtc_codes";
+        String query = "SELECT COUNT(*) FROM dtc_definitions";
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
             return rs.getInt(1) == 0;
@@ -249,7 +249,7 @@ public class DTCDatabaseCore {
 
         try (Statement stmt = connection.createStatement()) {
             // Total count
-            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM dtc_codes");
+            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM dtc_definitions");
             if (rs.next()) {
                 stats.put("total", rs.getInt(1));
             }
@@ -257,7 +257,7 @@ public class DTCDatabaseCore {
             // Count by type
             for (String type : Arrays.asList("P", "B", "C", "U")) {
                 rs = stmt.executeQuery(
-                    "SELECT COUNT(*) FROM dtc_codes WHERE type = '" + type + "'"
+                    "SELECT COUNT(*) FROM dtc_definitions WHERE type = '" + type + "'"
                 );
                 if (rs.next()) {
                     stats.put("type_" + type, rs.getInt(1));
@@ -266,7 +266,7 @@ public class DTCDatabaseCore {
 
             // Manufacturer-specific count
             rs = stmt.executeQuery(
-                "SELECT COUNT(*) FROM dtc_codes WHERE manufacturer IS NOT NULL"
+                "SELECT COUNT(*) FROM dtc_definitions WHERE manufacturer IS NOT NULL"
             );
             if (rs.next()) {
                 stats.put("manufacturer_specific", rs.getInt(1));

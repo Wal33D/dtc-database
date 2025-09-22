@@ -1,0 +1,95 @@
+P1106 - BARO Circuit Range Performance Malfunction
+P1107 - BARO Circuit Low Input
+P1108 - BARO Circuit High Input
+P1121 - Throttle Position Lower Than Expected
+P1122 - Throttle Position Higher Than Expected
+P1128 - MAP Lower Than Expected
+P1129 - MAP Higher Than Expected
+P1162 - HO2S11 Circuit Fault Bank 1 Sensor 1
+P1163 - HO2S11 Slow Response Bank 1 Sensor 1
+P1164 - HO2S11 Circuit Fault Bank 1 Sensor 1
+P1165 - HO2S11 Slow Response Bank 1 Sensor 1
+P1166 - HO2S11 Heater Circuit Fault Bank 1 Sensor 1
+P1167 - HO2S11 Heater Circuit VS+ Fault Bank 1 Sensor 1
+P1168 - HO2S11 Label Circuit Low Voltage Fault Bank 1 Sensor 1
+P1169 - HO2S11 Label Circuit High Voltage Fault Bank 1 Sensor 1
+P1201 - Cylinder 1 Misfire
+P1202 - Cylinder 2 Misfire
+P1203 - Cylinder 3 Misfire
+P1204 - Cylinder 4 Misfire
+P1205 - Cylinder 5 Misfire
+P1206 - Cylinder 6 Misfire
+P1241 - Throttle Vent Control Motor Circuit 1 Malfunction
+P1242 - Throttle Vent Control Motor Circuit 2 Malfunction
+P1243 - Throttle Position Insufficient
+P1244 - Closed Throttle Position Insufficient
+P1246 - Accelerator Position Sensor 1 Circuit Malfunction
+P1247 - Accelerator Position Sensor 2 Circuit Malfunction
+P1248 - Accelerator Position Sensors 1 & 2 Improper Correlation
+P1253 - VTEC System Circuit Fault
+P1259 - VTEC System Malfunction Rear Bank 1
+P1279 - VTEC System Malfunction Front Bank 2
+P1297 - ELD Circuit Low Input
+P1298 - Electrical Load Detector Circuit High Voltage
+P1300 - Random Misfire
+P1301 - Cylinder 1 Misfire
+P1302 - Cylinder 2 Misfire
+P1303 - Cylinder 3 Misfire
+P1304 - Cylinder 4 Misfire
+P1305 - Cylinder 5 Misfire
+P1306 - Cylinder 6 Misfire
+P1316 - Spark Plug Voltage Detection Circuit Malfunction Front Bank
+P1317 - Spark Plug Voltage Detection Circuit Malfunction Rear Bank
+P1318 - Spark Plug Voltage Detection Module Reset Circuit Malfunction Front Bank
+P1319 - Spark Plug Voltage Detection Module Reset Circuit Malfunction Rear Bank
+P1324 - Knock Sensor Power Source Circuit Low Voltage
+P1336 - CKP Sensor B Range Performance
+P1337 - CKP Sensor B Low Input
+P1359 - CKP TDC Sensor Circuit Connector Disconnection
+P1361 - TDC Sensor Intermittent Interruption
+P1362 - TDC1 Sensor No Signal
+P1366 - TDC2 Sensor Intermittent
+P1367 - TDC2 Sensor No Signal
+P1381 - CYP Sensor A Intermittent Interruption
+P1382 - CYP Sensor A No Signal
+P1386 - CYP Sensor B Intermittent Interruption
+P1387 - CYP Sensor B No Signal
+P1456 - Evaporative Emission Control System Leak Detected Fuel Tank System
+P1457 - Evaporative Emission Control System Leak Detected Control Canister System
+P1459 - EVAP Purge Flow Switch Malfunction
+P1491 - EGR Valve Lift Insufficient Detected
+P1498 - EGR Valve Lift Sensor High Voltage
+P1508 - IAC Valve Circuit Failure
+P1519 - IAC Valve Circuit Failure
+P1607 - ECM Internal Circuit Failure A
+P1608 - ECM Internal Circuit Failure B
+P1655 - TMA or TMB Signal Line Fault
+P1656 - Automatic Transmission System Malfunction
+P1660 - A/T FI Data Line Failure
+P1671 - A/T FI Data Line No Signal
+P1672 - A/T FI Data Line Failure
+P1676 - Traction Control System FI Data Line No Signal
+P1677 - Traction Control System FI Data Line Failure
+P1678 - FPTDR Signal Line Failure
+P1681 - A/T FI Signal A Low Input
+P1682 - A/T FI Signal A High Input
+P1686 - A/T FI Signal B Low Input
+P1687 - A/T FI Signal B High Input
+P1690 - Traction Control System STB Line Failure
+P1696 - Traction Control Fuel Cut Signal Low Input
+P1697 - Traction Control Fuel Cut Signal High Input
+P1705 - TCM A/T Gear Position Switch Circuit Shorted
+P1706 - TCM A/T Gear Position Switch Circuit Open
+P1753 - TCM A/T Lockup Solenoid Valve "A" Fault
+P1758 - TCM A/T Lockup Solenoid Valve "B" Fault
+P1790 - TCM A/T TP Sensor Circuit Fault
+P1791 - TCM A/T Vehicle Speed Sensor Circuit Fault
+P1753 - TCM A/T ECT Sensor Circuit Fault
+P1709 - Automatic Transmission System Malfunction
+P1738 - Automatic Transmission System Malfunction
+P1739 - Automatic Transmission System Malfunction
+P1768 - Automatic Transmission System Malfunction
+P1773 - Automatic Transmission System Malfunction
+P1788 - Automatic Transmission System Malfunction
+P1793 - Automatic Transmission System Malfunction
+P1795 - Automatic Transmission System Malfunction

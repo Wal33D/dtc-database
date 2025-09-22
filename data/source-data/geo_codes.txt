@@ -1,0 +1,19 @@
+P1250 - Early Fuel Evaporation Heater Circuit Fault
+P1300 - Ignition Coil 1 Primary Feedback Circuit
+P1305 - Ignition Coil 2 Primary Feedback Circuit
+P1310 - Ignition Coil 3 Primary Feedback Circuit
+P1315 - Ignition Coil 4 Primary Feedback Circuit
+P1335 - Crankshaft Position Sensor Circuit
+P1346 - Intake Camshaft Position System Performance
+P1349 - Intake Camshaft Position System
+P1408 - MAP Sensor Circuit
+P1410 - Fuel Tank Pressure System Fault
+P1450 - Barometric Pressure Sensor Circuit Fault
+P1451 - Barometric Pressure Sensor Performance
+P1460 - Cooling Fan Control System Fault
+P1500 - Starter Signal Circuit Fault
+P1510 - Backup Power Supply Fault
+P1520 - Stop Lamp Switch Circuit
+P1530 - Ignition Timing Adjustment Switch Circuit
+P1600 - PCM Battery Circuit Fault
+P1656 - Intake CMP Actuator Solenoid Control Circuit

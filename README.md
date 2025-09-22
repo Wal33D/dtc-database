@@ -1,18 +1,18 @@
-# DTC Database - 18,821 OBD-II Diagnostic Trouble Codes
+# DTC Database
 
-**The most comprehensive open-source OBD-II DTC database**
+OBD-II Diagnostic Trouble Code Database with manufacturer-specific definitions
 
-Author: Wal33D
-Email: aquataze@yahoo.com
+**Author**: Wal33D
+**Email**: aquataze@yahoo.com
 
 ## Features
 
-- **18,821 diagnostic trouble codes** with descriptions
+- **18,805+ diagnostic trouble codes** with descriptions
 - All 4 code types: P (Powertrain), B (Body), C (Chassis), U (Network)
-- **32 manufacturer-specific** code sets (Mercedes, BMW, Ford, Audi, etc.)
-- Multi-platform support: Android, Java, Python, TypeScript
+- **34 manufacturer-specific** code sets (Mercedes, BMW, Ford, Audi, etc.)
+- Multi-platform support: Java/Android, Python
 - SQLite database with efficient caching
-- Batch lookup and search capabilities
+- Manufacturer-specific definitions with generic fallback
 
 ## Quick Start
 
@@ -30,46 +30,42 @@ DTCDatabase db = DTCDatabase.getInstance(context);
 String desc = db.getDescription("P0171");
 ```
 
-### TypeScript
-```bash
-npm run code P0171
-```
 
 ## Directory Structure
 
 ```
 dtc-database/
-├── android/               # Android-specific implementation
-│   └── DTCDatabase.java
-├── java/                  # Platform-independent Java
-│   └── DTCDatabaseCore.java
-├── python/                # Python library
+├── data/                  # Data files
+│   ├── dtc_codes.db      # SQLite database (2.6MB)
+│   ├── source-data/      # Raw text files (18,805+ codes)
+│   │   ├── p_codes.txt   # Generic powertrain codes
+│   │   ├── b_codes.txt   # Generic body codes
+│   │   ├── c_codes.txt   # Generic chassis codes
+│   │   ├── u_codes.txt   # Generic network codes
+│   │   └── [manufacturer]_codes.txt  # 34 manufacturer files
+│   └── lib/              # Java dependencies
+├── java/                 # Java/Android implementation
+│   ├── DTCDatabaseCore.java
+│   └── DTCDatabaseAndroid.java
+├── python/               # Python implementation
 │   └── dtc_database.py
-├── source-data/           # Raw text files (18,821 codes)
-│   ├── p_codes.txt        # Powertrain codes (7,388)
-│   ├── b_codes.txt        # Body codes (299)
-│   ├── c_codes.txt        # Chassis codes (497)
-│   ├── u_codes.txt        # Network codes (1,229)
-│   └── [manufacturer]_codes.txt  # 32 manufacturer files
-├── query-code.ts          # TypeScript single lookup
-├── query-interactive.ts   # TypeScript interactive tool
-└── tsconfig.json
+├── docs/                 # Documentation
+└── build_database.py     # Database builder script
 ```
 
 ## Database Statistics
 
 | Category | Count |
 |----------|-------|
-| **Total Codes** | 18,821 |
-| Powertrain (P) | 7,388 |
-| Body (B) | 299 |
-| Chassis (C) | 497 |
-| Network (U) | 1,229 |
-| Manufacturer-Specific | 9,408 |
+| **Total Entries** | 18,805 |
+| **Unique Codes** | 12,128 |
+| **Manufacturers** | 34 |
+| Generic Codes | ~3,500 |
+| Manufacturer-Specific | ~15,000+ |
 
 ### Manufacturer Coverage
 
-32 manufacturers including:
+34 manufacturers including:
 - Acura, Audi, BMW, Buick
 - Cadillac, Chevrolet, Chrysler, Dodge
 - Ford, GM, GMC, Honda
@@ -139,11 +135,13 @@ List<DTC> bodyCodes = db.getCodesByType('B');
 ## Database Schema
 
 ```sql
-CREATE TABLE dtc_codes (
-    code TEXT PRIMARY KEY,
+CREATE TABLE dtc_definitions (
+    code TEXT NOT NULL,
+    manufacturer TEXT NOT NULL,
     description TEXT NOT NULL,
-    type TEXT,              -- P/B/C/U
-    manufacturer TEXT       -- NULL for generic
+    is_generic BOOLEAN DEFAULT 0,
+    source_file TEXT,
+    PRIMARY KEY (code, manufacturer)
 );
 ```
 
@@ -157,15 +155,9 @@ P0002 - Fuel Volume Regulator A Control Circuit Performance
 
 ## Building from Source
 
-### TypeScript
-```bash
-npm install
-npx ts-node build-database.ts
-```
-
 ### Python
-```python
-python3 python/dtc_database.py  # Creates SQLite database
+```bash
+python3 build_database.py  # Rebuilds SQLite database from source files
 ```
 
 ## Code Types
@@ -184,10 +176,6 @@ python3 python/dtc_database.py  # Creates SQLite database
 ## License
 
 MIT License - Free for commercial and non-commercial use
-
-## Acknowledgments
-
-Database compiled from various public sources and manufacturer documentation.
 
 ## Contact
 

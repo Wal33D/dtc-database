@@ -1,0 +1,93 @@
+P1086 - Tumble Generator Valve #2 LH Position Sensor Circuit Low Input
+P1087 - Tumble Generator Valve #2 LH Position Sensor Circuit High Input
+P1088 - Tumble Generator Valve #1 RH Position Sensor Circuit Low Input
+P1089 - Tumble Generator Valve #1 RH Position Sensor Circuit High Input
+P1090 - Tumble Generator Valve #1 RH Malfunction Stuck Open
+P1091 - Tumble Generator Valve #1 RH Malfunction Stuck Close
+P1092 - Tumble Generator Valve #2 LH Malfunction Stuck Open
+P1093 - Tumble Generator Valve #2 LH Malfunction Stuck Close
+P1094 - Tumble Generator Valve Circuit #1 Open Circuit
+P1095 - Tumble Generator Valve Circuit #1 Over Current
+P1096 - Tumble Generator Valve Circuit #2 Open Circuit
+P1097 - Tumble Generator Valve Circuit #2 Over Current
+P1100 - Starter Switch Circuit Malfunction
+P1101 - Neutral Position Switch Circuit Malfunction M/T
+P1102 - Pressure Sources Solenoid Valve Circuit Malfunction
+P1103 - Pressure Sources Switching Solenoid Valve Circuit
+P1104 - Engine Torque Control Signal Circuit Malfunction
+P1106 - Engine Torque Control Signal 2 Circuit Malfunction
+P1107 - AIR System Diagnosis Solenoid Circuit Fault
+P1110 - Atmospheric Pressure Sensor Low Input
+P1111 - Atmospheric Pressure Sensor High Input
+P1112 - Atmospheric Pressure Sensor Range Performance Problem
+P1115 - Engine Torque Control Cut Signal Circuit High Input
+P1116 - Engine Torque Control Cut Signal Circuit Low Input
+P1120 - Starter Switch High Input
+P1121 - Neutral Position Switch Circuit Low Input AT Vehicles
+P1122 - Pressure Sources Switching Valve Circuit High Input
+P1124 - TCS Signal Circuit High Input
+P1130 - Front Oxygen Sensor Circuit Malfunction Open Circuit
+P1131 - Front Oxygen Sensor Circuit Malfunction Short Circuit
+P1134 - Front Oxygen AF Sensor Microcomputer Problem
+P1137 - Front Oxygen AF Sensor Circuit Range Performance Problem
+P1139 - Front Oxygen AF Sensor #1 Heater Circuit Performance Range Problem
+P1141 - Mass Air Flow Sensor Circuit High Input
+P1142 - Mass Air Flow Sensor Circuit Low Input
+P1143 - Pressure Sensor Circuit Low Input
+P1144 - Pressure Sensor Circuit High Input
+P1146 - Pressure Sensor Circuit Range Performance Problem High Input
+P1150 - Front Oxygen Sensor Heater Circuit High Input
+P1151 - Rear Oxygen Sensor Heater Circuit High Input
+P1230 - Fuel Pump Control Unit Malfunction
+P1244 - Wastegate Control Solenoid Valve Malfunction Low Input
+P1245 - Wastegate Control Solenoid Valve Malfunction Fail Safe
+P1301 - Fire Due To Increased Exhaust Temperature
+P1312 - Exhaust Temperature Sensor Malfunction
+P1325 - Knock Sensor Circuit Low Input
+P1400 - Fuel Tank Pressure Control Solenoid Low Input
+P1401 - Fuel Tank Pressure Control System Performance
+P1402 - Fuel Level Pressure Sensor Circuit Fault
+P1420 - Fuel Tank Pressure Control Solenoid High Input
+P1421 - Exhaust Gas Recirculation Circuit High Input
+P1422 - EVAP Purge Control Solenoid Valve Circuit High Input
+P1423 - EVAP Vent Control High Input
+P1440 - Fuel Tank Pressure Control System Low Input
+P1441 - Fuel Tank Pressure Control System High Input
+P1442 - Fuel Level Sensor Circuit Range Performance
+P1443 - EVAP Control System Vent Control Function Problem
+P1480 - Cooling Fan Relay 1 Circuit High Input
+P1500 - Radiator Fan Relay 1 Circuit Malfunction
+P1501 - Idle Control System Malfunction Fail Safe
+P1502 - Radiator Fan Function Problem
+P1507 - Idle Control System Malfunction Fail Safe
+P1510 - Idle Air Control Solenoid Signal 1 Circuit Low Input
+P1511 - Idle Air Control Solenoid Signal 1 Circuit High Input
+P1512 - Idle Air Control Solenoid Signal 2 Circuit Low Input
+P1513 - Idle Air Control Solenoid Signal 2 Circuit High Input
+P1514 - Idle Air Control Solenoid Signal 3 Circuit Low Input
+P1515 - Idle Air Control Solenoid Signal 3 Circuit High Input
+P1516 - Idle Air Control Solenoid Signal 4 Circuit Low Input
+P1517 - Idle Air Control Solenoid Signal 4 Circuit High Input
+P1518 - Starter Switch Circuit Low Input
+P1520 - Radiator Fan Relay 1 Circuit High Input
+P1540 - Vehicle Speed Sensor Malfunction
+P1544 - High Exhaust Temperature Detected
+P1560 - Back-Up Voltage Circuit Malfunction
+P1590 - Neutral Position Switch Circuit High Input
+P1591 - Neutral Position Switch Circuit Low Input
+P1592 - Neutral Position Switch Circuit MT Model
+P1594 - Automatic Transmission Diagnosis Input Signal Circuit Malfunction
+P1595 - Automatic Transmission Diagnosis Input Signal Circuit Low Input
+P1596 - Automatic Transmission Diagnosis Input Signal Circuit High Input
+P1698 - Engine Torque Control Cut Signal Circuit Low Input
+P1699 - Engine Torque Control Cut Signal Circuit High Input
+P1700 - Throttle Position Sensor Circuit Malfunction AT
+P1701 - Cruise Control Set Signal Circuit Malfunction AT
+P1702 - Auto Trans Diagnosis Input Signal Circuit
+P1703 - Low Clutch Timing Control Solenoid Valve Circuit Malfunction
+P1704 - 2-4 Brake Timing Solenoid Valve Circuit Malfunction
+P1705 - 2-4 Brake Pressure Solenoid Valve Solenoid D Circuit
+P1711 - Engine Torque Control Signal 1 Circuit Malfunction
+P1712 - Engine Torque Control Signal 2 Circuit Malfunction
+P1722 - Auto Trans Diagnosis Input Signal High Input
+P1742 - Auto Trans Diagnosis Input Signal Malfunction

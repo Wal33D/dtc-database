@@ -1,0 +1,34 @@
+P1100 - Induction Control Motor Position Sensor Fault
+P1101 - Traction Control Vacuum Solenoid Circuit Fault
+P1102 - Traction Control Ventilation Solenoid Circuit Fault
+P1103 - Turbocharger Wastegate Actuator
+P1104 - Turbocharger Wastegate Solenoid
+P1105 - Fuel Pressure Solenoid
+P1294 - Target Idle Speed Not Reached
+P1295 - No 5 Volt Supply To TP Sensor
+P1296 - No 5 Volt Supply To MAP Sensor
+P1297 - No Charge In MAP From Start To Run
+P1300 - Ignition Timing Adjustment Circuit
+P1390 - Timing Belt Skipped One Tooth Or More
+P1391 - Intermittent Loss Of CMP Or CKP Sensor Signals
+P1400 - Manifold Differential Pressure Sensor Circuit
+P1443 - EVAP Purge Control Solenoid 2 Circuit Fault
+P1486 - EVAP Leak Monitor Pinched Hose Detected
+P1487 - High Speed Radiator Fan Control Relay Circuit Fault
+P1489 - High Speed Condenser Fan Control Relay Fault
+P1490 - Low Speed Fan Control Relay Fault
+P1492 - Battery Temperature Sensor High Voltage
+P1494 - EVAP Ventilation Switch Or Mechanical Fault
+P1495 - EVAP Ventilation Solenoid Circuit Fault
+P1496 - 5 Volt Supply Output Too Low
+P1500 - Alternator FR Terminal Circuit
+P1600 - Serial Communication Link
+P1696 - PCM Failure EEPROM Write Denied
+P1698 - No CCD Messages From TCM
+P1715 - Pulse Generator Assembly
+P1750 - Solenoid Assembly
+P1791 - PCM ECT Level Signal To TCM Circuit Fault
+P1899 - P/N Position Transaxle Range Switch Circuit Fault
+P1751 - A/T Control Relay
+P1791 - Engine Coolant Temperature Level Input Circuit
+P1795 - Throttle Position Input Circuit To TCM
