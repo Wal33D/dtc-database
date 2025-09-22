@@ -68,6 +68,26 @@ class PerfectDTCDatabase:
         if result:
             return result[0]
 
+        # Special case: INFINITI uses NISSAN codes
+        if manufacturer == 'NISSAN':
+            cursor.execute('''
+                SELECT description FROM dtc_definitions
+                WHERE code = ? AND manufacturer = 'INFINITI'
+            ''', (code,))
+            result = cursor.fetchone()
+            if result:
+                return result[0]
+
+        # Special case: GM brands can use generic GM codes
+        if manufacturer in ['CHEVY', 'BUICK', 'CADILLAC', 'GMC', 'PONTIAC', 'OLDSMOBILE', 'SATURN', 'GEO']:
+            cursor.execute('''
+                SELECT description FROM dtc_definitions
+                WHERE code = ? AND manufacturer = 'GM'
+            ''', (code,))
+            result = cursor.fetchone()
+            if result:
+                return result[0]
+
         # Fallback to generic if available
         cursor.execute('''
             SELECT description FROM dtc_definitions
@@ -194,54 +214,122 @@ class PerfectDTCDatabase:
 
         # Common WMI mappings
         wmi_map = {
+            # US Manufacturers - Ford
             '1FA': 'FORD', '1FB': 'FORD', '1FC': 'FORD', '1FD': 'FORD',
             '1FM': 'FORD', '1FT': 'FORD', '1FU': 'FORD', '1FV': 'FORD',
+
+            # US Manufacturers - General Motors
             '1G1': 'CHEVY', '1G2': 'PONTIAC', '1G3': 'OLDSMOBILE',
             '1G4': 'BUICK', '1G6': 'CADILLAC', '1G8': 'SATURN',
             '1GC': 'CHEVY', '1GM': 'PONTIAC', '1GT': 'GMC',
-            '1HG': 'HONDA', '1J4': 'JEEP', '1J8': 'JEEP',
-            '1LN': 'LINCOLN', '1ME': 'MERCURY', '1N4': 'NISSAN',
-            '1VW': 'VOLKSWAGEN', '1YV': 'MAZDA',
+            '1GE': 'CADILLAC', '1GY': 'CADILLAC', '1G9': 'GEO',
+
+            # US Manufacturers - Chrysler Group
+            '1C3': 'CHRYSLER', '1C4': 'CHRYSLER', '1C6': 'CHRYSLER',
+            '1D3': 'DODGE', '1D4': 'DODGE', '1D7': 'DODGE', '1D8': 'DODGE',
+            '1J4': 'JEEP', '1J8': 'JEEP',
+            '1P3': 'PLYMOUTH', '1P4': 'PLYMOUTH', '1P7': 'PLYMOUTH',
+
+            # US Manufacturers - Other
+            '1HG': 'HONDA', '1LN': 'LINCOLN', '1ME': 'MERCURY',
+            '1N4': 'NISSAN', '1N6': 'NISSAN', '1VW': 'VOLKSWAGEN',
+            '1YV': 'MAZDA', '1ZV': 'FORD',
+
+            # Canadian Manufacturers
             '2FA': 'FORD', '2FB': 'FORD', '2FC': 'FORD', '2FM': 'FORD',
-            '2FT': 'FORD', '2FU': 'FORD', '2FV': 'FORD',
+            '2FT': 'FORD', '2FU': 'FORD', '2FV': 'FORD', '2FZ': 'FORD',
             '2G1': 'CHEVY', '2G2': 'PONTIAC', '2G3': 'OLDSMOBILE',
-            '2G4': 'BUICK', '2G5': 'GMC', '2G6': 'CADILLAC',
+            '2G4': 'BUICK', '2G5': 'GMC', '2G6': 'CADILLAC', '2G9': 'GEO',
             '2HG': 'HONDA', '2HK': 'HONDA', '2HM': 'HONDA',
             '2LM': 'LINCOLN', '2ME': 'MERCURY',
+            '2C3': 'CHRYSLER', '2C4': 'CHRYSLER', '2D3': 'DODGE',
+            '2P3': 'PLYMOUTH', '2P4': 'PLYMOUTH',
+
+            # Mexican Manufacturers
             '3FA': 'FORD', '3FE': 'FORD', '3G1': 'CHEVY',
-            '3VW': 'VOLKSWAGEN', '4F2': 'MAZDA', '4J8': 'JEEP',
-            '4JG': 'MERCEDES', '4US': 'BMW', '4T1': 'TOYOTA',
-            '5FN': 'HONDA', '5J6': 'HONDA', '5NP': 'KIA',
-            '5TB': 'TOYOTA', '5TD': 'TOYOTA', '5TE': 'TOYOTA',
-            '5TF': 'TOYOTA', '5YJ': 'TESLA',
-            'JF1': 'SUBARU', 'JF2': 'SUBARU', 'JH4': 'ACURA',
-            'JHG': 'HONDA', 'JHL': 'HONDA', 'JHM': 'HONDA',
-            'JM1': 'MAZDA', 'JM3': 'MAZDA', 'JN1': 'NISSAN',
-            'JN8': 'NISSAN', 'JS1': 'SUZUKI', 'JS2': 'SUZUKI',
+            '3G2': 'PONTIAC', '3G4': 'BUICK', '3G5': 'BUICK',
+            '3G6': 'CADILLAC', '3G7': 'GMC', '3GC': 'CHEVY',
+            '3VW': 'VOLKSWAGEN', '3C4': 'CHRYSLER', '3D3': 'DODGE',
+            '3D4': 'DODGE', '3P3': 'PLYMOUTH',
+
+            # US Manufacturers continued (4-5 prefix)
+            '4F2': 'MAZDA', '4F3': 'MAZDA', '4F4': 'MAZDA',
+            '4J8': 'JEEP', '4JG': 'MERCEDES', '4US': 'BMW',
+            '4T1': 'TOYOTA', '4T3': 'TOYOTA',
+            '5FN': 'HONDA', '5J6': 'HONDA', '5J8': 'ACURA',
+            '5NP': 'KIA', '5TB': 'TOYOTA', '5TD': 'TOYOTA',
+            '5TE': 'TOYOTA', '5TF': 'TOYOTA', '5YJ': 'TESLA',
+
+            # US - Mitsubishi
+            '4A3': 'MITSUBISHI', '4A4': 'MITSUBISHI', '4A5': 'MITSUBISHI',
+            '4B3': 'MITSUBISHI',
+
+            # Japanese Manufacturers
+            'JA3': 'MITSUBISHI', 'JA4': 'MITSUBISHI', 'JA7': 'MITSUBISHI',
+            'JF1': 'SUBARU', 'JF2': 'SUBARU', 'JF3': 'SUBARU',
+            'JH4': 'ACURA', 'JHG': 'HONDA', 'JHL': 'HONDA', 'JHM': 'HONDA',
+            'JM1': 'MAZDA', 'JM3': 'MAZDA', 'JM7': 'MAZDA',
+            'JN1': 'NISSAN', 'JN3': 'NISSAN', 'JN6': 'NISSAN', 'JN8': 'NISSAN',
+            'JS1': 'SUZUKI', 'JS2': 'SUZUKI', 'JS3': 'SUZUKI',
             'JT2': 'TOYOTA', 'JT3': 'TOYOTA', 'JT4': 'TOYOTA',
             'JT5': 'TOYOTA', 'JT6': 'TOYOTA', 'JT8': 'LEXUS',
             'JTD': 'TOYOTA', 'JTE': 'TOYOTA', 'JTH': 'LEXUS',
             'JTJ': 'LEXUS', 'JTK': 'TOYOTA', 'JTL': 'TOYOTA',
             'JTM': 'TOYOTA', 'JTN': 'TOYOTA',
-            'KM8': 'KIA', 'KND': 'KIA', 'KNH': 'KIA',
+
+            # Korean Manufacturers
+            'KM8': 'KIA', 'KN8': 'KIA', 'KNA': 'KIA',
+            'KND': 'KIA', 'KNH': 'KIA', 'KNJ': 'KIA',
+            'KMH': 'HYUNDAI', 'KMF': 'HYUNDAI', 'KM1': 'HYUNDAI',
+
+            # European - French
             'VF1': 'RENAULT', 'VF2': 'RENAULT', 'VF3': 'PEUGEOT',
-            'VF6': 'RENAULT', 'VF7': 'CITROEN', 'VF8': 'MATRA',
+            'VF4': 'PEUGEOT', 'VF6': 'RENAULT', 'VF7': 'CITROEN',
+            'VF8': 'MATRA', 'VF9': 'BUGATTI',
+
+            # European - German
             'W0L': 'OPEL', 'W0V': 'OPEL',
-            'WA1': 'AUDI', 'WAU': 'AUDI', 'WBA': 'BMW',
-            'WBM': 'BMW', 'WBS': 'BMW', 'WBX': 'BMW',
+            'WA1': 'AUDI', 'WAU': 'AUDI', 'WUA': 'AUDI',
+            'WBA': 'BMW', 'WBM': 'BMW', 'WBS': 'BMW', 'WBX': 'BMW',
+            'WBY': 'BMW', 'WB1': 'BMW', 'WB2': 'BMW', 'WB3': 'BMW',
             'WD0': 'MERCEDES', 'WD1': 'MERCEDES', 'WD2': 'MERCEDES',
             'WD3': 'MERCEDES', 'WD4': 'MERCEDES', 'WD5': 'MERCEDES',
             'WD8': 'MERCEDES', 'WDA': 'MERCEDES', 'WDB': 'MERCEDES',
             'WDC': 'MERCEDES', 'WDD': 'MERCEDES', 'WDE': 'MERCEDES',
             'WDF': 'MERCEDES', 'WMW': 'MINI',
             'WP0': 'PORSCHE', 'WP1': 'PORSCHE',
-            'WUA': 'AUDI', 'WVG': 'VOLKSWAGEN', 'WVW': 'VOLKSWAGEN',
+            'WVG': 'VOLKSWAGEN', 'WVW': 'VOLKSWAGEN',
             'WV1': 'VOLKSWAGEN', 'WV2': 'VOLKSWAGEN', 'WV3': 'VOLKSWAGEN',
+
+            # European - British
+            'SAJ': 'JAGUAR', 'SAD': 'JAGUAR', 'SAF': 'JAGUAR', 'SAX': 'JAGUAR',
+            'SCC': 'LOTUS', 'SCF': 'ASTON_MARTIN',
+            'SAL': 'LAND_ROVER', 'SAR': 'ROVER', 'SHH': 'LAND_ROVER',
+            'SJN': 'NISSAN',  # Nissan UK
+
+            # European - Swedish
             'YV1': 'VOLVO', 'YV2': 'VOLVO', 'YV3': 'VOLVO',
-            'YV4': 'VOLVO', 'YV5': 'VOLVO',
+            'YV4': 'VOLVO', 'YV5': 'VOLVO', 'YS3': 'SAAB',
+
+            # European - Italian
             'ZA9': 'LAMBORGHINI', 'ZAM': 'MASERATI', 'ZAR': 'ALFA_ROMEO',
-            'ZCF': 'IVECO', 'ZFF': 'FERRARI', 'ZHW': 'LAMBORGHINI',
-            'ZLA': 'LANCIA'
+            'ZCF': 'IVECO', 'ZFA': 'FIAT', 'ZFF': 'FERRARI',
+            'ZHW': 'LAMBORGHINI', 'ZLA': 'LANCIA',
+
+            # Asian - Mitsubishi (additional)
+            'MA3': 'MITSUBISHI', 'MB3': 'MITSUBISHI', 'ML3': 'MITSUBISHI',
+            'MMB': 'MITSUBISHI', 'MMC': 'MITSUBISHI', 'MMD': 'MITSUBISHI',
+            'MMT': 'MITSUBISHI', 'MZ2': 'MITSUBISHI', 'MZ3': 'MITSUBISHI',
+
+            # Asian - Other
+            'LVS': 'FORD', 'LVY': 'VOLVO', 'LVG': 'TOYOTA',
+            'L56': 'HYUNDAI', 'L5Y': 'MAZDA',
+
+            # South American
+            '9BW': 'VOLKSWAGEN', '9BF': 'FORD', '9BG': 'CHEVY',
+            '9BD': 'FIAT', '9BM': 'MERCEDES', '9BN': 'JAGUAR',
+            '93H': 'HONDA', '93W': 'PEUGEOT', '93X': 'CITROEN',
+            '93Y': 'RENAULT', '94D': 'NISSAN', '9FB': 'RENAULT'
         }
 
         # Check first 3 characters
@@ -249,12 +337,21 @@ class PerfectDTCDatabase:
             return wmi_map[wmi]
 
         # Check first 2 characters for broader matches
-        wmi2 = vin[:2]
+        wmi2 = vin[:2].upper()
+        wmi1 = vin[0].upper()
+
+        # 2-character fallbacks
         if wmi2 == '1C':
             return 'CHRYSLER'
         elif wmi2 == '1D':
             return 'DODGE'
         elif wmi2 == '1P':
+            return 'PLYMOUTH'
+        elif wmi2 == '2C':
+            return 'CHRYSLER'
+        elif wmi2 == '2D':
+            return 'DODGE'
+        elif wmi2 == '2P':
             return 'PLYMOUTH'
         elif wmi2 == '3C':
             return 'CHRYSLER'
@@ -262,6 +359,37 @@ class PerfectDTCDatabase:
             return 'DODGE'
         elif wmi2 == '3P':
             return 'PLYMOUTH'
+
+        # GM fallback for any unmatched 1G prefix
+        elif wmi2 == '1G':
+            return 'GM'
+        elif wmi2 == '2G':
+            return 'GM'
+        elif wmi2 == '3G':
+            return 'GM'
+
+        # INFINITI shares NISSAN VINs but we default to NISSAN
+        # (JN prefix already maps to NISSAN which covers INFINITI)
+
+        # Regional fallbacks
+        elif wmi1 == 'J':
+            # Japanese manufacturer not in map
+            return None
+        elif wmi1 == 'K':
+            # Korean manufacturer not in map
+            return None
+        elif wmi1 == 'S':
+            # British manufacturer not in map
+            return None
+        elif wmi1 == 'W':
+            # German manufacturer not in map
+            return None
+        elif wmi1 == 'V':
+            # French/Spanish manufacturer not in map
+            return None
+        elif wmi1 == 'Z':
+            # Italian manufacturer not in map
+            return None
 
         return None
 

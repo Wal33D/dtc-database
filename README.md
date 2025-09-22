@@ -193,4 +193,3 @@ Database compiled from various public sources and manufacturer documentation.
 
 Wal33D - aquataze@yahoo.com
 
-For OBD-Droid integration, visit: https://github.com/Wal33D/OBD-Droid
