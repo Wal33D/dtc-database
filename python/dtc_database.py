@@ -7,7 +7,6 @@ Author: Wal33D
 Email: aquataze@yahoo.com
 """
 
-import json
 import sqlite3
 import os
 from typing import Dict, List, Optional, Tuple
@@ -81,6 +80,8 @@ class DTCDatabase:
     def _load_from_source_files(self):
         """Load codes from text files"""
         source_dir = Path(__file__).parent.parent / 'source-data'
+        if not self.conn:
+            raise RuntimeError("Database connection not established")
         cursor = self.conn.cursor()
 
         for file_path in source_dir.glob('*.txt'):
@@ -129,6 +130,8 @@ class DTCDatabase:
         if code in self.cache:
             return self.cache[code]
 
+        if not self.conn:
+            return None
         cursor = self.conn.cursor()
         cursor.execute(
             'SELECT description FROM dtc_codes WHERE code = ?',
@@ -156,6 +159,8 @@ class DTCDatabase:
             DTC object or None if not found
         """
         code = code.upper()
+        if not self.conn:
+            return None
         cursor = self.conn.cursor()
         cursor.execute(
             'SELECT * FROM dtc_codes WHERE code = ?',
@@ -201,6 +206,8 @@ class DTCDatabase:
         Returns:
             List of matching DTCs
         """
+        if not self.conn:
+            return []
         cursor = self.conn.cursor()
         search_term = f'%{keyword}%'
 
@@ -232,6 +239,8 @@ class DTCDatabase:
         Returns:
             List of DTCs of that type
         """
+        if not self.conn:
+            return []
         cursor = self.conn.cursor()
         cursor.execute(
             'SELECT * FROM dtc_codes WHERE type = ? LIMIT ?',
@@ -260,6 +269,8 @@ class DTCDatabase:
         Returns:
             List of manufacturer-specific DTCs
         """
+        if not self.conn:
+            return []
         cursor = self.conn.cursor()
         cursor.execute(
             'SELECT * FROM dtc_codes WHERE manufacturer = ? LIMIT ?',
@@ -284,6 +295,8 @@ class DTCDatabase:
         Returns:
             Dictionary with counts by type and total
         """
+        if not self.conn:
+            return {}
         cursor = self.conn.cursor()
 
         stats = {}
