@@ -45,17 +45,18 @@ class DTCDatabase:
     def __init__(self, db_path: Optional[str] = None):
         """Initialize database connection"""
         if db_path is None:
-            db_path = os.path.join(os.path.dirname(__file__), '..', 'dtc_definitions.db')
+            # Use the correct database path in data/ directory
+            db_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'dtc_codes.db')
 
         self.db_path = db_path
         self.conn = None
         self.cache = {}  # Simple cache for frequent lookups
 
-        # Create database if it doesn't exist
+        # Check if database exists
         if not os.path.exists(db_path):
-            self.create_database()
-        else:
-            self.conn = sqlite3.connect(db_path)
+            raise FileNotFoundError(f"Database not found at {db_path}. Please ensure data/dtc_codes.db exists.")
+
+        self.conn = sqlite3.connect(db_path)
 
     def create_database(self):
         """Create database from source files"""
