@@ -1,0 +1,1230 @@
+U0001 - High Speed CAN Communication Bus
+U0002 - High Speed CAN Communication Bus Performance
+U0003 - High Speed CAN Communication Bus (+) Open
+U0004 - High Speed CAN Communication Bus (+) Low
+U0005 - High Speed CAN Communication Bus (+) High
+U0006 - High Speed CAN Communication Bus (-) Open
+U0007 - High Speed CAN Communication Bus (-) Low
+U0008 - High Speed CAN Communication Bus (-) High
+U0009 - High Speed CAN Communication Bus (-) shorted to Bus (+)
+U0010 - Medium Speed CAN Communication Bus
+U0011 - Medium Speed CAN Communication Bus Performance
+U0012 - Medium Speed CAN Communication Bus (+) Open
+U0013 - Medium Speed CAN Communication Bus (+) Low
+U0014 - Medium Speed CAN Communication Bus (+) High
+U0015 - Medium Speed CAN Communication Bus (-) Open
+U0016 - Medium Speed CAN Communication Bus (-) Low
+U0017 - Medium Speed CAN Communication Bus (-) High
+U0018 - Medium Speed CAN Communication Bus (-) shorted to Bus (+)
+U0019 - Low Speed CAN Communication Bus
+U0020 - Low Speed CAN Communication Bus Performance
+U0021 - Low Speed CAN Communication Bus (+) Open
+U0022 - Low Speed CAN Communication Bus (+) Low
+U0023 - Low Speed CAN Communication Bus (+) High
+U0024 - Low Speed CAN Communication Bus (-) Open
+U0025 - Low Speed CAN Communication Bus (-) Low
+U0026 - Low Speed CAN Communication Bus (-) High
+U0027 - Low Speed CAN Communication Bus (-) shorted to Bus (+)
+U0028 - Vehicle Communication Bus A
+U0029 - Vehicle Communication Bus A Performance
+U0030 - Vehicle Communication Bus A (+) Open
+U0031 - Vehicle Communication Bus A (+) Low
+U0032 - Vehicle Communication Bus A (+) High
+U0033 - Vehicle Communication Bus A (-) Open
+U0034 - Vehicle Communication Bus A (-) Low
+U0035 - Vehicle Communication Bus A (-) High
+U0036 - Vehicle Communication Bus A (-) shorted to Bus A (+)
+U0037 - Vehicle Communication Bus B
+U0038 - Vehicle Communication Bus B Performance
+U0039 - Vehicle Communication Bus B (+) Open
+U0040 - Vehicle Communication Bus B (+) Low
+U0041 - Vehicle Communication Bus B (+) High
+U0042 - Vehicle Communication Bus B (-) Open
+U0043 - Vehicle Communication Bus B (-) Low
+U0044 - Vehicle Communication Bus B (-) High
+U0045 - Vehicle Communication Bus B (-) shorted to Bus B (+)
+U0046 - Vehicle Communication Bus C
+U0047 - Vehicle Communication Bus C Performance
+U0048 - Vehicle Communication Bus C (+) Open
+U0049 - Vehicle Communication Bus C (+) Low
+U0050 - Vehicle Communication Bus C (+) High
+U0051 - Vehicle Communication Bus C (-) Open
+U0052 - Vehicle Communication Bus C (-) Low
+U0053 - Vehicle Communication Bus C (-) High
+U0054 - Vehicle Communication Bus C (-) shorted to Bus C (+)
+U0055 - Vehicle Communication Bus D
+U0056 - Vehicle Communication Bus D Performance
+U0057 - Vehicle Communication Bus D (+) Open
+U0058 - Vehicle Communication Bus D (+) Low
+U0059 - Vehicle Communication Bus D (+) High
+U0060 - Vehicle Communication Bus D (-) Open
+U0061 - Vehicle Communication Bus D (-) Low
+U0062 - Vehicle Communication Bus D (-) High
+U0063 - Vehicle Communication Bus D (-) shorted to Bus D (+)
+U0064 - Vehicle Communication Bus E
+U0065 - Vehicle Communication Bus E Performance
+U0066 - Vehicle Communication Bus E (+) Open
+U0067 - Vehicle Communication Bus E (+) Low
+U0068 - Vehicle Communication Bus E (+) High
+U0069 - Vehicle Communication Bus E (-) Open
+U0070 - Vehicle Communication Bus E (-) Low
+U0071 - Vehicle Communication Bus E (-) High
+U0072 - Vehicle Communication Bus E (-) shorted to Bus E (+)
+U0073 - Control Module Communication Bus A Off
+U0074 - Control Module Communication Bus B Off
+U0075 - Control Module Communication Bus C Off
+U0076 - Control Module Communication Bus D Off
+U0077 - Control Module Communication Bus E Off
+U0078 - Control Module Communication Bus F Off
+U0079 - Control Module Communication Bus G Off
+U007A - Control Module Communication Bus H Off
+U007B - Control Module Communication Bus I Off
+U007C - Control Module Communication Bus J Off
+U007D - Control Module Communication Bus K Off
+U007E - Control Module Communication Bus L Off
+U007F - Control Module Communication Bus M Off
+U0080 - Vehicle Communication Bus F
+U0081 - Vehicle Communication Bus F Performance
+U0082 - Vehicle Communication Bus F + Open
+U0083 - Vehicle Communication Bus F + Low
+U0084 - Vehicle Communication Bus F + High
+U0085 - Vehicle Communication Bus F - Open
+U0086 - Vehicle Communication Bus F - Low
+U0087 - Vehicle Communication Bus F - High
+U0088 - Vehicle Communication Bus F - Shorted to Bus F +
+U0089 - Vehicle Communication Bus G
+U008A - Vehicle Communication Bus G Performance
+U008B - Vehicle Communication Bus G (+) Open
+U008C - Vehicle Communication Bus G (+) Low
+U008D - Vehicle Communication Bus G (+) High
+U008E - Vehicle Communication Bus G (-) Open
+U008F - Vehicle Communication Bus G (-) Low
+U0090 - Vehicle Communication Bus G (-) High
+U0091 - Vehicle Communication Bus G (-) shorted to Bus G (+)
+U0092 - Vehicle Communication Bus H
+U0093 - Vehicle Communication Bus H Performance
+U0094 - Vehicle Communication Bus H (+) Open
+U0095 - Vehicle Communication Bus H (+) Low
+U0096 - Vehicle Communication Bus H (+) High
+U0097 - Vehicle Communication Bus H (-) Open
+U0098 - Vehicle Communication Bus H (-) Low
+U0099 - Vehicle Communication Bus H (-) High
+U009A - Vehicle Communication Bus H (-) shorted to Bus H (+)
+U009B - Vehicle Communication Bus I
+U009C - Vehicle Communication Bus I Performance
+U009D - Vehicle Communication Bus J
+U009E - Vehicle Communication Bus J Performance
+U0100 - Lost Communication With ECM/PCM A
+U0101 - Lost Communication With TCM
+U0102 - Lost Communication With Transfer Case Control Module
+U0103 - Lost Communication With Gear Shift Control Module A
+U0104 - Lost Communication With Cruise Control Module
+U0105 - Lost Communication With Fuel Injector Control Module
+U0106 - Lost Communication With Glow Plug Control Module 1
+U0107 - Lost Communication With Throttle Actuator A Control Module
+U0108 - Lost Communication With Alternative Fuel Control Module
+U0109 - Lost Communication With Fuel Pump Control Module A
+U010A - Lost Communication With Exhaust Gas Recirculation Control Module A
+U010B - Lost Communication With Exhaust Gas Recirculation Control Module B
+U010C - Lost Communication With Turbocharger/Supercharger Control Module A
+U010D - Lost Communication With Turbocharger/Supercharger Control Module B
+U010E - Lost Communication With Reductant Control Module
+U010F - Lost Communication With Air Conditioning Control Module
+U0110 - Lost Communication With Drive Motor Control Module A
+U0111 - Lost Communication With Battery Energy Control Module A
+U0112 - Lost Communication With Battery Energy Control Module B
+U0113 - Lost Communication With Emissions Critical Control Information
+U0114 - Lost Communication With Four-Wheel Drive Clutch Control Module
+U0115 - Lost Communication With ECM/PCM B
+U0116 - Lost Communication With Coolant Temperature Control Module
+U0117 - Lost Communication With PTO Control Module
+U0118 - Lost Communication With Fuel Additive Control Module
+U0119 - Lost Communication With Fuel Cell Control Module
+U011A - Lost Communication With Exhaust Gas Sensor Module A
+U011B - Lost Communication With Rocker Arm Control Module A
+U011C - Lost Communication With Rocker Arm Control Module B
+U011D - Lost Communication With All Wheel Drive Control Module
+U011E - Lost Communication With Throttle Actuator B Control Module
+U011F - Lost Communication With V2X Module
+U0120 - Lost Communication With Starter / Generator Control Module
+U0121 - Lost Communication With Anti-Lock Brake System (ABS) Control Module A
+U0122 - Lost Communication With Vehicle Dynamics Control Module
+U0123 - Lost Communication With Yaw Rate Sensor Module
+U0124 - Lost Communication With Lateral Acceleration Sensor Module
+U0125 - Lost Communication With Multi-axis Acceleration Sensor Module A
+U0126 - Lost Communication With Steering Angle Sensor Module
+U0127 - Lost Communication With Tire Pressure Monitor Module
+U0128 - Lost Communication With Park Brake Control Module
+U0129 - Lost Communication With Brake System Control Module A
+U012A - Lost Communication With Chassis Control Module A
+U012B - Lost Communication With Chassis Control Module B
+U012C - Lost Communication With Active Vibration Control Module
+U012D - Lost Communication With Generator A Control Module
+U012E - Lost Communication With Camshaft Position Control Module
+U012F - Lost Communication With Generator B Control Module
+U0130 - Lost Communication With Steering Effort Control Module
+U0131 - Lost Communication With Power Steering Control Module A
+U0132 - Lost Communication With Suspension Control Module A
+U0133 - Lost Communication With Active Roll Control Module
+U0134 - Lost Communication With Power Steering Control Module - Rear
+U0135 - Lost Communication With Differential Control Module - Front
+U0136 - Lost Communication With Differential Control Module - Rear
+U0137 - Lost Communication With Trailer Brake Control Module
+U0138 - Lost Communication With All Terrain Control Module
+U0139 - Lost Communication With Suspension Control Module B
+U013C - Lost Communication With Accelerator Pedal Module
+U013D - Lost Communication With Vacuum Sensor A
+U013E - Lost Communication With Vacuum Sensor B
+U013F - Lost Communication With Pedestrian Alert Control Module
+U0140 - Lost Communication With Body Control Module
+U0141 - Lost Communication With Body Control Module A
+U0142 - Lost Communication With Body Control Module B
+U0143 - Lost Communication With Body Control Module C
+U0144 - Lost Communication With Body Control Module D
+U0145 - Lost Communication With Body Control Module E
+U0146 - Lost Communication With Serial Data Gateway Module A
+U0147 - Lost Communication With Serial Data Gateway Module B
+U0148 - Lost Communication With Serial Data Gateway Module C
+U0149 - Lost Communication With Serial Data Gateway Module D
+U014A - Lost Communication With Battery Energy Control Module C
+U014B - Lost Communication With Hybrid/EV Battery Inductive Charging Module
+U014C - Lost Communication With Battery Energy Control Module D
+U014D - Lost Communication with Mirror Control Module B
+U014E - Lost Communication With Multi-axis Acceleration Sensor Module B
+U0150 - Lost Communication With Serial Data Gateway Module E
+U0151 - Lost Communication With Restraints Control Module
+U0152 - Lost Communication With Side Restraints Control Module - Left
+U0153 - Lost Communication With Side Restraints Control Module - Right
+U0154 - Lost Communication With Restraints Occupant Classification System Module
+U0155 - Lost Communication With Instrument Panel Cluster (IPC) Control Module
+U0156 - Lost Communication With Information Center A
+U0157 - Lost Communication With Information Center B
+U0158 - Lost Communication With Head Up Display
+U0159 - Lost Communication With Parking Assist Control Module A
+U015A - Lost Communication With Anti-Lock Brake System (ABS) Control Module B
+U015B - Lost Communication With Power Steering Control Module “B”
+U015C - Lost Communication With Automated Driving System Control Module A
+U015D - Lost Communication With Automated Driving System Control Module B
+U015E - Lost Communication With Automated Driving System Interface Module “A”
+U015F - Lost Communication With Automated Driving System Interface Module “B
+U0160 - Lost Communication With Audible Alert Control Module
+U0161 - Lost Communication With Compass Module
+U0162 - Lost Communication With Navigation Display Module
+U0163 - Lost Communication With Navigation Control Module
+U0164 - Lost Communication With HVAC Control Module
+U0165 - Lost Communication With HVAC Control Module - Rear
+U0166 - Lost Communication With Auxiliary Heater Control Module
+U0167 - Lost Communication With Vehicle Immobilizer Control Module
+U0168 - Lost Communication With Vehicle Security Control Module
+U0169 - Lost Communication With Sunroof Control Module
+U016A - Lost Communication With Global Positioning System Module
+U016B - Lost Communication With A/C Compressor Control Module
+U016C - Lost Communication With Fuel Pump Control Module B
+U016D - Lost Communication With Exhaust Gas Sensor Module B
+U0170 - Lost Communication With Restraints System Sensor A
+U0171 - Lost Communication With Restraints System Sensor B
+U0172 - Lost Communication With Restraints System Sensor C
+U0173 - Lost Communication With Restraints System Sensor D
+U0174 - Lost Communication With Restraints System Sensor E
+U0175 - Lost Communication With Restraints System Sensor F
+U0176 - Lost Communication With Restraints System Sensor G
+U0177 - Lost Communication With Restraints System Sensor H
+U0178 - Lost Communication With Restraints System Sensor I
+U0179 - Lost Communication With Restraints System Sensor J
+U017A - Lost Communication With Restraints System Sensor K
+U017B - Lost Communication With Restraints System Sensor L
+U017C - Lost Communication With Restraints System Sensor M
+U017D - Lost Communication With Restraints System Sensor N
+U017E - Lost Communication With Seat Belt Pretensioner Module A
+U017F - Lost Communication With Seat Belt Pretensioner Module B
+U0180 - Lost Communication With Automatic Lighting Control Module
+U0181 - Lost Communication With Headlamp Leveling Control Module A
+U0182 - Lost Communication With Lighting Control Module - Front
+U0183 - Lost Communication With Lighting Control Module - Rear A
+U0184 - Lost Communication With Radio
+U0185 - Lost Communication With Antenna Control Module
+U0186 - Lost Communication With Audio Amplifier A
+U0187 - Lost Communication With Digital Disc Player/Changer Module A
+U0188 - Lost Communication With Digital Disc Player/Changer Module B
+U0189 - Lost Communication With Digital Disc Player/Changer Module C
+U018A - Lost Communication With Headlamp Leveling Control Module B
+U0190 - Lost Communication With Digital Disc Player/Changer Module D
+U0191 - Lost Communication With Television
+U0192 - Lost Communication With Personal Computer
+U0193 - Lost Communication With Digital Audio Control Module A
+U0194 - Lost Communication With Digital Audio Control Module B
+U0195 - Lost Communication With Subscription Entertainment Receiver Module
+U0196 - Lost Communication With Entertainment Control Module - Rear A
+U0197 - Lost Communication With Telephone Control Module
+U0198 - Lost Communication With Telematic Control Module
+U0199 - Lost Communication With Door Control Module A
+U019A - Lost Communication With Tachograph Module
+U019B - Lost Communication With Battery Charger Control Module A
+U019C - Lost Communication With Glow Plug Control Module 2
+U019D - Lost Communication With Direct Ozone Reduction Catalyst Temperature Sensor
+U019E - Lost Communication With Transmission Range Control Module
+U019F - Lost Communication With Engine Coolant Pump Control Module
+U01A0 - Lost Communication With Hybrid/EV Battery Interface Control Module A
+U01A1 - Lost Communication With Hybrid/EV Battery Interface Control Module B
+U01A2 - Lost Communication With Hybrid/EV Battery Interface Control Module C
+U01A3 - Lost Communication With Hybrid/EV Battery Interface Control Module D
+U01A4 - Lost Communication With Hybrid/EV Battery Interface Control Module E
+U01A5 - Lost Communication With Hybrid/EV Battery Interface Control Module F
+U01A6 - Lost Communication With Hybrid/EV Battery Interface Control Module G
+U01A7 - Lost Communication With Hybrid/EV Battery Interface Control Module H
+U01A8 - Lost Communication With Hybrid/EV Battery Interface Control Module I
+U01A9 - Lost Communication With Hybrid/EV Battery Interface Control Module J
+U01AA - Lost Communication With Hybrid/EV Battery Interface Control Module K
+U01AB - Lost Communication With Hybrid/EV Battery Interface Control Module L
+U01AC - Lost Communication With Hybrid/EV Battery Interface Control Module M
+U01AD - Lost Communication With Hybrid/EV Battery Interface Control Module N
+U01AE - Lost Communication With Hybrid/EV Battery Interface Control Module O
+U01AF - Lost Communication With Hybrid/EV Battery Interface Control Module P
+U01B0 - Lost Communication With Battery Monitor Module
+U01B1 - Lost Communication With Particulate Matter Sensor B
+U01B2 - Lost Communication With Planetary Gear Set Control Module
+U01B3 - Lost Communication With Brake Blending Actuator
+U01B4 - Lost Communication With Brake System Control Module B
+U01B5 - Lost Communication With Catalyst Heater Control Module
+U01B6 - Lost Communication With Fuel Heater Control Module
+U01B7 - Lost Communication With Switch Input Module “A”
+U01B8 - Lost Communication With Switch Input Module “B”
+U01B9 - Lost Communication With Switch Input Module “C”
+U01BA - Lost Communication With Park Lock/Pawl Control Module
+U01BB - Lost Communication With Battery Charger Control Module B
+U01BC - Lost Communication With Charge Air Cooler Coolant Pump B
+U01BD - Lost Communication With DC/DC Converter Control Module C
+U01BE - Lost Communication with Drive Motor A Clutch Actuator
+U01BF - Lost Communication with Battery Management Control Module
+U0200 - Lost Communication With Door Control Module B
+U0201 - Lost Communication With Door Control Module C
+U0202 - Lost Communication With Door Control Module D
+U0203 - Lost Communication With Door Control Module E
+U0204 - Lost Communication With Door Control Module F
+U0205 - Lost Communication With Door Control Module G
+U0206 - Lost Communication With Folding Top Control Module
+U0207 - Lost Communication With Moveable Roof Control Module A
+U0208 - Lost Communication With Seat Control Module A
+U0209 - Lost Communication With Seat Control Module B
+U020A - Lost Communication With Moveable Roof Control Module “B”
+U020B - Lost Communication With Door Control Module H
+U020C - Lost Communication With Wireless Accessory Charging Module A
+U020D - Lost Communication With Wireless Accessory Charging Module B
+U0210 - Lost Communication With Seat Control Module C
+U0211 - Lost Communication With Seat Control Module D
+U0212 - Lost Communication With Steering Column Control Module
+U0213 - Lost Communication With Mirror Control Module A
+U0214 - Lost Communication With Remote Function Actuation Module
+U0215 - Lost Communication With Door Switch A
+U0216 - Lost Communication With Door Switch B
+U0217 - Lost Communication With Door Switch C
+U0218 - Lost Communication With Door Switch D
+U0219 - Lost Communication With Door Switch E
+U0220 - Lost Communication With Door Switch F
+U0221 - Lost Communication With Door Switch G
+U0222 - Lost Communication With Door Window Motor A
+U0223 - Lost Communication With Door Window Motor B
+U0224 - Lost Communication With Door Window Motor C
+U0225 - Lost Communication With Door Window Motor D
+U0226 - Lost Communication With Door Window Motor E
+U0227 - Lost Communication With Door Window Motor F
+U0228 - Lost Communication With Door Window Motor G
+U0229 - Lost Communication With Heated Steering Wheel Module
+U022E - Lost Communication With Object Detection Maintenance Control Module A
+U022F - Lost Communication With Object Detection Maintenance Control Module B
+U0230 - Lost Communication With Rear Gate Module
+U0231 - Lost Communication With Rain Sensing Module
+U0232 - Lost Communication With Side Obstacle Detection Control Module A
+U0233 - Lost Communication With Side Obstacle Detection Control Module B
+U0234 - Lost Communication With Convenience Recall Module
+U0235 - Lost Communication With Front Distance Range Sensor - Single Sensor or Center
+U0236 - Lost Communication With Column Lock Module
+U0237 - Lost Communication With Digital Audio Control Module C
+U0238 - Lost Communication With Digital Audio Control Module D
+U0239 - Lost Communication With Entrapment Control Module A
+U023A - Lost Communication With Image Processing Module A
+U023B - Lost Communication With Image Processing Module B
+U023C - Lost Communication With Image Processing Module C
+U023D - Lost Communication With Front Distance Range Sensor - Left
+U023E - Lost Communication With Front Distance Range Sensor - Right
+U0240 - Lost Communication With Entrapment Control Module B
+U0241 - Lost Communication With Headlamp Control Module A
+U0242 - Lost Communication With Headlamp Control Module B
+U0243 - Lost Communication With Parking Assist Control Module B
+U0244 - Lost Communication With Running Board Control Module A
+U0245 - Lost Communication With Entertainment Control Module - Front
+U0246 - Lost Communication With Seat Control Module E
+U0247 - Lost Communication With Seat Control Module F
+U0248 - Lost Communication With Remote Accessory Module
+U0249 - Lost Communication With Entertainment Control Module - Rear B
+U024A - Lost Communication With Interior Lighting Control Module A
+U024B - Lost Communication With Seat Control Module G
+U024C - Lost Communication With Seat Control Module H
+U024D - Lost Communication With Seat Control Module J
+U024E - Lost Communication With Side Obstacle Detection Control Module C
+U024F - Lost Communication With Side Obstacle Detection Control Module D
+U0250 - Lost Communication With Impact Classification System Module
+U0251 - Lost Communication With Running Board Control Module B
+U0252 - Lost Communication With Lighting Control Module - Rear B
+U0253 - Lost Communication With Accessory Protocol Interface Module
+U0254 - Lost Communication With Remote Start Module
+U0255 - Lost Communication With Front Display Interface Module
+U0256 - Lost Communication With Front Controls Interface Module A
+U0257 - Lost Communication With Front Controls/Display Interface Module
+U0258 - Lost Communication With Radio Transceiver
+U0259 - Lost Communication With Special Purpose Vehicle Control Module A
+U025A - Lost Communication With Special Purpose Vehicle Control Module B
+U025B - Lost Communication With Special Purpose Vehicle Control Module C
+U025C - Lost Communication With Special Purpose Vehicle Control Module D
+U025D - Lost Communication With Front Controls Interface Module B
+U025E - Lost Communication With Electronic Brake Booster Control Module A
+U025F - Lost Communication With Electronic Brake Booster Control Module B
+U0260 - Lost Communication With Seat Control Switch Module A
+U0261 - Lost Communication With Seat Control Switch Module B
+U0262 - Lost Communication With Audio Amplifier B
+U0263 - Lost Communication With Speech Recognition Module
+U0264 - Lost Communication With Camera Module - Rear
+U0265 - Lost Communication With Image Processing Sensor A
+U0266 - Lost Communication With Image Processing Sensor B
+U0267 - Lost Communication With Image Processing Sensor C
+U0268 - Lost Communication With Image Processing Sensor D
+U0269 - Lost Communication With Image Processing Sensor E
+U026A - Lost Communication With Image Processing Sensor F
+U026B - Lost Communication With Image Processing Sensor G
+U026C - Lost Communication With Image Processing Sensor H
+U026D - Lost Communication With Image Processing Sensor I
+U026E - Lost Communication With Image Processing Sensor J
+U026F - Lost Communication With Image Processing Sensor K
+U0270 - Lost Communication With Image Processing Sensor L
+U0271 - Lost Communication With Seat Control Switch Module C
+U0272 - Lost Communication With Seat Control Switch Module D
+U0273 - Lost Communication With Lighting Driver Control Module “A”
+U0274 - Lost Communication With Lighting Driver Control Module “B”
+U0275 - Lost Communication With Lighting Driver Control Module “C”
+U0276 - Lost Communication With Lighting Driver Control Module “D”
+U0277 - Lost Communication With Seat Control Module K
+U0278 - Lost Communication With Seat Control Module L
+U0279 - Lost Communication with Haptic Control Module
+U027A - Lost Communication With Battery Charger Control Module C
+U027B - Lost Communication with Battery Charger Control Module D
+U027C - Lost Communication With Off-Board Charger Control Module
+U0284 - Lost Communication With Active Grille Air Shutter Module A
+U0285 - Lost Communication With Active Grille Air Shutter Module B
+U0286 - Lost Communication With Radiator Anti Tamper Device
+U0287 - Lost Communication With Transmission Fluid Pump Module A
+U0288 - Lost Communication With DC/AC Converter Control Module A
+U0289 - Lost Communication With DC/AC Converter Control Module B
+U028A - Lost Communication With Transmission Fluid Pump Module B
+U028B - Lost Communication With Active Grille Air Shutter Module C
+U028C - Lost Communication With Active Grille Air Shutter Module D
+U028D - Lost Communication with Active Aerodynamic Feature Control Module A
+U028E - Lost Communication with Active Aerodynamic Feature Control Module B
+U028F - Lost Communication with Active Aerodynamic Feature Control Module C
+U0290 - Lost Communication with Active Aerodynamic Feature Control Module D
+U0291 - Lost Communication With Gear Shift Control Module B
+U0292 - Lost Communication With Drive Motor Control Module B
+U0293 - Lost Communication With Hybrid/EV Powertrain Control Module
+U0294 - Lost Communication With Powertrain Control Monitor Module
+U0295 - Lost Communication With AC/AC Converter Control Module
+U0296 - Lost Communication With AC/DC Converter Control Module A
+U0297 - Lost Communication With AC/DC Converter Control Module B
+U0298 - Lost Communication With DC/DC Converter Control Module A
+U0299 - Lost Communication With DC/DC Converter Control Module B
+U029A - Lost Communication With Hybrid/EV Battery Pack Sensor Module
+U029B - Lost Communication With Drive Motor Control Module C
+U029C - Lost Communication With Drive Motor Control Module D
+U029D - Lost Communication With NOx Sensor A
+U029E - Lost Communication With NOx Sensor B
+U029F - Lost Communication With Evaporative Emission System Leak Detection Control Module
+U02A0 - Invalid Data Received From Hybrid/EV Battery Interface Control Module D
+U02A1 - Lost Communication With NOx Sensor C
+U02A2 - Lost Communication With Reductant Quality Module
+U02A3 - Lost Communication With Particulate Matter Sensor
+U02A4 - Lost Communication With NH3 Sensor
+U02A5 - Lost Communication With Reductant Heater Control Module
+U02A6 - Lost Communication With Safety Integration Control Module
+U02A7 - Lost Communication With Engine Sound Control 1
+U02A8 - Lost Communication With Engine Sound Control 2
+U02A9 - Lost Communication With Charge Air Cooler Coolant Pump A
+U02AA - Lost Communication With Engine Disconnect Clutch
+U02AB - Lost Communication With Vehicle Thermal Management Control Module
+U02AC - Lost Communication With Turbocharger/Supercharger Boost Control A
+U02AD - Lost Communication With Turbocharger/Supercharger Boost Control B
+U02AE - Lost Communications With Hybrid/EV Battery Coolant Pump
+U02AF - Lost Communication With Turbocharger Turbine Inlet Valve Position Sensor
+U02B0 - Lost Communication With Turbocharger/Supercharger Boost Control B Position Sensor
+U02B1 - Lost Communication With Comfort and Convenience Display A
+U02B2 - Lost Communication With Comfort and Convenience Display B
+U02B3 - Lost Communication With Driver Monitoring System Module
+U02B4 - Lost Communication With Front Radar Module A
+U02B5 - Lost Communication With Front Radar Module B
+U02B6 - Lost Communication With Rear Radar Module A
+U02B7 - Lost Communication With Rear Radar Module B
+U02B8 - Lost Communication With Rear Radar Module C
+U02B9 - Lost Communication With Rear Radar Module D
+U02BA - Lost Communication With Hybrid/EV Electronics Coolant Pump B
+U02BB - Lost Communications with EVAP System Purge Pump
+U02BC - Lost Communication With Localization and Mapping Module
+U02BD - Lost Communication With Night Vision Control Module
+U02BE - Lost Communication With Trailer Backup Assist Control Module
+U02BF - Lost Communication With Interior Lighting Control Module B
+U02C0 - Lost Communication With Active Radiator Air Flow Control Module A
+U02C1 - Lost Communication With Hybrid/EV Electronics Coolant Pump C
+U0300 - Internal Control Module Software Incompatibility
+U0301 - Software Incompatibility With ECM/PCM
+U0302 - Software Incompatibility With Transmission Control Module
+U0303 - Software Incompatibility With Transfer Case Control Module
+U0304 - Software Incompatibility With Gear Shift Control Module A
+U0305 - Software Incompatibility With Cruise Control Module
+U0306 - Software Incompatibility With Fuel Injector Control Module
+U0307 - Software Incompatibility With Glow Plug Control Module 1
+U0308 - Software Incompatibility With Throttle Actuator Control Module
+U0309 - Software Incompatibility With Alternative Fuel Control Module
+U030A - Software Incompatibility With Evaporative Emission System Leak Detection Control Module
+U030B - Software Incompatibility With Glow Plug Control Module 2
+U030C - Software Incompatibility With Reductant Quality Module
+U030D - Software Incompatibility With NOx Sensor A
+U030E - Software Incompatibility With NOx Sensor B
+U030F - Software Incompatibility With Reductant Control Module
+U0310 - Software Incompatibility With Fuel Pump Control Module
+U0311 - Software Incompatibility With Drive Motor Control Module
+U0312 - Software Incompatibility With Battery Energy Control Module A
+U0313 - Software Incompatibility With Battery Energy Control Module B
+U0314 - Software Incompatibility With Four-Wheel Drive Clutch Control Module
+U0315 - Software Incompatibility With Anti-Lock Brake System (ABS) Control Module
+U0316 - Software Incompatibility With Vehicle Dynamics Control Module
+U0317 - Software Incompatibility With Park Brake Control Module
+U0318 - Software Incompatibility With Brake System Control Module A
+U0319 - Software Incompatibility With Steering Effort Control Module
+U031A - Software Incompatibility With Transmission Range Control Module
+U031B - Software Incompatibility With DC/DC Converter Control Module A
+U031C - Software Incompatibility With Brake System Control Module B
+U031D - Software Incompatibility With Parking Assist Control Module A
+U031E - Software Incompatibility With Parking Assist Control Module B
+U031F - Software Incompatibility With Accessory Protocol Interface Module
+U0320 - Software Incompatibility With Power Steering Control Module
+U0321 - Software Incompatibility With Suspension Control Module A
+U0322 - Software Incompatibility With Body Control Module
+U0323 - Software Incompatibility With Instrument Panel Control Module
+U0324 - Software Incompatibility With HVAC Control Module
+U0325 - Software Incompatibility With Auxiliary Heater Control Module
+U0326 - Software Incompatibility With Vehicle Immobilizer Control Module
+U0327 - Software Incompatibility With Vehicle Security Control Module
+U0328 - Software Incompatibility With Steering Angle Sensor Module
+U0329 - Software Incompatibility With Steering Column Control Module
+U032A - Software Incompatibility With A/C Compressor Control Module
+U0330 - Software Incompatibility With Tire Pressure Monitor Module
+U0331 - Software Incompatibility With Body Control Module A
+U0332 - Software Incompatibility With Multi-axis Acceleration Sensor Module A
+U0333 - Software Incompatibility With Gear Shift Control Module B
+U0334 - Software Incompatibility With Radio
+U0335 - Software Incompatibility With Hybrid/EV Battery Pack Sensor Module
+U0336 - Software Incompatibility With Restraints Control Module
+U0337 - Software Incompatibility With Battery Charger Control Module A
+U0338 - Software Incompatibility With Remote Function Actuation Module
+U0339 - Software Incompatibility With Body Control Module B
+U033A - Software Incompatibility With Hybrid/EV Battery Interface Control Module A
+U033B - Software Incompatibility With Hybrid/EV Battery Interface Control Module B
+U033C - Software Incompatibility With Hybrid/EV Battery Interface Control Module C
+U033D - Software Incompatibility With Hybrid/EV Battery Interface Control Module D
+U033E - Software Incompatibility With Hybrid/EV Battery Interface Control Module E
+U033F - Software Incompatibility With Hybrid/EV Battery Interface Control Module F
+U0340 - Software Incompatibility With Hybrid/EV Battery Interface Control Module G
+U0341 - Software Incompatibility With Hybrid/EV Battery Interface Control Module H
+U0342 - Software Incompatibility With Hybrid/EV Battery Interface Control Module I
+U0343 - Software Incompatibility With Hybrid/EV Battery Interface Control Module J
+U0344 - Software Incompatibility With Hybrid/EV Battery Interface Control Module K
+U0345 - Software Incompatibility With Hybrid/EV Battery Interface Control Module L
+U0346 - Software Incompatibility With Hybrid/EV Battery Interface Control Module M
+U0347 - Software Incompatibility With Hybrid/EV Battery Interface Control Module N
+U0348 - Software Incompatibility With Hybrid/EV Battery Interface Control Module O
+U0349 - Software Incompatibility With Hybrid/EV Battery Interface Control Module P
+U034A - Software Incompatibility With Engine Disconnect Clutch
+U034B - Software Incompatibility With Brake Booster Control
+U034C - Software Incompatibility With Battery Energy Control Module C
+U034D - Software Incompatibility With Vehicle Thermal Management Control Module
+U034E - Software Incompatibility With Active Grille Air Shutter Module A
+U034F - Software Incompatibility With Active Grille Air Shutter Module B
+U0350 - Software Incompatibility With Active Grille Air Shutter Module C
+U0351 - Software Incompatibility With Active Grille Air Shutter Module D
+U0352 - Software Incompatibility With NOx Sensor C
+U0353 - Software Incompatibility With Ion Sense Module
+U0354 - Software Incompatibility With Hybrid/EV Battery Inductive Charger Control Module
+U0400 - Invalid Data Received
+U0401 - Invalid Data Received From ECM/PCM A
+U0402 - Invalid Data Received From TCM
+U0403 - Invalid Data Received From Transfer Case Control Module
+U0404 - Invalid Data Received From Gear Shift Control Module A
+U0405 - Invalid Data Received From Cruise Control Module
+U0406 - Invalid Data Received From Fuel Injector Control Module
+U0407 - Invalid Data Received From Glow Plug Control Module 1
+U0408 - Invalid Data Received From Throttle Actuator A Control Module
+U0409 - Invalid Data Received From Alternative Fuel Control Module
+U040A - Invalid Data Received From Air Conditioning Control Module
+U040B - Invalid Data Received From Exhaust Gas Recirculation Control Module A
+U040C - Invalid Data Received From Exhaust Gas Recirculation Control Module B
+U040D - Invalid Data Received From Turbocharger/Supercharger Control Module A
+U040E - Invalid Data Received From Turbocharger/Supercharger Control Module B
+U040F - Invalid Data Received From Reductant Control Module
+U0410 - Invalid Data Received From Fuel Pump Control Module A
+U0411 - Invalid Data Received From Drive Motor Control Module A
+U0412 - Invalid Data Received From Battery Energy Control Module A
+U0413 - Invalid Data Received From Battery Energy Control Module B
+U0414 - Invalid Data Received From Four-Wheel Drive Clutch Control Module
+U0415 - Invalid Data Received From Anti-Lock Brake System (ABS) Control Module
+U0416 - Invalid Data Received From Vehicle Dynamics Control Module
+U0417 - Invalid Data Received From Park Brake Control Module
+U0418 - Invalid Data Received From Brake System Control Module A
+U0419 - Invalid Data Received From Steering Effort Control Module
+U041A - Invalid Data Received From Battery Isolation/Voltage Stabilization Control Module
+U041B - Invalid Data Received From Exhaust Gas Sensor Module A
+U041C - Invalid Data Received From Rocker Arm Control Module A
+U041D - Invalid Data Received From Rocker Arm Control Module B
+U041E - Invalid Data Received From All Wheel Drive Control Module
+U041F - Invalid Data Received From Throttle Actuator B Control Module
+U0420 - Invalid Data Received From Power Steering Control Module A
+U0421 - Invalid Data Received From Suspension Control Module A
+U0422 - Invalid Data Received From Body Control Module
+U0423 - Invalid Data Received From Instrument Panel Cluster Control Module
+U0424 - Invalid Data Received From HVAC Control Module
+U0425 - Invalid Data Received From Auxiliary Heater Control Module
+U0426 - Invalid Data Received From Vehicle Immobilizer Control Module
+U0427 - Invalid Data Received From Vehicle Security Control Module
+U0428 - Invalid Data Received From Steering Angle Sensor Module
+U0429 - Invalid Data Received From Steering Column Control Module
+U042A - Invalid Data Received From V2X Module
+U042B - Invalid Data Received From Chassis Control Module A
+U042C - Invalid Data Received From Chassis Control Module B
+U042D - Invalid Data Received from Active Vibration Control Module
+U042E - Invalid Data Received From Generator A Control Module
+U042F - Invalid Data Received From Camshaft Position Control Module
+U0430 - Invalid Data Received From Tire Pressure Monitor Module
+U0431 - Invalid Data Received From Body Control Module A
+U0432 - Invalid Data Received From Multi-axis Acceleration Sensor Module A
+U0433 - Invalid Data Received From Front Distance Range Sensor - Single Sensor or Center
+U0434 - Invalid Data Received From Active Roll Control Module
+U0435 - Invalid Data Received From Power Steering Control Module - Rear
+U0436 - Invalid Data Received From Differential Control Module - Front
+U0437 - Invalid Data Received From Differential Control Module - Rear
+U0438 - Invalid Data Received From Trailer Brake Control Module
+U0439 - Invalid Data Received From All Terrain Control Module
+U043A - Invalid Data Received From Suspension Control Module B
+U043B - Invalid Data Received From Front Distance Range Sensor - Left
+U043C - Invalid Data Received From Front Distance Range Sensor - Right
+U043D - Invalid Data Received From Accelerator Pedal Module
+U043E - Invalid Data Received From Vacuum Sensor A
+U043F - Invalid Data Received From Vacuum Sensor B
+U0440 - Invalid Data Received From Pedestrian Alert Control Module
+U0441 - Invalid Data Received From Emissions Critical Control Information
+U0442 - Invalid Data Received From ECM/PCM B
+U0443 - Invalid Data Received From Body Control Module B
+U0444 - Invalid Data Received From Body Control Module C
+U0445 - Invalid Data Received From Body Control Module D
+U0446 - Invalid Data Received From Body Control Module E
+U0447 - Invalid Data Received From Serial Data Gateway Module A
+U0448 - Invalid Data Received From Serial Data Gateway Module B
+U0449 - Invalid Data Received From Serial Data Gateway Module C
+U044A - Invalid Data Received From Serial Data Gateway Module D
+U044B - Invalid Data Received From Battery Energy Control Module C
+U044C - Invalid Data Received From Hybrid/EV Battery Inductive Charging Module
+U044D - Invalid Data Received From Generator B Control Module
+U044F - Invalid Data Received From Mirror Control Module B
+U0451 - Invalid Data Received From Serial Data Gateway Module E
+U0452 - Invalid Data Received From Restraints Control Module
+U0453 - Invalid Data Received From Side Restraints Control Module - Left
+U0454 - Invalid Data Received From Side Restraints Control Module - Right
+U0455 - Invalid Data Received From Restraints Occupant Classification System Module
+U0456 - Invalid Data Received From Coolant Temperature Control Module
+U0457 - Invalid Data Received From Information Center A
+U0458 - Invalid Data Received From Information Center B
+U0459 - Invalid Data Received From Head Up Display
+U045A - Invalid Data Received From Parking Assist Control Module A
+U045B - Invalid Data Received From Anti-Lock Brake System (ABS) Control Module B
+U045C - Invalid Data Received From Power Steering Control Module “B”
+U045D - Invalid Data Received From Automated Driving System Control Module A
+U045E - Invalid Data Received From Automated Driving System Control Module B
+U045F - Invalid Data Received From Automated Driving System Interface Module “A”
+U0460 - Invalid Data Received From Automated Driving System Interface Module “B”
+U0461 - Invalid Data Received From Audible Alert Control Module
+U0462 - Invalid Data Received From Compass Module
+U0463 - Invalid Data Received From Navigation Display Module
+U0464 - Invalid Data Received From Navigation Control Module
+U0465 - Invalid Data Received From PTO Control Module
+U0466 - Invalid Data Received From HVAC Control Module - Rear
+U0467 - Invalid Data Received From Fuel Additive Control Module
+U0468 - Invalid Data Received From Fuel Cell Control Module
+U0469 - Invalid Data Received From Starter / Generator Control Module
+U046A - Invalid Data Received From Sunroof Control Module
+U046B - Invalid Data Received From Global Positioning System Module
+U046C - Invalid Data Received From A/C Compressor Control Module
+U046D - Invalid Data Received from Fuel Pump Control Module B
+U046E - Invalid Data Received From Exhaust Gas Sensor Module B
+U0471 - Invalid Data Received From Restraints System Sensor A
+U0472 - Invalid Data Received From Restraints System Sensor B
+U0473 - Invalid Data Received From Restraints System Sensor C
+U0474 - Invalid Data Received From Restraints System Sensor D
+U0475 - Invalid Data Received From Restraints System Sensor E
+U0476 - Invalid Data Received From Restraints System Sensor F
+U0477 - Invalid Data Received From Restraints System Sensor G
+U0478 - Invalid Data Received From Restraints System Sensor H
+U0479 - Invalid Data Received From Restraints System Sensor I
+U047A - Invalid Data Received From Restraints System Sensor J
+U047B - Invalid Data Received From Restraints System Sensor K
+U047C - Invalid Data Received From Restraints System Sensor L
+U047D - Invalid Data Received From Restraints System Sensor M
+U047E - Invalid Data Received From Restraints System Sensor N
+U047F - Invalid Data Received From Seat Belt Pretensioner Module A
+U0480 - Invalid Data Received From Seat Belt Pretensioner Module B
+U0481 - Invalid Data Received From Automatic Lighting Control Module
+U0482 - Invalid Data Received From Headlamp Leveling Control Module A
+U0483 - Invalid Data Received From Lighting Control Module - Front
+U0484 - Invalid Data Received From Lighting Control Module - Rear A
+U0485 - Invalid Data Received From Radio
+U0486 - Invalid Data Received From Antenna Control Module
+U0487 - Invalid Data Received From Audio Amplifier A
+U0488 - Invalid Data Received From Digital Disc Player/Changer Module A
+U0489 - Invalid Data Received From Digital Disc Player/Changer Module B
+U048A - Invalid Data Received From Digital Disc Player/Changer Module C
+U048B - Invalid Data Received From Headlamp Leveling Control Module B
+U0491 - Invalid Data Received From Digital Disc Player/Changer Module D
+U0492 - Invalid Data Received From Television
+U0493 - Invalid Data Received From Personal Computer
+U0494 - Invalid Data Received From Digital Audio Control Module A
+U0495 - Invalid Data Received From Digital Audio Control Module B
+U0496 - Invalid Data Received From Subscription Entertainment Receiver Module
+U0497 - Invalid Data Received From Entertainment Control Module - Rear A
+U0498 - Invalid Data Received From Telephone Control Module
+U0499 - Invalid Data Received From Telematic Control Module
+U049A - Invalid Data Received From Door Control Module A
+U049B - Invalid Data Received From Tachograph Module
+U049C - Invalid Data Received From Battery Charger Control Module A
+U049D - Invalid Data Received From Glow Plug Control Module 2
+U049E - Invalid Data Received From Direct Ozone Reduction Catalyst Temperature Sensor
+U049F - Invalid Data Received From Transmission Range Control Module
+U04A0 - Invalid Data Received From Engine Coolant Pump Control Module
+U04A1 - Invalid Data Received From Hybrid/EV Battery Interface Control Module A
+U04A2 - Invalid Data Received From Hybrid/EV Battery Interface Control Module B
+U04A3 - Invalid Data Received From Hybrid/EV Battery Interface Control Module C
+U04A4 - Invalid Data Received From Particulate Matter Sensor A
+U04A5 - Invalid Data Received From Hybrid/EV Battery Interface Control Module E
+U04A6 - Invalid Data Received From Hybrid/EV Battery Interface Control Module F
+U04A7 - Invalid Data Received From Hybrid/EV Battery Interface Control Module G
+U04A8 - Invalid Data Received From Hybrid/EV Battery Interface Control Module H
+U04A9 - Invalid Data Received From Hybrid/EV Battery Interface Control Module I
+U04AA - Invalid Data Received From Hybrid/EV Battery Interface Control Module J
+U04AB - Invalid Data Received From Hybrid/EV Battery Interface Control Module K
+U04AC - Invalid Data Received From Hybrid/EV Battery Interface Control Module L
+U04AD - Invalid Data Received From Hybrid/EV Battery Interface Control Module M
+U04AE - Invalid Data Received From Hybrid/EV Battery Interface Control Module N
+U04AF - Invalid Data Received From Hybrid/EV Battery Interface Control Module O
+U04B0 - Invalid Data Received From Hybrid/EV Battery Interface Control Module P
+U04B1 - Invalid Data Received From Battery Monitor Module
+U04B2 - Invalid Data Received From Particulate Matter Sensor B
+U04B3 - Invalid Data Received From Planetary Gear Set Control Module
+U04B4 - Invalid Data Received From Brake Blending Actuator
+U04B5 - Invalid Data Received from Brake System Control Module B
+U04B6 - Invalid Data Received From Catalyst Heater Control Module
+U04BA - Invalid Data Received from Switch Input Module “A”
+U04BB - Invalid Data Received from Switch Input Module “B”
+U04BC - Invalid Data Received from Switch Input Module “C”
+U04BD - Invalid Data Received From Park Lock/Pawl Control Module
+U04BE - Invalid Data Received From Battery Charger Control Module B
+U04BF - Invalid Data Received from Drive Motor A Clutch Actuator
+U04C0 - Invalid Data Received from Battery Management Control Module
+U0501 - Invalid Data Received From Door Control Module B
+U0502 - Invalid Data Received From Door Control Module C
+U0503 - Invalid Data Received From Door Control Module D
+U0504 - Invalid Data Received From Door Control Module E
+U0505 - Invalid Data Received From Door Control Module F
+U0506 - Invalid Data Received From Door Control Module G
+U0507 - Invalid Data Received From Folding Top Control Module
+U0508 - Invalid Data Received From Moveable Roof Control Module A
+U0509 - Invalid Data Received From Seat Control Module A
+U050A - Invalid Data Received From Seat Control Module B
+U050B - Invalid Data Received From Moveable Roof Control Module “B”
+U050C - Invalid Data Received From Door Control Module H
+U050D - Invalid Data Received From Wireless Accessory Charging Module A
+U050E - Invalid Data Received From Wireless Accessory Charging Module B
+U0511 - Invalid Data Received From Seat Control Module C
+U0512 - Invalid Data Received From Seat Control Module D
+U0513 - Invalid Data Received From Yaw Rate Sensor Module
+U0514 - Invalid Data Received From Mirror Control Module A
+U0515 - Invalid Data Received From Remote Function Actuation Module
+U0516 - Invalid Data Received From Door Switch A
+U0517 - Invalid Data Received From Door Switch B
+U0518 - Invalid Data Received From Door Switch C
+U0519 - Invalid Data Received From Door Switch D
+U051A - Invalid Data Received From Door Switch E
+U0521 - Invalid Data Received From Door Switch F
+U0522 - Invalid Data Received From Door Switch G
+U0523 - Invalid Data Received From Door Window Motor A
+U0524 - Invalid Data Received From Door Window Motor B
+U0525 - Invalid Data Received From Door Window Motor C
+U0526 - Invalid Data Received From Door Window Motor D
+U0527 - Invalid Data Received From Door Window Motor E
+U0528 - Invalid Data Received From Door Window Motor F
+U0529 - Invalid Data Received From Door Window Motor G
+U052A - Invalid Data Received From Heated Steering Wheel Module
+U052F - Invalid Data Received From Object Detection Maintenance Control Module A
+U0530 - Invalid Data Received From Object Detection Maintenance Control Module B
+U0531 - Invalid Data Received From Rear Gate Module
+U0532 - Invalid Data Received From Rain Sensing Module
+U0533 - Invalid Data Received From Side Obstacle Detection Control Module A
+U0534 - Invalid Data Received From Side Obstacle Detection Control Module B
+U0535 - Invalid Data Received From Convenience Recall Module
+U0536 - Invalid Data Received From Lateral Acceleration Sensor Module
+U0537 - Invalid Data Received From Column Lock Module
+U0538 - Invalid Data Received From Digital Audio Control Module C
+U0539 - Invalid Data Received From Digital Audio Control Module D
+U053A - Invalid Data Received From Entrapment Control Module A
+U053B - Invalid Data Received From Image Processing Module A
+U053C - Invalid Data Received From Image Processing Module B
+U053D - Invalid Data Received From Image Processing Module C
+U0541 - Invalid Data Received From Entrapment Control Module B
+U0542 - Invalid Data Received From Headlamp Control Module A
+U0543 - Invalid Data Received From Headlamp Control Module B
+U0544 - Invalid Data Received From Parking Assist Control Module B
+U0545 - Invalid Data Received From Running Board Control Module A
+U0546 - Invalid Data Received From Entertainment Control Module - Front
+U0547 - Invalid Data Received From Seat Control Module E
+U0548 - Invalid Data Received From Seat Control Module F
+U0549 - Invalid Data Received From Remote Accessory Module
+U054A - Invalid Data Received From Entertainment Control Module - Rear B
+U054B - Invalid Data Received From Interior Lighting Control Module A
+U054C - Invalid Data Received from Seat Control Module G
+U054D - Invalid Data Received from Seat Control Module H
+U054E - Invalid Data Received from Seat Control Module J
+U054F - Invalid Data Received From Side Obstacle Detection Control Module C
+U0550 - Invalid Data Received From Side Obstacle Detection Control Module D
+U0551 - Invalid Data Received From Impact Classification System Module
+U0552 - Invalid Data Received From Running Board Control Module B
+U0553 - Invalid Data Received From Lighting Control Module - Rear B
+U0554 - Invalid Data Received From Accessory Protocol Interface Module
+U0555 - Invalid Data Received From Remote Start Module
+U0556 - Invalid Data Received From Front Display Interface Module
+U0557 - Invalid Data Received From Front Controls Interface Module A
+U0558 - Invalid Data Received From Front Controls/Display Interface Module
+U0559 - Invalid Data Received From Radio Transceiver
+U055A - Invalid Data Received From Special Purpose Vehicle Control Module A
+U055B - Invalid Data Received From Special Purpose Vehicle Control Module B
+U055C - Invalid Data Received From Special Purpose Vehicle Control Module C
+U055D - Invalid Data Received From Special Purpose Vehicle Control Module D
+U055E - Invalid Data Received From Front Controls Interface Module B
+U055F - Invalid Data Received From Electronic Brake Booster Control Module A
+U0560 - Invalid Data Received From Electronic Brake Booster Control Module B
+U0561 - Invalid Data Received From Seat Control Switch Module A
+U0562 - Invalid Data Received From Seat Control Switch Module B
+U0563 - Invalid Data Received From Audio Amplifier B
+U0564 - Invalid Data Received From Speech Recognition Module
+U0565 - Invalid Data Received From Camera Module - Rear
+U0566 - Invalid Data Received From Image Processing Sensor A
+U0567 - Invalid Data Received From Image Processing Sensor B
+U0568 - Invalid Data Received From Image Processing Sensor C
+U0569 - Invalid Data Received From Image Processing Sensor D
+U056A - Invalid Data Received From Image Processing Sensor E
+U056B - Invalid Data Received From Image Processing Sensor F
+U056C - Invalid Data Received From Image Processing Sensor G
+U056D - Invalid Data Received From Image Processing Sensor H
+U056E - Invalid Data Received From Image Processing Sensor I
+U056F - Invalid Data Received From Image Processing Sensor J
+U0570 - Invalid Data Received From Image Processing Sensor K
+U0571 - Invalid Data Received From Image Processing Sensor L
+U0572 - Invalid Data Received from Vehicle Motion Control Module A
+U0573 - Invalid Data Received from Vehicle Motion Control Module B
+U0574 - Invalid Data Received From Lighting Driver Control Module “A”
+U0575 - Invalid Data Received From Lighting Driver Control Module “B”
+U0576 - Invalid Data Received From Lighting Driver Control Module “C”
+U0577 - Invalid Data Received From Lighting Driver Control Module “D”
+U0578 - Invalid Data Received From Seat Module K
+U0579 - Invalid Data Received From Seat Module L
+U057B - Invalid Data Received From Battery Charger Control Module C
+U057C - Invalid Data Received From Battery Charger Control Module D
+U057D - Invalid Data Received From Off-Board Charger Control Module
+U0580 - Invalid Data Received From Haptic Control Module
+U0585 - Invalid Data Received From Active Grille Air Shutter Module A
+U0586 - Invalid Data Received From Active Grille Air Shutter Module B
+U0587 - Invalid Data Received From With Radiator Anti Tamper Device
+U0588 - Invalid Data Received From Transmission Fluid Pump Module A
+U0589 - Invalid Data Received From DC/AC Converter Control Module A
+U058A - Invalid Data Received From DC/AC Converter Control Module B
+U058B - Invalid Data Received From Transmission Fluid Pump Module B
+U058C - Invalid Data Received From Active Grille Air Shutter Module C
+U058D - Invalid Data Received From Active Grille Air Shutter Module D
+U0592 - Invalid Data Received From Gear Shift Control Module B
+U0593 - Invalid Data Received From Drive Motor Control Module B
+U0594 - Invalid Data Received From Hybrid/EV Powertrain Control Module
+U0595 - Invalid Data Received From Powertrain Control Monitor Module
+U0596 - Invalid Data Received From AC/AC Converter Control Module
+U0597 - Invalid Data Received From AC/DC Converter Control Module A
+U0598 - Invalid Data Received From AC/DC Converter Control Module B
+U0599 - Invalid Data Received From DC/DC Converter Control Module A
+U059A - Invalid Data Received From DC/DC Converter Control Module B
+U059B - Invalid Data Received From Hybrid/EV Battery Pack Sensor Module
+U059C - Invalid Data Received From Drive Motor Control Module C
+U059D - Invalid Data Received From Drive Motor Control Module D
+U059E - Invalid Data Received From NOx Sensor A
+U059F - Invalid Data Received From NOx Sensor B
+U05A0 - Invalid Data Received from Evaporative Emission System Leak Detection Control Module
+U05A1 - NOx Sensor A Received Invalid Data From ECM/PCM
+U05A2 - NOx Sensor B Received Invalid Data From ECM/PCM
+U05A3 - Invalid Data Received From Reductant Quality Module
+U05A4 - Particulate Matter Sensor Received Invalid Data From ECM/PCM
+U05A5 - Invalid Data Received From NH3 Sensor
+U05A6 - Invalid Data Received from Reductant Heater Control Module
+U05A7 - Invalid Data Received From Safety Integration Control Module
+U05A8 - Invalid Data Received From NOx Sensor C
+U05A9 - NOx Sensor C Received Invalid Data From ECM/PCM
+U05AA - Invalid Data Received From Charge Air Cooler Coolant Pump
+U05AB - Invalid Data Received From Engine Disconnect Clutch
+U05AC - Invalid Data Received From Vehicle Thermal Management Control Module
+U05B2 - Invalid Data Received From Comfort and Convenience Display A
+U05B3 - Invalid Data Received From Comfort and Convenience Display B
+U05B4 - Invalid Data Received From Driver Monitoring System Module
+U05B5 - Invalid Data Received From Front Radar Module A
+U05B6 - Invalid Data Received From Front Radar Module B
+U05B7 - Invalid Data Received From Rear Radar Module A
+U05B8 - Invalid Data Received From Rear Radar Module B
+U05B9 - Invalid Data Received From Rear Radar Module C
+U05BA - Invalid Data Received From Rear Radar Module D
+U05BD - Invalid Data Received From Localization and Mapping Module
+U05BE - Invalid Data Received From Night Vision Control Module
+U05BF - Invalid Data Received From Trailer Backup Assist Control Module
+U05C0 - Invalid Data Received From Interior Lighting Control Module B
+U05C1 - Invalid Data Received From Active Radiator Air Flow Control Module A
+U0600 - Lost Communication With Engine Oil Pressure Sensor A
+U0601 - Lost Communication With Particulate Filter Pressure Sensor A
+U0602 - Lost Communication With Particulate Filter Pressure Sensor B
+U0603 - Lost Communication With Fuel Pressure Sensor A
+U0604 - Lost Communication With Fuel Pressure Sensor B
+U0605 - Lost communication With A/C Refrigerant Sensor A
+U0606 - Lost Communication With Throttle/Pedal Position Sensor/Switch A
+U0607 - Lost Communication With Throttle/Pedal Position Sensor/Switch B
+U0608 - Lost Communication With Throttle/Pedal Position Sensor/Switch C
+U0609 - Lost Communication With Manifold Absolute Pressure/Barometric Pressure Sensor
+U060A - Lost Communication With Manifold Absolute Pressure Sensor B
+U060B - Lost Communication With Turbocharger/Supercharger Boost Sensor A
+U060C - Lost Communication With Turbocharger/Supercharger Boost Sensor B
+U060D - Lost Communication With Turbocharger/Supercharger Boost Sensor C
+U060E - Lost Communication With Crankcase Pressure Sensor
+U060F - Lost Communication With Mass or Volume Air Flow Sensor A
+U0610 - Lost Communication With Mass or Volume Air Flow Sensor B
+U0611 - Lost Communication With Intake Air Temperature Sensor 1 Bank 1
+U0612 - Lost Communication With Intake Air Temperature Sensor 1 Bank 2
+U0613 - Lost Communication With Intake Air Temperature Sensor 2 Bank 1
+U0614 - Lost Communication With Intake Air Temperature Sensor 2 Bank 2
+U0615 - Lost Communication With Engine Coolant Bypass Valve A
+U0616 - Lost Communication With Engine Coolant Bypass Valve B
+U0617 - Lost Communication With Engine Coolant Bypass Valve C
+U0618 - Lost Communication With Engine Coolant Bypass Valve D
+U0619 - Lost Communication With Reductant Level Sensor A
+U061A - Lost Communication With Reductant Level Sensor B
+U061B - Lost Communication With Reductant Level Sensor C
+U061C - Lost Communication With Reductant Temperature Sensor A
+U061D - Lost Communication With Reductant Temperature Sensor B
+U061E - Lost Communication with Battery Isolation/Voltage Stabilization Control Module
+U061F - Lost Communication With Exhaust Gas Temperature Sensor Bank 1 Sensor 1
+U0620 - Lost Communication With Exhaust Gas Temperature Sensor Bank 1 Sensor 2
+U0621 - Lost Communication With Exhaust Gas Temperature Sensor Bank 2 Sensor 1
+U0622 - Lost Communication With Exhaust Gas Temperature Sensor Bank 2 Sensor 2
+U0623 - Lost Communication With Coolant Pump “A”
+U0624 - Lost Communication With Coolant Pump “B”
+U0625 - Lost Communication With Fuel Rail Pressure Sensor Bank 1
+U0626 - Lost Communication With A/C Refrigerant Pressure Sensor “A”
+U0627 - Lost Communication With A/C Refrigerant Temperature Sensor “A”
+U0628 - Lost Communication With A/C Refrigerant Pressure Sensor “B”
+U0629 - Lost Communication With A/C Refrigerant Temperature Sensor “B”
+U062A - Lost Communication With A/C Refrigerant Distribution Valve Actuator “A”
+U062B - Lost Communication With A/C Refrigerant Distribution Valve Actuator “B”
+U062C - Lost Communication With A/C Refrigerant Distribution Valve Actuator “C”
+U062D - Lost Communication With A/C Refrigerant Distribution Valve Actuator “D”
+U062E - Lost Communication With A/C Refrigerant Expansion Valve Actuator
+U062F - Lost Communication With Coolant Pump C
+U0630 - Lost Communication With Engine Coolant Temperature Sensor 4
+U0631 - Lost Communication With Engine Coolant Temperature Sensor 5
+U0632 - Lost Communication With Fan 1
+U0633 - Lost Communication With Fan 2
+U0634 - Lost Communication With Hybrid/EV Battery Pack Coolant Temperature Sensor A
+U0635 - Lost Communication With Hybrid/EV Battery Pack Coolant Temperature Sensor B
+U0636 - Lost Communication With Hybrid/EV Battery Pack Coolant Control Valve A
+U0637 - Lost Communication With Hybrid/EV Battery Pack Coolant Control Valve B
+U0638 - Lost Communication With Hybrid/EV Electronics Coolant Temperature Sensor A
+U0639 - Lost Communication With Hybrid/EV Electronics Coolant Temperature Sensor B
+U063A - Lost Communication With Hybrid/EV Electronics Coolant Temperature Sensor C
+U063B - Lost Communication With Coolant Bypass Valve Actuator A
+U063C - Lost Communication With Coolant Bypass Valve Actuator B
+U063D - Lost Communication With Hybrid/EV Electronics Coolant Pump A
+U063E - Lost Communication With Exhaust Heat Exchanger Bypass Valve Actuator A
+U063F - Lost Communication With Engine Coolant Flow Control Valve Position Sensor
+U0640 - Lost Communication With EVAP Fuel Vapor Temperature Sensor Circuit
+U0641 - Lost Communication With EVAP System Pressure Sensor/Switch Circuit A
+U0642 - Lost Communication With EVAP System Pressure Sensor/Switch Circuit B
+U0643 - Lost Communication With Turbocharger/Supercharger A Temperature Sensor
+U0644 - Lost Communication With Wastegate Position Sensor A
+U0645 - Lost Communication With Active Air Dam Module
+U0646 - Lost Communication With Motor Electronics Coolant Pump A
+U0647 - Lost Communication With Motor Electronics Coolant Pump B
+U0648 - Lost Communication With Motor Electronics Coolant Pump C
+U0649 - Lost Communication With Coolant Pump D
+U064A - Lost Communication With Hybrid/EV Battery Pack Current Sensor A
+U064B - Lost Communication With Hybrid/EV Battery Pack Current Sensor B
+U064C - Lost Communication With Hybrid/EV Battery Pack Current Sensor C
+U064D - Lost Communication With Trailer Brake Control Switch
+U064E - Lost Communication With EGR Cooler Bypass Position Sensor Bank 1
+U064F - Lost Communication With Intake Manifold Runner Position Sensor Bank 1
+U0650 - Lost Communication With Exhaust Pressure Control Valve A Sensor/Switch
+U0651 - Lost Communication With EGR Sensor A
+U0652 - Lost Communication With EGR Sensor B
+U0653 - Lost Communication With EGR Sensor C
+U0654 - Lost Communication With Diesel Intake Air Flow A Position Sensor
+U0655 - Lost Communication With Diesel Intake Air Flow B Position Sensor
+U0656 - Lost Communication With Turbocharger/Supercharger Boost Control A Position Sensor
+U0657 - Lost Communication With Turbocharger/Supercharger Bypass Valve A Position Sensor
+U0658 - Lost Communication With Windshield Temperature Sensor
+U0659 - Lost Communication With Left Front Temperature Actuator
+U065A - Lost Communication With Right Front Temperature Actuator
+U065B - Lost Communication With Left Front Mode Actuator
+U065C - Lost Communication With Right Front Mode Actuator
+U065D - Lost Communication With Air Intake Actuator
+U065E - Lost Communication With Ram Air Actuator
+U065F - Lost Communication With Left Rear Temperature Actuator A
+U0660 - Lost Communication With Left Rear Temperature Actuator B
+U0661 - Lost Communication With Right Rear Temperature Actuator A
+U0662 - Lost Communication With Right Rear Temperature Actuator B
+U0663 - Lost Communication With Rear Mode Actuator
+U0664 - Lost Communication With Rear HVAC Air Cutoff Actuator
+U0665 - Lost Communication With Fuel Rail Pressure Sensor Bank 2
+U0666 - Lost Communication With Reductant Pressure Sensor
+U0667 - Lost Communication With Engine Oil Temperature Sensor A
+U0668 - Lost Communication With Engine Oil Level Sensor Circuit
+U0669 - Lost Communication With EGR Sensor D
+U066A - Lost Communication With EGR Sensor E
+U066B - Lost Communication With Turbocharger/Supercharger Bypass Valve B Position Sensor
+U066C - Lost Communication With Exhaust Heat Exchanger Bypass Valve Actuator B
+U066D - Lost Communication With Charge Air Cooler Temperature Sensor Bank 1
+U066E - Lost Communication With Charge Air Cooler Temperature Sensor Bank 2
+U066F - Lost Communication With Low Pressure Fuel System Sensor
+U0670 - Lost Communication With Fuel Temperature Sensor A
+U0671 - Lost Communication With Fuel Temperature Sensor B
+U0672 - Lost Communication With Engine Coolant Pump
+U0673 - Lost Communication With Ion Sense Module
+U0674 - Lost Communication With Wastegate Position Sensor B
+U0675 - Lost Communication With Turbocharger/Supercharger Speed Sensor A
+U0676 - Lost Communication With Fuel Level Sensor A
+U0677 - Lost Communication With Fuel Level Sensor B
+U0678 - Lost Communication With Fuel Level Sensor C
+U0679 - Lost Communication With Transmission Fluid Pressure Sensor/Switch A
+U067A - Lost Communication With Transmission Fluid Pressure Sensor/Switch B
+U067B - Lost Communication With Engine Disconnect Clutch Pressure Sensor
+U067C - Lost Communication With Fan 3
+U067D - Lost Communication With Fan 4
+U067E - Lost Communication With Exhaust Pressure Control Valve B Sensor/Switch
+U067F - Lost Communication With Barometric Pressure Sensor A
+U0680 - Lost Communication With Barometric Pressure Sensor B
+U0681 - Lost Communication With Throttle/Pedal Position Sensor/Switch D
+U0682 - Lost Communication With Throttle/Pedal Position Sensor/Switch E
+U0683 - Lost Communication With Throttle/Pedal Position Sensor/Switch F
+U0684 - Lost Communication With Catalyst Temperature Bank 1 Sensor 1
+U0685 - Lost Communication With Catalyst Temperature Bank 1 Sensor 2
+U0686 - Lost Communication With Catalyst Temperature Bank 2 Sensor 1
+U0687 - Lost Communication With Catalyst Temperature Bank 2 Sensor 2
+U0688 - Lost Communication With Throttle Position Sensor/Switch G
+U0689 - Lost Communication With Turbocharger/Supercharger B Temperature Sensor
+U068A - Lost Communication With Barometric Pressure Sensor C
+U068B - Lost Communication With Turbocharger/Supercharger Inlet Pressure Sensor A
+U068C - Lost Communication With Turbocharger/Supercharger Inlet Pressure Sensor B
+U068D - Lost Communication With EGR Temperature Sensor A
+U068E - Lost Communication With EGR Temperature Sensor B
+U068F - Lost Communication With EGR Temperature Sensor C
+U0690 - Lost Communication With EGR Temperature Sensor D
+U0691 - Lost Communication With Exhaust Pressure Sensor A
+U0692 - Lost Communication With Exhaust Pressure Sensor B
+U0693 - Lost Communication With Humidity Sensor
+U0694 - Lost Communication With Hybrid/EV Battery Pack Coolant Pump A
+U0695 - Lost Communication With Hybrid/EV Battery Pack Coolant Pump B
+U0696 - Lost Communication With Particulate Filter Pressure Sensor C
+U0697 - Lost Communication With Particulate Filter Pressure Sensor D
+U0698 - Lost Communication with Coolant Pump “E”
+U0699 - Lost Communication with Coolant Pump “F”
+U069A - Lost Communication With Exhaust Gas Temperature Sensor Bank 1 Sensor 3
+U069B - Lost Communication With Exhaust Gas Temperature Sensor Bank 1 Sensor 4
+U069C - Lost Communication With Exhaust Gas Temperature Sensor Bank 2 Sensor 3
+U069D - Lost Communication With Exhaust Gas Temperature Sensor Bank 2 Sensor 4
+U069E - Lost Communication with Coolant Heater A
+U069F - Lost Communication With Exhaust Pressure Sensor C
+U0901 - Invalid Data from Ion Sense Module
+U1000 - Manufacturer Controlled DTC
+U2000 - Manufacturer Controlled DTC
+U3000 - Control Module
+U3001 - Control Module Improper Shutdown Performance
+U3002 - Vehicle Identification Number
+U3003 - Battery Voltage
+U3004 - Accessory Power Relay
+U3005 - Retained Accessory Power
+U3006 - Control Module Input Power A Circuit/Open
+U3007 - Control Module Input Power B Circuit/Open
+U3008 - Control Module Ground A
+U3009 - Control Module Ground B
+U300A - Ignition Switch
+U300B - Ignition Input Accessory/On/Start
+U300C - Ignition Input Off/On/Start
+U300D - Ignition Input On/Start
+U300E - Ignition Input On
+U300F - Ignition Input Accessory
+U3010 - Ignition Input Start
+U3011 - Ignition Input Off
+U3012 - Control Module Improper Wake-up Performance
+U3013 - Control Module Input Power C Circuit/Open
+U3014 - Control Module Input Power D Circuit/Open
+U3015 - Control Module Ground C
+U3016 - Control Module Ground D
+U3017 - Control Module Timer/Clock Performance
+U3018 - Control Module Input Power Circuit A/B Correlation
+U3019 - Control Module Input Power Circuit B/C Correlation
+U301A - Control Module Wake-up Circuit A/Open
+U301B - Control Module Wake-up Circuit A Low
+U301C - Control Module Wake-up Circuit A High
+U301D - Control Module Wake-up Circuit A Performance
+U301E - Control Module Wake-up Circuit B/Open
+U301F - Control Module Wake-up Circuit B Low
+U3020 - Control Module Wake-up Circuit B High
+U3021 - Control Module Wake-up Circuit B Performance
+U3022 - Ignition Input Accessory/Off
+U3023 - Control Module Input Power Circuit A - Ignition Input On/Start Circuit Correlation
+U3024 - Control Module Input Power Circuit B - Ignition Input On/Start Circuit Correlation
+U3025 - Control Module A Disable Circuit/Open
+U3026 - Control Module A Disable Circuit Low
+U3027 - Control Module A Disable Circuit High
+U3028 - Control Module A Disable Feedback Circuit
+U3029 - Control Module A Disable Feedback Circuit Low
+U302A - Control Module A Disable Feedback Circuit High
+U302B - Ignition Output Accessory/On/Start
+U302C - Ignition Output Off/On/Start
+U302D - Ignition Output On/Start
+U302E - Ignition Output On
+U302F - Ignition Output Accessory
+U3030 - Ignition Output Start
+U3031 - Ignition Output Off
+U3032 - Ignition Output Accessory/Off
+U3033 - Control Module Security Certificate Missing/Invalid
+U3034 - Communication Authentication Key/Certificate Missing/Invalid
+U3035 - Communication Authentication Signal Invalid Data
+U3036 - Communication Authentication Signal Performance
+U3500 - Control Module Input Power A Circuit Range/Performance
+U3501 - Control Module Input Power A Circuit Low
+U3502 - Control Module Input Power A Circuit High
+U3503 - Control Module Input Power A Circuit Intermittent/Erratic
+U3504 - Control Module Input Power B Circuit Range/Performance
+U3505 - Control Module Input Power B Circuit Low
+U3506 - Control Module Input Power B Circuit High
+U3507 - Control Module Input Power B Circuit Intermittent/Erratic
+U3508 - Control Module Input Power C Circuit Range/Performance
+U3509 - Control Module Input Power C Circuit Low
+U350A - Control Module Input Power C Circuit High
+U350B - Control Module Input Power C Circuit Intermittent/Erratic
+U350C - Control Module Cooling Fan Circuit/Open
+U350D - Control Module Cooling Fan Circuit Low
+U350E - Control Module Cooling Fan Circuit High
+U350F - Control Module Cooling Fan Circuit Range/Performance
+U3510 - Control Module Missing Calibration
+U3511 - High Voltage System Interlock Circuit B
+U3512 - High Voltage System Interlock Circuit B Performance
+U3513 - High Voltage System Interlock Circuit B Low
+U3514 - High Voltage System Interlock Circuit B High
+U3515 - High Voltage System Interlock Circuit C
+U3516 - High Voltage System Interlock Circuit C Performance
+U3517 - High Voltage System Interlock Circuit C Low
+U3518 - High Voltage System Interlock Circuit C High
+U3519 - High Voltage System Interlock Circuit D
+U351A - High Voltage System Interlock Circuit D Performance
+U351B - High Voltage System Interlock Circuit D Low
+U351C - High Voltage System Interlock Circuit D High
+U351D - High Voltage System Interlock Circuit E
+U351E - High Voltage System Interlock Circuit E Performance
+U351F - High Voltage System Interlock Circuit E Low
+U3520 - High Voltage System Interlock Circuit E High
+U3521 - High Voltage System Interlock Circuit F
+U3522 - High Voltage System Interlock Circuit F Performance
+U3523 - High Voltage System Interlock Circuit F Low
+U3524 - High Voltage System Interlock Circuit F High
+U3525 - High Voltage System Interlock Circuit G
+U3526 - High Voltage System Interlock Circuit G Performance
+U3527 - High Voltage System Interlock Circuit G Low
+U3528 - High Voltage System Interlock Circuit G High
+U3529 - High Voltage System Interlock Circuit H
+U352A - High Voltage System Interlock Circuit H Performance
+U352B - High Voltage System Interlock Circuit H Low
+U352C - High Voltage System Interlock Circuit H High
+U352D - High Voltage System Interlock Circuit J
+U352E - High Voltage System Interlock Circuit J Performance
+U352F - High Voltage System Interlock Circuit J Low
+U3530 - High Voltage System Interlock Circuit J High
+U3531 - High Voltage System Interlock Circuit K
+U3532 - High Voltage System Interlock Circuit K Performance
+U3533 - High Voltage System Interlock Circuit K Low
+U3534 - High Voltage System Interlock Circuit K High
+U3535 - High Voltage System Interlock Circuit L
+U3536 - High Voltage System Interlock Circuit L Performance
+U3537 - High Voltage System Interlock Circuit L Low
+U3538 - High Voltage System Interlock Circuit L High
+U3539 - High Voltage System Interlock Circuit M
+U353A - High Voltage System Interlock Circuit M Performance
+U353B - High Voltage System Interlock Circuit M Low
+U353C - High Voltage System Interlock Circuit M High
+U353D - High Voltage System Interlock Circuit N
+U353E - High Voltage System Interlock Circuit N Performance
+U353F - High Voltage System Interlock Circuit N Low
+U3540 - High Voltage System Interlock Circuit N High
+U3541 - High Voltage System Interlock Circuit O
+U3542 - High Voltage System Interlock Circuit O Performance
+U3543 - High Voltage System Interlock Circuit O Low
+U3544 - High Voltage System Interlock Circuit O High
+U3545 - High Voltage System Interlock Circuit P
+U3546 - High Voltage System Interlock Circuit P Performance
+U3547 - High Voltage System Interlock Circuit P Low
+U3548 - High Voltage System Interlock Circuit P High
+U3549 - Hydrogen Tank High Pressure Sensor 1 Circuit
+U354A - Hydrogen Tank A Temperature Sensor 1 Circuit
+U354B - Hydrogen Tank A Temperature Sensor 2 Circuit
+U354C - Hydrogen Tank B Temperature Sensor 1 Circuit
+U354D - Hydrogen Tank B Temperature Sensor 2 Circuit
+U354E - Hydrogen Tank C Temperature Sensor 1 Circuit
+U354F - Hydrogen Tank C Temperature Sensor 2 Circuit
+U3550 - Hydrogen Tank A Valve Control Circuit
+U3551 - Hydrogen Tank A Valve Enable Circuit
+U3552 - Hydrogen Tank A Valve Performance
+U3553 - Hydrogen Tank B Valve Control Circuit
+U3554 - Hydrogen Tank B Valve Enable Circuit
+U3555 - Hydrogen Tank B Valve Performance
+U3556 - Hydrogen Tank C Valve Control Circuit
+U3557 - Hydrogen Tank C Valve Enable Circuit
+U3558 - Hydrogen Tank C Valve
+U3559 - Air Inlet Pressure Sensor Circuit
+U355A - Charge Air Cooler Outlet Pressure Sensor 1 Circuit
+U355B - Charge Air Cooler Outlet Pressure Sensor 2 Circuit
+U355C - Charge Air Cooler Outlet Temperature Sensor Circuit
+U355D - Expander Inlet Pressure Sensor 1 Circuit
+U355E - Expander Inlet Pressure Sensor 2 Circuit
+U355F - Cathode Backpressure Valve Control Circuit
+U3560 - Cathode Backpressure Valve Position Sensor Circuit
+U3561 - Cathode Bypass Valve Control Circuit
+U3562 - Cathode Bypass Valve
+U3563 - Cathode Bypass Valve Position Sensor Circuit
+U3564 - Hydrogen Supply Line A Pressure Sensor 1 Circuit
+U3565 - Hydrogen Supply Line A Pressure Sensor 2 Circuit
+U3566 - Anode Inlet Pressure Sensor 1 Circuit
+U3567 - Anode Inlet Pressure Sensor 2 Circuit
+U3568 - Anode Multifunction Valve Control Circuit
+U3569 - Anode Multifunction Valve
+U356A - Anode Drain Valve Control Circuit
+U356B - Anode Drain Valve
+U356C - Anode Header Drain Valve Control Circuit
+U356D - Anode Header Drain Valve
+U356E - Anode Drain Valve Heater Relay Control Circuit
+U356F - Anode Header Drain Valve Heater Relay Control Circuit
+U3570 - Stack Inlet Coolant Temperature Sensor Circuit
+U3571 - Stack Outlet Coolant Temperature Sensor 1 Circuit
+U3572 - Stack Outlet Coolant Temperature Sensor 2 Circuit
+U3573 - Coolant Mixing Valve Control Circuit
+U3574 - Coolant Mixing Valve
+U3575 - Coolant Mixing Valve Position Sensor Circuit
+U3576 - Stack Differential Pressure Sensor Circuit

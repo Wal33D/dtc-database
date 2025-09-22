@@ -1,0 +1,76 @@
+P1102 - HO2S11 Heater Circuit High Voltage
+P1105 - HO2S12 Heater Circuit High Voltage
+P1115 - H02S12 Heater Circuit Low Voltage
+P1117 - HO2S12 Heater Circuit Low Voltage
+P1123 - Long Term Fuel Trim Adaptive Air System Low
+P1124 - Long Term Fuel Trim Adaptive Air System High
+P1127 - Long Term Fuel Trim Multiplicative Air System Low
+P1128 - Long Term Fuel Trim Multiplicative Air System High
+P1140 - Load Calculation Cross Check
+P1170 - HO2S11 Circuit Voltage Stuck At Mid-Range
+P1195 - EGR Boost Or Pressure Sensor Circuit Fault
+P1196 - Ignition Switch Start Circuit Fault
+P1213 - Fuel Injector 1 Circuit High Voltage
+P1214 - Fuel Injector 2 Circuit High Voltage
+P1215 - Fuel Injector 3 Circuit High Voltage
+P1216 - Fuel Injector 4 Circuit High Voltage
+P1225 - Fuel Injector 1 Circuit Low Voltage
+P1226 - Fuel Injector 2 Circuit Low Voltage
+P1227 - Fuel Injector 3 Circuit Low Voltage
+P1228 - Fuel Injector 4 Circuit Low Voltage
+P1250 - Pressure Regulator Control Solenoid Valve Open Or Short
+P1252 - Pressure Regulator Control Solenoid Valve No. 2 Circuit Malfunction
+P1307 - Chassis Acceleration Sensor Signal Malfunction
+P1308 - Chassis Acceleration Sensor Signal Low
+P1309 - Chassis Acceleration Sensor Signal High
+P1345 - No SGC Signal 1.6L
+P1386 - Knock Sensor Control Zero Test
+P1401 - EGR Control Solenoid Circuit Signal Low
+P1402 - EGR Control Solenoid Circuit Signal High
+P1410 - EVAP Purge Control Solenoid Circuit High Voltage
+P1412 - EGR Differential Pressure Sensor Signal Low
+P1413 - EGR Differential Pressure Sensor Signal High
+P1425 - EVAP Purge Control Solenoid Circuit Low Voltage
+P1449 - Canister Drain Cut Valve Open Or Short 1.8L
+P1450 - Excessive Vacuum Leak
+P1455 - Fuel Tank Sending Unit Open Or Short 1.8L
+P1457 - Purge Solenoid Valve Low System Malfunction
+P1458 - A/C Compressor Clutch Signal Fault
+P1485 - EGR Vent Control Solenoid Circuit Fault
+P1486 - EGR Vacuum Control Solenoid Circuit Fault
+P1487 - EGR Boost Sensor Solenoid Circuit Fault
+P1496 - EGR Stepper Motor Malfunction Circuit 1 1.8L
+P1497 - EGR Stepper Motor Malfunction Circuit 2 1.8L
+P1498 - EGR Stepper Motor Malfunction Circuit 3 1.8L
+P1499 - EGR Stepper Motor Malfunction Circuit 4 1.8L
+P1500 - No Vehicle Speed Signal to TCM
+P1505 - Idle Air Control Valve Opening Coil Voltage Low
+P1506 - Idle Air Control Valve Opening Coil Voltage High
+P1507 - Idle Air Control Valve Closing Coil Voltage Low
+P1508 - Idle Air Control Valve Closing Coil Voltage High
+P1510 - Idle Air Control Valve Closing Coil High Voltage
+P1513 - Idle Air Control Valve Closing Coil Low Voltage
+P1515 - A/T To M/T Codification
+P1523 - VICS Solenoid Valve
+P1552 - Idle Air Control Valve Opening Coil Low Voltage
+P1553 - Idle Air Control Valve Opening Coil High Voltage
+P1586 - A/T To M/T Codification
+P1606 - Chassis Accelerator Sensor Signal Circuit Fault
+P1608 - PCM Malfunction
+P1611 - MIL Request Circuit Voltage Low
+P1614 - MIL Request Circuit Voltage High
+P1616 - Chassis Accelerator Sensor Signal Low Voltage
+P1617 - Chassis Accelerator Sensor Signal High Voltage
+P1624 - TCM To PCM MIL Request Signal Circuit Fault
+P1631 - Alternator T Open Or No Power Output 1.8L
+P1632 - Battery Voltage Detection Circuit for Alternator Regulator 1.8L
+P1633 - Battery Overcharge
+P1634 - Alternator B Open 1.8L
+P1655 - Unused Power Stage 'B'
+P1660 - Power Stage Group 'B'
+P1665 - Power Stage Group 'A'
+P1693 - MIL Circuit Malfunction
+P1743 - Torque Converter Clutch Solenoid Valve Open Or Short
+P1794 - Battery Or Circuit Failure
+P1795 - 4WD Switch Signal Malfunction
+P1797 - Clutch Pedal Switch MT Or P/N Switch Circuit Fault

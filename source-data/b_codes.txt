@@ -1,0 +1,300 @@
+B0001 - Driver Frontal Stage 1 Deployment Control
+B0002 - Driver Frontal Stage 2 Deployment Control
+B0003 - Driver Frontal Stage 3 Deployment Control
+B0004 - Driver Knee Bolster Deployment Control
+B0005 - Collapsible Steering Column Deployment Control
+B0010 - Passenger Frontal Stage 1 Deployment Control
+B0011 - Passenger Frontal Stage 2 Deployment Control
+B0012 - Passenger Frontal Stage 3 Deployment Control
+B0013 - Passenger Knee Bolster Deployment Control
+B0018 - Center Frontal Stage 1 Deployment Control
+B0019 - Center Frontal Stage 2 Deployment Control
+B001A - Center Frontal Stage 3 Deployment Control
+B0020 - Left Side Airbag Deployment Control
+B0021 - Left Curtain Deployment Control 1
+B0022 - Left Curtain Deployment Control 2
+B0028 - Right Side Airbag Deployment Control
+B0029 - Right Curtain Deployment Control 1
+B002A - Right Curtain Deployment Control 2
+B0030 - Second Row Left Side Airbag Deployment Control
+B0031 - Second Row Left Frontal Stage 1 Deployment Control
+B0032 - Second Row Left Frontal Stage 2 Deployment Control
+B0033 - Second Row Left Frontal Stage 3 Deployment Control
+B0038 - Second Row Right Side Airbag Deployment Control
+B0039 - Second Row Right Frontal Stage 1 Deployment Control
+B003A - Second Row Right Frontal Stage 2 Deployment Control
+B003B - Second Row Right Frontal Stage 3 Deployment Control
+B0040 - Third Row Left Side Airbag Deployment Control
+B0041 - Third Row Left Frontal Stage 1 Deployment Control
+B0042 - Third Row Left Frontal Stage 2 Deployment Control
+B0043 - Third Row Left Frontal Stage 3 Deployment Control
+B0048 - Third Row Right Side Airbag Deployment Control
+B0049 - Third Row Right Frontal Stage 1 Deployment Control
+B004A - Third Row Right Frontal Stage 2 Deployment Control
+B004B - Third Row Right Frontal Stage 3 Deployment Control
+B0050 - Driver Seat Belt Sensor
+B0051 - First Row Center Seat Belt Sensor
+B0052 - Passenger Seat Belt Sensor
+B0053 - Second Row Left Seat Belt Sensor
+B0054 - Second Row Center Seat Belt Sensor
+B0055 - Second Row Right Seat Belt Sensor
+B0056 - Third Row Left Seat Belt Sensor
+B0057 - Third Row Center Seat Belt Sensor
+B0058 - Third Row Right Seat Belt Sensor
+B0060 - Driver Seat Belt Tension Sensor
+B0061 - Passenger Seat Belt Tension Sensor
+B0070 - Driver Seat Belt Pretensioner A Deployment Control
+B0071 - First Row Center Seat Belt Pretensioner Deployment Control
+B0072 - Passenger Seat Belt Pretensioner A Deployment Control
+B0073 - Second Row Left Seat Belt Pretensioner Deployment Control
+B0074 - Second Row Center Seat Belt Pretensioner Deployment Control
+B0075 - Second Row Right Seat Belt Pretensioner Deployment Control
+B0076 - Third Row Left Seat Belt Pretensioner Deployment Control
+B0077 - Third Row Center Seat Belt Pretensioner Deployment Control
+B0078 - Third Row Right Seat Belt Pretensioner Deployment Control
+B0079 - Driver Seat Belt Pretensioner B Deployment Control
+B007A - Passenger Seat Belt Pretensioner B Deployment Control
+B007B - Second Row Left Seat Belt Pretensioner B Deployment Control
+B007C - Second Row Right Seat Belt Pretensioner B Deployment Control
+B007D - Second Row Center Seat Belt Pretensioner B Deployment Control
+B007E - Driver Seat Belt Pretensioner C Deployment Control
+B007F - Passenger Seat Belt Pretensioner C Deployment Control
+B0080 - Driver Seat Belt Load Limiter Deployment Control
+B0081 - First Row Center Seat Belt Load Limiter Deployment Control
+B0082 - Passenger Seat Belt Load Limiter Deployment Control
+B0083 - Second Row Left Seat Belt Load Limiter Deployment Control
+B0084 - Second Row Center Seat Belt Load Limiter Deployment Control
+B0085 - Second Row Right Seat Belt Load Limiter Deployment Control
+B0086 - Third Row Left Seat Belt Load Limiter Deployment Control
+B0087 - Third Row Center Seat Belt Load Limiter Deployment Control
+B0088 - Third Row Right Seat Belt Load Limiter Deployment Control
+B0090 - Left Frontal Restraints Sensor
+B0091 - Left Side Restraints Sensor 1
+B0092 - Left Side Restraints Sensor 2
+B0093 - Left Side Restraints Sensor 3
+B0094 - Center Frontal Restraints Sensor
+B0095 - Right Frontal Restraints Sensor
+B0096 - Right Side Restraints Sensor 1
+B0097 - Right Side Restraints Sensor 2
+B0098 - Right Side Restraints Sensor 3
+B0099 - Roll Over Sensor
+B009A - Left Side Restraints Sensor 4
+B009B - Left Side Restraints Sensor 5
+B009C - Left Side Restraints Sensor 6
+B009D - Right Side Restraints Sensor 4
+B009E - Right Side Restraints Sensor 5
+B009F - Right Side Restraints Sensor 6
+B00A0 - Occupant Classification System
+B00A1 - Occupant Position System
+B00B0 - Driver Seat Occupant Classification Sensor A
+B00B1 - Driver Seat Occupant Classification Sensor B
+B00B2 - Driver Seat Occupant Classification Sensor C
+B00B3 - Driver Seat Occupant Classification Sensor D
+B00B4 - Driver Seat Occupant Classification Sensor E
+B00B5 - Driver Seat Track Position Restraints Sensor
+B00B6 - Driver Seat Recline Position Restraints Sensor
+B00B7 - Driver Seat Occupant Position Sensor A
+B00B8 - Driver Seat Occupant Position Sensor B
+B00B9 - Driver Seat Occupant Position Sensor C
+B00BA - Driver Seat Occupant Position Sensor D
+B00BB - Driver Seat Occupant Position Sensor E
+B00C0 - Passenger Seat Occupant Classification Sensor A
+B00C1 - Passenger Seat Occupant Classification Sensor B
+B00C2 - Passenger Seat Occupant Classification Sensor C
+B00C3 - Passenger Seat Occupant Classification Sensor D
+B00C4 - Passenger Seat Occupant Classification Sensor E
+B00C5 - Passenger Seat Track Position Restraints Sensor
+B00C6 - Passenger Seat Recline Position Restraints Sensor
+B00C7 - Passenger Seat Occupant Position Sensor A
+B00C8 - Passenger Seat Occupant Position Sensor B
+B00C9 - Passenger Seat Occupant Position Sensor C
+B00CA - Passenger Seat Occupant Position Sensor D
+B00CB - Passenger Seat Occupant Position Sensor E
+B00D0 - Driver Seat Belt Indicator
+B00D1 - Passenger Seat Belt Indicator
+B00D2 - Restraint System Malfunction Indicator 1
+B00D3 - Restraint System Malfunction Indicator 2
+B00D4 - Restraint System Malfunction Audible Indicator
+B00D5 - Restraint System Passenger Disable Indicator
+B00DF - Passenger Restraints Disable Switch
+B00E0 - Third Row Left Seat Belt Pretensioner B Deployment Control
+B00E1 - Third Row Right Seat Belt Pretensioner B Deployment Control
+B00E2 - Third Row Center Seat Belt Pretensioner B Deployment Control
+B00E3 - Second Row Left Seat Belt Pretensioner C Deployment Control
+B00E4 - Second Row Right Seat Belt Pretensioner C Deployment Control
+B00E5 - Second Row Center Seat Belt Pretensioner C Deployment Control
+B00E6 - Third Row Right Seat Belt Pretensioner C Deployment Control
+B00E7 - Third Row Left Seat Belt Pretensioner C Deployment Control
+B00E8 - Third Row Center Seat Belt Pretensioner C Deployment Control
+B00F0 - Driver Inflatable Seat Belt Deployment Control
+B00F1 - Passenger Inflatable Seat Belt Deployment Control
+B00F2 - Second Row Left Inflatable Seat Belt Deployment Control
+B00F3 - Second Row Center Inflatable Seat Belt Deployment Control
+B00F4 - Second Row Right Inflatable Seat Belt Deployment Control
+B00F5 - Third Row Left Inflatable Seat Belt Deployment Control
+B00F6 - Third Row Center Inflatable Seat Belt Deployment Control
+B00F7 - Third Row Right Inflatable Seat Belt Deployment Control
+B0100 - Sensor Cleaning Air Blower Actuator A
+B0101 - Sensor Cleaning Air Blower Actuator B
+B0102 - Sensor Cleaning Air Blower Actuator A Control
+B0103 - Sensor Cleaning Air Blower Actuator B Control
+B0104 - Sensor Cleaning Air Blower Actuator A Control Relay
+B0105 - Sensor Cleaning Air Blower Actuator B Control Relay
+B0106 - LIDAR Washer Actuator A
+B0107 - LIDAR Washer Actuator B
+B0108 - LIDAR Washer Actuator C
+B0109 - LIDAR Washer Actuator D
+B010A - Camera Washer Actuator A
+B010B - Camera Washer Actuator B
+B010C - Camera Washer Actuator C
+B010D - Camera Washer Actuator D
+B010E - Camera Washer Actuator E
+B010F - Camera Washer Actuator F
+B0110 - Camera Washer Actuator G
+B0111 - Camera Washer Actuator H
+B0112 - Camera Washer Actuator J
+B0113 - Camera Washer Actuator K
+B0114 - Camera Washer Actuator L
+B0115 - Camera Washer Actuator M
+B0116 - Camera Washer Actuator N
+B0117 - Camera Washer Actuator O
+B0118 - Camera Washer Actuator P
+B0119 - Camera Washer Actuator Q
+B011A - Camera Washer Actuator R
+B011B - Camera Washer Actuator S
+B011C - Fluid Reservoir Level Sensor A
+B011D - Fluid Reservoir Level Sensor B
+B011E - Fluid Reservoir Level Sensor C
+B011F - Fluid Reservoir Level Sensor D
+B0120 - Fluid Reservoir Level Sensor E
+B0121 - Fluid Reservoir Level Sensor F
+B0122 - Pedestrian Alert Speaker A
+B0123 - Pedestrian Alert Speaker B
+B0124 - Night Vision Camera
+B0125 - Night Vision Control Module
+B0126 - Driver Monitoring Camera
+B0127 - DC/AC Converter A High Voltage Power Outlet “A” Circuit/Open
+B0128 - DC/AC Converter A High Voltage Power Outlet “B” Circuit/Open
+B0129 - DC/AC Converter A High Voltage Power Outlet “C” Circuit/Open
+B012A - DC/AC Converter A High Voltage Power Outlet “D” Circuit/Open
+B012B - DC/AC Converter A High Voltage Power Outlet “E” Circuit/Open
+B012C - DC/AC Converter A High Voltage Power Outlet Control Module “A”
+B012D - DC/AC Converter A High Voltage Power Outlet Control Module “B”
+B012E - DC/AC Converter A High Voltage Power Outlet Control Module “C”
+B012F - A/V Sensor Washer Fluid A Control Circuit
+B0130 - A/V Sensor Washer Fluid B Control Circuit
+B0131 - A/V Sensor Washer Fluid C Control Circuit
+B0132 - A/V Sensor Washer Fluid D Control Circuit
+B0133 - A/V Sensor Washer Fluid E Control Circuit
+B0134 - A/V Sensor Washer Fluid F Control Circuit
+B1317 - Battery Voltage High
+B1318 - Battery Voltage Low
+B1342 - ECU Is Defective
+B1379 - Oil Change Reset Button Circuit Short To Ground
+B1380 - Oil Change Reset Button Circuit Failure
+B1381 - Oil Change Reset Button Circuit Open
+B1382 - Oil Change Reset Button Circuit Short To Battery
+B2000 - Manufacturer Controlled DTC
+B2200 - No Communication to TV Module (No Fitting of TV)
+B2201 - No Communication With Traffic MasterModule
+B2202 - No Communication to VICS Module (No Fitting of VICS)
+B2300 - Seat Driver Memory Position Error
+B2301 - Seat Passenger Memory Position Error
+B2320 - Mirror Driver Horizontal Feedback Potentiometer Circuit Failure
+B2321 - Mirror Driver Horizontal Feedback Potentiometer Circuit Open
+B2322 - Mirror Driver Horizontal Feedback Potentiometer Circuit Short to Battery
+B2323 - Mirror Driver Horizontal Feedback Potentiometer Circuit Short to Ground
+B2601 - No Latch Signal Sensed on Closing and Door Reversed
+B3000 - B3000-B3999 ISO/SAE Reserved
+B3A00 - A/C Refrigerant Distribution Valve Actuator C Stuck/Open
+B3A01 - A/C Refrigerant Distribution Valve Actuator C Control Circuit/Open
+B3A02 - A/C Refrigerant Distribution Valve Actuator C Control Circuit Low
+B3A03 - A/C Refrigerant Distribution Valve Actuator C Control Circuit High
+B3A04 - A/C Refrigerant Distribution Valve C Control Circuit Driver Current/Temperature Too High
+B3A05 - A/C Refrigerant Distribution Valve Actuator D Stuck/Open
+B3A06 - A/C Refrigerant Distribution Valve Actuator D Control Circuit/Open
+B3A07 - A/C Refrigerant Distribution Valve Actuator D Control Circuit Low
+B3A08 - A/C Refrigerant Distribution Valve Actuator D Control Circuit High
+B3A09 - A/C Refrigerant Distribution Valve D Control Circuit Driver Current/Temperature Too High
+B3A0A - A/C Refrigerant Expansion Valve Actuator Stuck/Open
+B3A0B - A/C Refrigerant Expansion Valve Actuator Control Circuit/Open
+B3A0C - A/C Refrigerant Expansion Valve Actuator Control Circuit Low
+B3A0D - A/C Refrigerant Expansion Valve Actuator Control Circuit High
+B3A0E - A/C Refrigerant Expansion Valve Actuator Control Circuit Driver Current/Temperature Too High
+B3A0F - A/C Condenser Efficiency Below Threshold
+B3A10 - A/C Condenser Efficiency Above Threshold
+B3A11 - A/C Refrigerant Expansion Valve Actuator Control Circuit Performance
+B3A12 - A/C Refrigerant Expansion Valve Actuator Temperature Range/Performance
+B3A13 - A/C Refrigerant Distribution Valve A Actuator Control Circuit Performance
+B3A14 - A/C Refrigerant Distribution Valve A Actuator Temperature Range/Performance
+B3A15 - A/C Refrigerant Distribution Valve B Actuator Control Circuit Performance
+B3A16 - A/C Refrigerant Distribution Valve B Actuator Temperature Range/Performance
+B3A17 - A/C Refrigerant Distribution Valve C Actuator Control Circuit Performance
+B3A18 - A/C Refrigerant Distribution Valve C Actuator Temperature Range/Performance
+B3A19 - A/C Refrigerant Distribution Valve D Actuator Control Circuit Performance
+B3A1A - A/C Refrigerant Distribution Valve D Actuator Temperature Range/Performance
+B3A1B - A/C System Pressure - Too High
+B3A1C - A/C System Temperature - Too High
+B3A1D - Battery Charger B
+B3A1E - Battery Charger A Ground Performance
+B3A1F - Battery Charger B Ground Performance
+B3A20 - Active Aerodynamic Feature Control Module A
+B3A21 - Active Aerodynamic Feature Control Module B
+B3A22 - Active Aerodynamic Feature Control Module C
+B3A23 - Active Aerodynamic Feature Control Module D
+B3A24 - Active Aerodynamic Feature Control Module A Power Mode Circuit High Voltage
+B3A25 - Active Aerodynamic Feature Control Module A Power Mode Circuit Low Voltage
+B3A26 - Active Aerodynamic Feature Control Module A Power Mode Circuit/Open
+B3A27 - Active Aerodynamic Feature Control Module A Power Mode Circuit Performance
+B3A28 - Active Aerodynamic Feature Control Module B Power Mode Circuit High Voltage
+B3A29 - Active Aerodynamic Feature Control Module B Power Mode Circuit Low Voltage
+B3A2A - Active Aerodynamic Feature Control Module B Power Mode Circuit/Open
+B3A2B - Active Aerodynamic Feature Control Module B Power Mode Circuit Performance
+B3A2C - Active Aerodynamic Feature Control Module C Power Mode Circuit High Voltage
+B3A2D - Active Aerodynamic Feature Control Module C Power Mode Circuit Low Voltage
+B3A2E - Active Aerodynamic Feature Control Module C Power Mode Circuit/Open
+B3A2F - Active Aerodynamic Feature Control Module C Power Mode Circuit Performance
+B3A30 - Active Aerodynamic Feature Control Module D Power Mode Circuit High Voltage
+B3A31 - Active Aerodynamic Feature Control Module D Power Mode Circuit Low Voltage
+B3A32 - Active Aerodynamic Feature Control Module D Power Mode Circuit/Open
+B3A33 - Active Aerodynamic Feature Control Module D Power Mode Circuit Performance
+B3A34 - Active Aerodynamic Feature A Actuator Position Sensor Not Learned
+B3A35 - Active Aerodynamic Feature A Actuator Performance
+B3A36 - Active Aerodynamic Feature A Actuator Temperature Not Plausible
+B3A37 - Active Aerodynamic Feature A Actuator Temperature Too High
+B3A38 - Active Aerodynamic Feature A Actuator Temperature Too Low
+B3A39 - Active Aerodynamic Feature A Position Not Plausible
+B3A3A - Active Aerodynamic Feature A Position Sensor 1 Circuit High Voltage
+B3A3B - Active Aerodynamic Feature A Position Sensor 1 Circuit Low Voltage
+B3A3C - Active Aerodynamic Feature A Position Sensor 2 Circuit High Voltage
+B3A3D - Active Aerodynamic Feature A Position Sensor 2 Circuit Low Voltage
+B3A3E - Active Aerodynamic Feature B Actuator Performance
+B3A3F - Active Aerodynamic Feature B Actuator Position Sensor Not Learned
+B3A40 - Active Aerodynamic Feature B Actuator Temperature Not Plausible
+B3A41 - Active Aerodynamic Feature B Actuator Temperature Too High
+B3A42 - Active Aerodynamic Feature B Actuator Temperature Too Low
+B3A43 - Active Aerodynamic Feature B Position Not Plausible
+B3A44 - Active Aerodynamic Feature B Position Sensor 1 Circuit High Voltage
+B3A45 - Active Aerodynamic Feature B Position Sensor 1 Circuit Low Voltage
+B3A46 - Active Aerodynamic Feature B Position Sensor 2 Circuit High Voltage
+B3A47 - Active Aerodynamic Feature B Position Sensor 2 Circuit Low Voltage
+B3A48 - Active Aerodynamic Feature C Actuator Performance
+B3A49 - Active Aerodynamic Feature C Actuator Position Sensor Not Learned
+B3A4A - Active Aerodynamic Feature C Actuator Temperature Not Plausible
+B3A4B - Active Aerodynamic Feature C Actuator Temperature Too High
+B3A4C - Active Aerodynamic Feature C Actuator Temperature Too Low
+B3A4D - Active Aerodynamic Feature C Position Not Plausible
+B3A4E - Active Aerodynamic Feature C Position Sensor 1 Circuit High Voltage
+B3A4F - Active Aerodynamic Feature C Position Sensor 1 Circuit Low Voltage
+B3A50 - Active Aerodynamic Feature C Position Sensor 2 Circuit High Voltage
+B3A51 - Active Aerodynamic Feature C Position Sensor 2 Circuit Low Voltage
+B3A52 - Active Aerodynamic Feature D Actuator Performance
+B3A53 - Active Aerodynamic Feature D Actuator Position Sensor Not Learned
+B3A54 - Active Aerodynamic Feature D Actuator Temperature Not Plausible
+B3A55 - Active Aerodynamic Feature D Actuator Temperature Too High
+B3A56 - Active Aerodynamic Feature D Actuator Temperature Too Low
+B3A57 - Active Aerodynamic Feature D Position Not Plausible
+B3A58 - Active Aerodynamic Feature D Position Sensor 1 Circuit High Voltage
+B3A59 - Active Aerodynamic Feature D Position Sensor 1 Circuit Low Voltage
+B3A5A - Active Aerodynamic Feature D Position Sensor 2 Circuit High Voltage
+B3A5B - Active Aerodynamic Feature D Position Sensor 2 Circuit Low Voltage

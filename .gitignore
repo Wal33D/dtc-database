@@ -1,0 +1,46 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.venv
+
+# Java/Android
+*.class
+*.jar
+*.war
+*.ear
+build/
+out/
+target/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Node/TypeScript
+node_modules/
+dist/
+*.js
+*.js.map
+!tsconfig.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*~

@@ -1,0 +1,233 @@
+P1000 - OBD II Monitor Testing Not Completed
+P1001 - Unable to Achieve Self-Test Function Or SCP Error
+P1100 - Mass Air Flow Sensor Circuit Intermittent
+P1101 - Mass Air Flow Sensor Circuit Out Of Self-Test Range
+P1102 - Mass Air Flow Sensor Signal Inconsistent With Throttle Position Sensor
+P1103 - Mass Air Flow Sensor Signal Inconsistent With Engine Speed
+P1110 - Intake Air Temperature Sensor Signal Dynamic Chamber Circuit
+P1112 - Intake Air Temperature Sensor Circuit Intermittent
+P1113 - Intake Air Temperature Sensor Signal Dynamic Chamber Circuit
+P1114 - Intake Air Temperature Sensor Circuit Low Input
+P1116 - ECT Sensor Circuit Out Of Self Test Range
+P1117 - ECT Sensor Signal Intermittent
+P1120 - Throttle Position Sensor Out Of Range Low
+P1121 - Throttle Position Sensor Signal Not Consistent With Mass Air Flow Signal
+P1122 - Throttle Position Stuck Closed
+P1123 - Throttle Position Stuck Open
+P1124 - Throttle Position Sensor Signal Out Of Self Test Range
+P1125 - Throttle Position Sensor Signal Intermittent
+P1126 - Throttle Position Narrow Range Sensor Circuit
+P1127 - HO2S Bank 1 Sensor 2 Heater Not On During Key On Engine Running Self Test
+P1128 - HO2S Bank 1 Sensor 1 Signals Swapped In Key On Engine Running Self Test
+P1129 - Downstream H02S Sensors Swapped
+P1130 - HO2S Bank 1 Sensor 1 Not Switching Fuel Control Limit Reached
+P1131 - HO2S Bank 1 Sensor 1 Signal Below 0.45v AF Ratio Too Lean
+P1132 - HO2S Bank 1 Sensor 1 Signal Above 0.45v AF Ratio Too Rich
+P1133 - Bank 1 Fuel Control Shifted Lean
+P1134 - Bank 1 Fuel Control Shifted Rich
+P1135 - HO2S Bank 1 Sensor 1 Heater Circuit Low Input
+P1136 - HO2S Bank 1 Sensor 1 Heater Circuit High Input
+P1137 - HO2S Bank 1 Sensor 2 Not Switching Fuel Control Limit Reached
+P1138 - HO2S Bank 1 Sensor 2 Signal Above 0.45v AF Ratio Too Rich
+P1141 - HO2S Bank 1 Sensor 2 Heater Circuit Low Input
+P1142 - HO2S Bank 1 Sensor 2 Heater Circuit High Input
+P1143 - HO2S Bank 1 Sensor 3 Signal Below 0.45v AF Ratio Too Lean
+P1144 - HO2S Bank 1 Sensor 3 Signal Above 0.45v AF Ratio Too Rich
+P1150 - HO2S Bank 2 Sensor 1 Not Switching Fuel Control Limit Reached
+P1151 - HO2S Bank 2 Sensor 1 Signal Below 0.45v AF Ratio Too Lean
+P1152 - HO2S Bank 2 Sensor 1 Signal Above 0.45v AF Ratio Too Rich
+P1153 - Bank 2 Fuel Control Shifted Lean FAOSC
+P1154 - Bank 2 Fuel Control Shifted Rich FAOSC
+P1169 - HO2S Bank 1 Sensor 1 Circuit Fixed Bank 1 Sensor 1
+P1170 - HO2S Bank 1 Sensor 1 Circuit Fixed Bank 1 Sensor 1
+P1173 - HO2S Bank 2 Sensor 1 Circuit Fixed Bank 2 Sensor 1
+P1182 - Fuel Shut Off Solenoid Circuit
+P1189 - Pump Speed Signal
+P1190 - Calibration Resistor Out Of Range
+P1191 - TP Controlled Circuit
+P1194 - ECM PCM A D Converter
+P1195 - EGR Boost Sensor Circuit
+P1196 - Ignition Switch Start Circuit
+P1197 - Mileage Switch Circuit
+P1213 - Start Injector Circuit
+P1221 - Traction Control System
+P1222 - Traction Control Output Circuit
+P1226 - Control Sleeve Sensor Circuit
+P1235 - Fuel Pump Control Circuit
+P1236 - Fuel Pump Control Out Range
+P1248 - Turbo Boost Pressure Not Detected
+P1250 - Pressure Regulator Control Solenoid Circuit
+P1251 - Air Mixture Solenoid Circuit
+P1252 - Pressure Regulator Control Solenoid 2 Circuit Malfunction
+P1260 - Anti-Theft System Signal Detected Engine Disabled
+P1270 - Engine RPM or Vehicle Speed Limit Reached
+P1279 - Control Sleeve Sensor Circuit Range Performance
+P1298 - Injector Driver Module Failure
+P1309 - Misfire Detection Monitor
+P1312 - Injection Pump Timing Actuator Circuit
+P1318 - Injection Timing Piston Position Sensor Circuit
+P1319 - Injection Timing Piston Position Sensor Circuit Range Performance
+P1345 - No CMP or SGC Signal
+P1351 - Ignition Diagnostic Monitor Signal Lost To PCM Or Out Of Range
+P1352 - Ignition Coil A Primary Circuit
+P1353 - Ignition Coil B Primary Circuit
+P1354 - Ignition Coil C Primary Circuit
+P1358 - Ignition Diagnostic Monitor Signal Out Of Self Test Range
+P1359 - SPOUT Signal Lost To Powertrain Control Module Or Out Of Range
+P1360 - Ignition Coil A Secondary Circuit
+P1361 - Ignition Coil B Secondary Circuit
+P1362 - Ignition Coil C Secondary Circuit
+P1364 - Ignition Coil Primary Circuit
+P1365 - Ignition Coil Secondary Circuit
+P1382 - Camshaft Position Timing Solenoid 1 Circuit
+P1387 - Camshaft Position Timing Solenoid 2 Circuit
+P1390 - Octane Adjust Shorting Bar Out Or Circuit Open
+P1400 - DPFE Sensor Circuit Low Input
+P1401 - DPFE Sensor Circuit High Input
+P1402 - EGR Valve Position Sensor Circuit
+P1405 - DPFE Sensor Upstream Hose Off Or Plugged
+P1406 - DPFE Sensor Downstream Hose Off Or Plugged
+P1407 - No EGR Flow Detected
+P1408 - EGR System Flow Out Of Key On Engine Running Self Test Range
+P1409 - EGR Vacuum Regulator Solenoid Circuit
+P1410 - EGR Boost Solenoid Valve Stuck
+P1412 - Exhaust Gas Recirculation Valve Frozen
+P1415 - Air Pump Circuit
+P1416 - Port Air Circuit
+P1417 - Port Air Relief Circuit
+P1418 - Split Air 1 Circuit
+P1419 - Split Air 2 Circuit
+P1439 - Floor Temp Switch Circuit
+P1443 - EVAP System Purge Flow Fault
+P1444 - EVAP Purge Flow Sensor Circuit Low Voltage
+P1445 - EVAP Purge Flow Sensor Circuit High Voltage
+P1446 - Evaporative Vacuum Solenoid Circuit
+P1449 - Evaporative Check Solenoid Circuit
+P1450 - Unable To Bleed Up Fuel Tank Vacuum
+P1451 - Canister Vent Solenoid Circuit
+P1455 - Fuel Tank Level Sensor Circuit
+P1456 - Fuel Tank Temperature Sensor Circuit
+P1457 - Purge Solenoid Control System
+P1458 - A/C Compressor Clutch Signal Fault
+P1475 - Fan Relay Low Circuit
+P1476 - Fan Relay High Circuit
+P1508 - Idle Air Control Circuit Open
+P1509 - Idle Air Control Circuit Shorted
+P1514 - High Load Neutral Drive Fault
+P1516 - Gear Change Neutral Drive Fault
+P1517 - Cranking Neutral Drive Fault
+P1534 - Restraint Deployment Indicator Circuit
+P1562 - Powertrain Control Module +B Voltage Low
+P1566 - TCM B+ Voltage Low
+P1569 - IMRC Circuit Low
+P1570 - IMRC Circuit High
+P1600 - Loss Of KAM Power Circuit Open
+P1601 - Powertrain Control Module Communication Line To TCM Error
+P1602 - Powertrain Control Module Communication Line To TCM Error, Immobilizer System Communication Error With Powertrain Control Module
+P1603 - Immobilizer System Fault
+P1604 - Immobilizer System Fault
+P1605 - Powertrain Control Module Keep Alive Memory Test Error
+P1608 - Powertrain Control Module ECM CPU DTC Test Fault
+P1609 - Powertrain Control Module ECM CPU Knock Sensor Circuit
+P1621 - Immobilizer System Fault
+P1622 - Immobilizer System Fault
+P1623 - Immobilizer System Fault
+P1624 - Immobilizer System Fault
+P1627 - Powertrain Control Module ECM TCS Line Communication Error
+P1628 - Powertrain Control Module ECM TCS Any Line Communication Error
+P1630 - Alternator Regulator 1 Control Circuit
+P1631 - Generator Output Voltage Signal No Output
+P1632 - Battery Voltage Detection Circuit for Alternator Regulator
+P1633 - Battery Overcharge Fault
+P1634 - Generator Terminal B Circuit Open
+P1645 - Fuel Pump Resistor Switch Circuit
+P1649 - Fuel Injection Pump Module
+P1650 - Power Steering Pressure Switch Out Of Range Fault
+P1651 - Power Steering Pressure Switch Circuit
+P1652 - Power Steering Pressure Switch Circuit
+P1680 - Metering Oil Pump Failure
+P1682 - Metering Oil Pump Failure
+P1683 - Metering Oil Pump Temperature Sensor Circuit
+P1684 - Metering Oil Pump Position Sensor Circuit
+P1685 - Metering Oil Pump Stepping Motor Cont Circuit
+P1686 - Metering Oil Pump Stepping Motor Cont Circuit
+P1687 - Metering Oil Pump Stepping Motor Cont Circuit
+P1688 - Metering Oil Pump Stepping Motor Cont Circuit
+P1689 - Oil Pressure Control Solenoid Circuit
+P1690 - Wastegate Solenoid Circuit
+P1691 - Turbo Pressure Control Solenoid Circuit
+P1692 - Turbo Control Solenoid Circuit
+P1693 - Turbo Charge Control Circuit
+P1694 - Turbo Charge Relief Circuit
+P1701 - Transmission Range Sensor Reverse Engagement Error
+P1702 - Transmission Range Sensor Circuit Intermittent
+P1703 - Brake On Off Switch Out Of Self Test Range
+P1705 - Transmission Range Sensor Out Of Self Test Range
+P1706 - High Vehicle Speed Observed In Park
+P1708 - Clutch Switch Circuit
+P1709 - Clutch Pedal Position Switch Circuit
+P1710 - Transmission Control Module Solenoid Internal Ground Circuit
+P1711 - Transmission Fluid Temperature Sensor Circuit Out Of Self Test Range
+P1713 - Transmission Fluid Temperature Sensor Circuit
+P1714 - Shift Solenoid 1 Mechanical Fault
+P1715 - Shift Solenoid 2 Mechanical Fault
+P1716 - Shift Solenoid 3 Mechanical Fault
+P1717 - Shift Solenoid 4 Mechanical Fault
+P1718 - Transmission Fluid Temperature Sensor Circuit
+P1719 - Engine Torque Signal
+P1720 - Vehicle Speed Sensor 2 Signal Error
+P1721 - Gear 1 Incorrect Ratio
+P1722 - Gear 2 Incorrect Ratio
+P1723 - Gear 3 Incorrect Ratio
+P1724 - Gear 4 Incorrect Ratio
+P1729 - Transmission 4x4 Low Switch Error
+P1735 - First Gear Switch Circuit Failure
+P1736 - Second Gear Switch Circuit Failure
+P1737 - Lockup Solenoid
+P1738 - Shift Time Error
+P1739 - Slip Solenoid
+P1740 - Torque Converter Clutch Solenoid Mechanical Fault
+P1741 - Torque Converter Clutch Control Electrical Fault
+P1742 - Torque Converter Clutch Solenoid Shorted
+P1743 - Torque Converter Clutch Failed On TCIL Is On
+P1744 - Torque Converter Clutch Solenoid Mechanical Fault
+P1745 - Line Pressure Solenoid
+P1746 - Electronic Pressure Control Solenoid Circuit Open
+P1747 - Electronic Pressure Control Solenoid Circuit
+P1748 - Pressure Control Solenoid A
+P1749 - Electronic Pressure Control Solenoid Circuit Low
+P1751 - Transmission Shift Solenoid A Mechanical Fault
+P1752 - Transmission Shift Solenoid A Circuit Shorted
+P1754 - Transmission Coast Clutch Solenoid Electrical Fault
+P1756 - Transmission Shift Solenoid B Mechanical Fault
+P1757 - Transmission Shift Solenoid B Circuit Shorted
+P1759 - 2-4 Brake Failsafe Valve Malfunction
+P1761 - Transmission Shift Solenoid 3 Mechanical Fault
+P1762 - Transmission SS3 SS4 OD Band Fault
+P1763 - Low And Reverse Brake Pressure Switch Circuit
+P1764 - Low And Reverse Brake Failsafe Valve Malfunction
+P1765 - Transmission 3-2 Timing Solenoid Valve
+P1767 - Torque Converter Clutch Solenoid Circuit
+P1770 - Clutch Solenoid Circuit
+P1771 - Throttle Position Sensor Circuit Open To Transmission Control Module
+P1772 - Throttle Position Sensor Circuit Shorted To Transmission Control Module
+P1775 - Torque Down Signal 1 Circuit
+P1776 - Torque Down Signal 2 Circuit
+P1777 - Torque Down Response Signal Circuit
+P1780 - Transmission Control Switch Circuit, Overdrive Off Switch Not Cycled During The Self Test
+P1781 - Transmission 4x4 Low Switch Out Of Range Fault
+P1783 - Transmission Fluid Temperature High Input
+P1788 - Pressure Control Solenoid B Circuit Open
+P1789 - Pressure Control Solenoid B Circuit Shorted
+P1790 - TP Mechanical Circuit
+P1791 - TP Electric Circuit
+P1792 - Barometer Pressure Circuit
+P1793 - Intake Air Volume Circuit
+P1794 - Powertrain Control Module Battery Direct Power Circuit
+P1795 - Idle Switch Circuit
+P1796 - Kick Down Switch Circuit
+P1797 - P/N Switch Open Or Short Circuit
+P1798 - Coolant Temperature Circuit
+P1799 - Hold Switch Circuit
+P1900 - Turbine Speed Sensor Circuit Intermittent
+P1901 - Torque Converter Clutch Circuit Intermittent

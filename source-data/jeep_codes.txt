@@ -1,0 +1,98 @@
+P1105 - Open Or Shorted Condition Detected In The Baro Read Solenoid Control Circuit
+P1192 - Inlet Air Temp. Circuit Low
+P1193 - Inlet Air Temp. Circuit High
+P1194 - Incorrect Or Irrational Performance Has Been Detected For The PWM
+P1195 - O2 Sensor 1/1 (Bank 1 Sensor 1) Slow During Catalyst Monitor
+P1196 - O2 Sensor 2/1 (Bank 2 Sensor 1) Slow During Catalyst Monitor
+P1197 - O2 Sensor 1/2 (Bank 1 Sensor 2) Slow During Catalyst Monitor
+P1198 - Radiator Temperature Sensor Voltage Too High
+P1199 - Radiator Temperature Sensor Voltage Too Low
+P1243 - Open Or Shorted Condition Detected In The Turbocharger Surge Valve Solenoid Control
+P1280 - Open Or Shorted Condition Detected In The Fuel System Relay Control Circuit
+P1281 - Engine Operating Temp Below Acceptable Range
+P1282 - Fuel Pump Relay Control Circuit Open Or Shorted
+P1283 - Idle Select Signal Invalid
+P1284 - Fuel Injection Pump Battery Voltage Out Of Range
+P1285 - Fuel Injection Pump Controller Always On
+P1286 - Accelerator Pedal Position Sensor Supply Voltage Too High
+P1287 - Fuel Injection Pump Controller Supply Voltage Low
+P1288 - Intake Manifold Short Runner Solenoid Circuit Open Or Shorted
+P1289 - Manifold Tune Valve Solenoid Circuit Open Or Shorted
+P1290 - CNG Fuel Pressure Too High
+P1291 - No Temp Rise Seen From Fuel Heaters
+P1292 - CNG Pressure Sensor Voltage Too High
+P1293 - CNG Pressure Sensor Voltage Too Low
+P1294 - Target Idle Not Reached
+P1295 - Loss Of 5 Volts To TP Sensor
+P1296 - Loss Of 5 Volts To MAP Sensor
+P1297 - No Change In MAP From Start To Run
+P1298 - Lean Operation At Wide Open Throttle
+P1299 - Vacuum Leak Found (IAC Fully Seated)
+P1388 - Auto Shutdown (ASD) Relay Control Circuit Open Or Shorted
+P1389 - No Auto Shutdown (ASD) Relay Output Voltage At PCM
+P1390 - Timing Belt Skipped One Tooth Or More
+P1391 - Intermittent Loss of CMP Or CKP
+P1398 - PCM Is Unable To Learn The Crankshaft Position Sensor's Signal
+P1399 - Wait To Start Lamp Circuit Open Or Shorted
+P1403 - Loss Of 5 Volts To EGR Sensor
+P1475 - Auxiliary 5 Volt Output Too High
+P1476 - Too Little Secondary Air
+P1477 - Too Much Secondary Air
+P1478 - Battery Temp Sensor Voltage Out Of Limit
+P1479 - Transmission Fan Relay Circuit Open Or Shorted
+P1480 - PCV Solenoid Valve Open Or Shorted
+P1480 - Open Or Shorted Condition Detected In The Positive Crankcase Ventilation (PCV
+P1481 - EATX RPM Pulse Generator Signal For Misfire Detection
+P1482 - Catalyst Temperature Sensor Circuit Shorted Low
+P1483 - Catalyst Temperature Sensor Circuit Shorted High
+P1484 - Catalytic Converter Overheat Detected
+P1485 - Air Injection Solenoid Circuit Open Or Shorted
+P1486 - Evap Leak Monitor Pinched Hose
+P1487 - Hi Speed Rad Fan CTRL Relay Circuit Open Or Shorted
+P1488 - Auxiliary 5 Volt Supply Output Too Low
+P1489 - High Speed Fan CTRL Relay Circuit Open Or Shorted
+P1490 - Low Speed Fan CTRL Relay Circuit Open Or Shorted
+P1491 - Radiator Fan Control Relay Circuit Open Or Shorted
+P1492 - Battery Temperature Sensor Voltage Too High
+P1493 - Battery Temperature Sensor Voltage Too Low
+P1494 - Leak Detection Pump Switch Or Mechanical Fault
+P1495 - Leak Detection Pump Solenoid Circuit Open Or Shorted
+P1496 - 5 Volt Supply Output Too Low
+P1498 - High Speed Rad Fan Ground CTRL Rly Circuit
+P1499 - Open Or Shorted Condition Detected In The Hydraulic Cooling Fan Solenoid Control
+P1594 - Charging System Voltage Too High
+P1595 - Speed Control Solenoid Circuit Open Or Shorted
+P1596 - Speed Control Switch Always High
+P1597 - Speed Control Switch Always Low
+P1598 - A/C Pressure Sensor Voltage Too High
+P1599 - A/C Pressure Sensor Voltage Too Low
+P1602 - PCM Not Programmed
+P1680 - Clutch Released Switch Circuit Open Or Shorted
+P1681 - No Instrument Panel Cluster CCD/J1850 Messages Received
+P1682 - Charging System Voltage Too Low
+P1683 - Speed Control Power Relay Or Speed Control 12 Volt Driver Circuit Open Or Shorted
+P1684 - Battery Disconnected Within Last 50 Starts
+P1685 - Skim Invalid Key
+P1686 - No SKIM Bus Message Received
+P1687 - No Cluster Bus Message
+P1688 - Internal Fuel Injection Pump Controller Failure
+P1689 - No Communication Between ECM & Injection Pump Module
+P1690 - Fuel Injection Pump CKP Sensor Does Not Agree With ECM CKP Sensor
+P1691 - Fuel Injection Pump Controller Calibration Failure
+P1693 - DTC Detected In ECM Or PCM
+P1694 - No CCD Messages Received From ECM
+P1695 - No CCD/J1850 Message From BCM
+P1696 - PCM Failure EEPROM Write Denied
+P1697 - PCM Failure SRI Mile Not Stored
+P1698 - No CCD Messages Received From PCM
+P1699 - No CCD/J1850 Messages Received From The Climate Control Module (CCM)
+P1719 - Skip Shift Solenoid Circuit Open Or Shorted
+P1740 - TCC Or OD Solenoid Performance
+P1756 - Governor Pressure Not Equal To Target At 15 20 PSI
+P1757 - Governor Pressure Above 3 PSI When Request Is 0 PSI
+P1762 - Governor Pressure Sensor Offset Improper Voltage
+P1763 - Governor Pressure Sensor Voltage Too High
+P1764 - Governor Pressure Sensor Voltage Too Low
+P1765 - Trans 12 Volt Supply Relay Control Circuit Open Or Shorted
+P1830 - Open Or Shorted Condition Detected In The Clutch Pedal Switch Over-Ride Relay Control
+P1899 - Park Neutral Position Switch Stuck In Park or In Gear
