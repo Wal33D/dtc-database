@@ -42,55 +42,109 @@ for dtc in results[:3]:
     print(f"{dtc.code}: {dtc.description}")
 ```
 
-### Java/Android
+### Java Core
 ```java
-DTCDatabase db = new DTCDatabase("data/dtc_codes.db");
+import com.dtcdatabase.DTCDatabaseCore;
+
+DTCDatabaseCore db = new DTCDatabaseCore("data/dtc_codes.db");
 
 // Look up a code
-DTC dtc = db.getDTC("P0420");
-System.out.println(dtc.getCode() + ": " + dtc.getDescription());
+DTCDatabaseCore.DTC dtc = db.getDTC("P0420");
+System.out.println(dtc.code + ": " + dtc.description);
 
 // Search for codes
-List<DTC> results = db.search("misfire");
+List<DTCDatabaseCore.DTC> results = db.search("misfire", 50);
+```
+
+### Android
+```java
+import com.dtcdatabase.DTCDatabase;
+
+// Initialize (in Activity or Application)
+DTCDatabase db = DTCDatabase.getInstance(context);
+
+// Single code lookup
+String description = db.getDescription("P0420");
+Log.d("DTC", description);
+// Output: Catalyst System Efficiency Below Threshold Bank 1
+
+// Search for codes
+List<DTCDatabase.DTC> results = db.searchByKeyword("oxygen");
+for (DTCDatabase.DTC dtc : results) {
+    Log.d("DTC", dtc.code + ": " + dtc.description);
+}
+
+// Get manufacturer-specific codes
+List<DTCDatabase.DTC> fordCodes = db.getManufacturerCodes("FORD");
 ```
 
 
 ## Installation
 
+### Python
 ```bash
 # Clone the repository
 git clone https://github.com/Wal33D/dtc-database.git
 cd dtc-database
 
-# For Python projects
+# Use directly (no dependencies required)
 from python.dtc_database import DTCDatabase
+```
 
-# For Java projects - add SQLite JDBC dependency
+### Java
+```bash
+# Add as submodule or copy DTCDatabaseCore.java
+# Requires SQLite JDBC dependency
 # Maven: org.xerial:sqlite-jdbc:3.36.0.3
 ```
 
-No external dependencies required for Python (uses standard library).
+### Android
+```gradle
+// In your root settings.gradle:
+include ':dtc-database-android'
+project(':dtc-database-android').projectDir = new File(rootDir, 'libs/dtc-database/android/dtc-database-android')
+
+// In your app build.gradle:
+implementation project(':dtc-database-android')
+
+// Database file (2.7 MB) is automatically included in assets
+// No external dependencies required - uses Android SQLite
+```
+
+**Note**: Place the 2.7 MB `dtc_codes.db` file in `android/dtc-database-android/src/main/assets/` (included in repository).
 
 ## Directory Structure
 
 ```
 dtc-database/
 ├── data/
-│   ├── dtc_codes.db         # SQLite database (2.7 MB)
-│   ├── lib/                 # Data processing libraries
-│   └── source-data/         # Original data sources (38 files)
+│   ├── dtc_codes.db                # SQLite database (2.7 MB)
+│   ├── lib/                        # JAR dependencies for Java
+│   └── source-data/                # 38 text files with code definitions
 ├── python/
-│   └── dtc_database.py      # Python implementation
+│   └── dtc_database.py             # Python implementation
 ├── java/
-│   ├── DTCDatabase.java     # Java implementation
-│   └── DTC.java            # DTC model class
+│   ├── DTCDatabaseCore.java        # Java core implementation
+│   └── DTCDatabaseAndroid.java     # Legacy Android (use android/ module instead)
+├── android/                        # Android library module
+│   └── dtc-database-android/
+│       ├── src/main/
+│       │   ├── assets/
+│       │   │   └── dtc_codes.db    # Database file (2.7 MB)
+│       │   ├── java/com/dtcdatabase/
+│       │   │   └── DTCDatabase.java # Android SQLiteOpenHelper implementation
+│       │   └── AndroidManifest.xml
+│       ├── build.gradle            # Android library configuration
+│       └── consumer-rules.pro      # ProGuard rules
 ├── docs/
-│   ├── API.md              # Complete API reference
-│   ├── INSTALLATION.md     # Setup guide
-│   └── USAGE.md            # Usage examples
-├── build_database.py        # Database builder
-├── test.py                  # Test suite
-└── README.md               # This file
+│   ├── API.md                      # Complete API reference
+│   ├── INSTALLATION.md             # Setup guide
+│   └── USAGE.md                    # Usage examples
+├── .github/workflows/
+│   └── ci.yml                      # CI/CD for Python, Java, and Android
+├── build_database.py               # Database builder script
+├── test.py                         # Python test suite
+└── README.md                       # This file
 ```
 
 ## Database Statistics
