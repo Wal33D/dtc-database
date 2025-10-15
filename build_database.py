@@ -29,9 +29,11 @@ def build_database():
             code TEXT NOT NULL,
             manufacturer TEXT NOT NULL,
             description TEXT NOT NULL,
+            type TEXT NOT NULL,
+            locale TEXT NOT NULL DEFAULT 'en',
             is_generic BOOLEAN DEFAULT 0,
             source_file TEXT,
-            PRIMARY KEY (code, manufacturer)
+            PRIMARY KEY (code, manufacturer, locale)
         )
     ''')
 
@@ -39,13 +41,15 @@ def build_database():
     cursor.execute('CREATE INDEX idx_code ON dtc_definitions(code)')
     cursor.execute('CREATE INDEX idx_manufacturer ON dtc_definitions(manufacturer)')
     cursor.execute('CREATE INDEX idx_generic ON dtc_definitions(is_generic)')
+    cursor.execute('CREATE INDEX idx_locale ON dtc_definitions(locale)')
+    cursor.execute('CREATE INDEX idx_type ON dtc_definitions(type)')
 
-    # Create view for generic codes
+    # Create view for generic codes (English by default)
     cursor.execute('''
         CREATE VIEW generic_codes AS
-        SELECT DISTINCT code, description
+        SELECT DISTINCT code, description, type
         FROM dtc_definitions
-        WHERE is_generic = 1
+        WHERE is_generic = 1 AND locale = 'en'
     ''')
 
     # Create statistics table
@@ -91,13 +95,16 @@ def build_database():
 
                         # Skip obvious data errors
                         if len(code) == 5 and code[0] in 'PBCU':
+                            # Extract code type (P, B, C, or U)
+                            code_type = code[0]
+
                             # Insert definition
                             try:
                                 cursor.execute('''
                                     INSERT INTO dtc_definitions
-                                    (code, manufacturer, description, is_generic, source_file)
-                                    VALUES (?, ?, ?, ?, ?)
-                                ''', (code, manufacturer, desc, is_generic, file_name))
+                                    (code, manufacturer, description, type, locale, is_generic, source_file)
+                                    VALUES (?, ?, ?, ?, 'en', ?, ?)
+                                ''', (code, manufacturer, desc, code_type, is_generic, file_name))
 
                                 total_entries += 1
 

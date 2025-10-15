@@ -56,10 +56,13 @@ public class DTCDatabase extends SQLiteOpenHelper {
     private static final String COL_DESCRIPTION = "description";
     private static final String COL_TYPE = "type";
     private static final String COL_MANUFACTURER = "manufacturer";
+    private static final String COL_LOCALE = "locale";
+    private static final String COL_IS_GENERIC = "is_generic";
 
     private Context context;
     private static DTCDatabase instance;
     private String databasePath;
+    private String currentLocale = "en"; // Default to English
 
     // Cache for frequently accessed codes (limit to 100 entries)
     private Map<String, String> descriptionCache = new HashMap<>();
@@ -129,10 +132,13 @@ public class DTCDatabase extends SQLiteOpenHelper {
         // Database is copied from assets, so onCreate is not typically called
         // But we include the schema for reference
         String createTable = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" +
-                COL_CODE + " TEXT PRIMARY KEY, " +
+                COL_CODE + " TEXT NOT NULL, " +
+                COL_MANUFACTURER + " TEXT NOT NULL, " +
                 COL_DESCRIPTION + " TEXT NOT NULL, " +
-                COL_TYPE + " TEXT, " +
-                COL_MANUFACTURER + " TEXT)";
+                COL_TYPE + " TEXT NOT NULL, " +
+                COL_LOCALE + " TEXT NOT NULL DEFAULT 'en', " +
+                COL_IS_GENERIC + " BOOLEAN DEFAULT 0, " +
+                "PRIMARY KEY (" + COL_CODE + ", " + COL_MANUFACTURER + ", " + COL_LOCALE + "))";
         db.execSQL(createTable);
     }
 
@@ -145,67 +151,130 @@ public class DTCDatabase extends SQLiteOpenHelper {
     }
 
     /**
-     * Get description for a DTC code
+     * Get description for a DTC code (generic codes only, current locale)
      *
      * @param code The DTC code (e.g., "P0420", case-insensitive)
      * @return Description or null if not found
      */
     public String getDescription(String code) {
+        return getDescription(code, null);
+    }
+
+    /**
+     * Get description for a DTC code with manufacturer context
+     * Falls back to generic if manufacturer-specific not found
+     *
+     * @param code The DTC code (e.g., "P0420", case-insensitive)
+     * @param manufacturer Manufacturer name (e.g., "FORD", null for generic only)
+     * @return Description or null if not found
+     */
+    public String getDescription(String code, String manufacturer) {
         if (code == null || code.isEmpty()) {
             return null;
         }
 
         String upperCode = code.toUpperCase();
+        String cacheKey = upperCode + ":" + (manufacturer != null ? manufacturer : "GENERIC") + ":" + currentLocale;
 
         // Check cache first
-        if (descriptionCache.containsKey(upperCode)) {
-            return descriptionCache.get(upperCode);
+        if (descriptionCache.containsKey(cacheKey)) {
+            return descriptionCache.get(cacheKey);
         }
 
         SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT " + COL_DESCRIPTION + " FROM " + TABLE_NAME +
-                      " WHERE " + COL_CODE + " = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{upperCode});
-
         String description = null;
-        if (cursor.moveToFirst()) {
-            description = cursor.getString(0);
 
-            // Add to cache if not full
-            if (descriptionCache.size() < CACHE_MAX_SIZE) {
-                descriptionCache.put(upperCode, description);
+        // Try manufacturer-specific first if provided
+        if (manufacturer != null && !manufacturer.isEmpty()) {
+            String query = "SELECT " + COL_DESCRIPTION + " FROM " + TABLE_NAME +
+                          " WHERE " + COL_CODE + " = ? AND " + COL_MANUFACTURER + " = ? AND " + COL_LOCALE + " = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{upperCode, manufacturer.toUpperCase(), currentLocale});
+
+            if (cursor.moveToFirst()) {
+                description = cursor.getString(0);
             }
+            cursor.close();
         }
-        cursor.close();
+
+        // Fall back to generic code if no manufacturer-specific found
+        if (description == null) {
+            String query = "SELECT " + COL_DESCRIPTION + " FROM " + TABLE_NAME +
+                          " WHERE " + COL_CODE + " = ? AND " + COL_MANUFACTURER + " = 'GENERIC' AND " + COL_LOCALE + " = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{upperCode, currentLocale});
+
+            if (cursor.moveToFirst()) {
+                description = cursor.getString(0);
+            }
+            cursor.close();
+        }
+
+        // Add to cache if found and cache not full
+        if (description != null && descriptionCache.size() < CACHE_MAX_SIZE) {
+            descriptionCache.put(cacheKey, description);
+        }
 
         return description;
     }
 
     /**
-     * Get full DTC object with all information
+     * Get full DTC object with all information (generic only)
      *
      * @param code The DTC code
      * @return DTC object or null if not found
      */
     public DTC getDTC(String code) {
+        return getDTC(code, null);
+    }
+
+    /**
+     * Get full DTC object with manufacturer context
+     * Falls back to generic if manufacturer-specific not found
+     *
+     * @param code The DTC code
+     * @param manufacturer Manufacturer name (null for generic only)
+     * @return DTC object or null if not found
+     */
+    public DTC getDTC(String code, String manufacturer) {
         if (code == null || code.isEmpty()) {
             return null;
         }
 
         SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_CODE + " = ?";
-        Cursor cursor = db.rawQuery(query, new String[]{code.toUpperCase()});
-
         DTC dtc = null;
-        if (cursor.moveToFirst()) {
-            dtc = new DTC(
-                cursor.getString(cursor.getColumnIndexOrThrow(COL_CODE)),
-                cursor.getString(cursor.getColumnIndexOrThrow(COL_DESCRIPTION)),
-                cursor.getString(cursor.getColumnIndexOrThrow(COL_TYPE)),
-                cursor.getString(cursor.getColumnIndexOrThrow(COL_MANUFACTURER))
-            );
+
+        // Try manufacturer-specific first if provided
+        if (manufacturer != null && !manufacturer.isEmpty()) {
+            String query = "SELECT * FROM " + TABLE_NAME +
+                          " WHERE " + COL_CODE + " = ? AND " + COL_MANUFACTURER + " = ? AND " + COL_LOCALE + " = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{code.toUpperCase(), manufacturer.toUpperCase(), currentLocale});
+
+            if (cursor.moveToFirst()) {
+                dtc = new DTC(
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_CODE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_DESCRIPTION)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_TYPE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_MANUFACTURER))
+                );
+            }
+            cursor.close();
         }
-        cursor.close();
+
+        // Fall back to generic if no manufacturer-specific found
+        if (dtc == null) {
+            String query = "SELECT * FROM " + TABLE_NAME +
+                          " WHERE " + COL_CODE + " = ? AND " + COL_MANUFACTURER + " = 'GENERIC' AND " + COL_LOCALE + " = ?";
+            Cursor cursor = db.rawQuery(query, new String[]{code.toUpperCase(), currentLocale});
+
+            if (cursor.moveToFirst()) {
+                dtc = new DTC(
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_CODE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_DESCRIPTION)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_TYPE)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_MANUFACTURER))
+                );
+            }
+            cursor.close();
+        }
 
         return dtc;
     }
@@ -245,6 +314,7 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
     /**
      * Search codes by keyword with custom limit
+     * Searches in current locale only
      *
      * @param keyword Search term (case-insensitive)
      * @param limit Maximum number of results
@@ -259,10 +329,10 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME +
-                      " WHERE " + COL_DESCRIPTION + " LIKE ? " +
-                      " OR " + COL_CODE + " LIKE ? LIMIT ?";
+                      " WHERE (" + COL_DESCRIPTION + " LIKE ? OR " + COL_CODE + " LIKE ?) " +
+                      " AND " + COL_LOCALE + " = ? LIMIT ?";
         String searchTerm = "%" + keyword + "%";
-        Cursor cursor = db.rawQuery(query, new String[]{searchTerm, searchTerm, String.valueOf(limit)});
+        Cursor cursor = db.rawQuery(query, new String[]{searchTerm, searchTerm, currentLocale, String.valueOf(limit)});
 
         while (cursor.moveToNext()) {
             results.add(new DTC(
@@ -289,6 +359,7 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
     /**
      * Get codes by type with custom limit
+     * Returns codes in current locale only
      *
      * @param type Code type character ('P', 'B', 'C', or 'U')
      * @param limit Maximum number of results
@@ -299,8 +370,8 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME +
-                      " WHERE " + COL_TYPE + " = ? LIMIT ?";
-        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(type), String.valueOf(limit)});
+                      " WHERE " + COL_TYPE + " = ? AND " + COL_LOCALE + " = ? LIMIT ?";
+        Cursor cursor = db.rawQuery(query, new String[]{String.valueOf(type), currentLocale, String.valueOf(limit)});
 
         while (cursor.moveToNext()) {
             results.add(new DTC(
@@ -327,6 +398,7 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
     /**
      * Get manufacturer-specific codes with custom limit
+     * Returns codes in current locale only
      *
      * @param manufacturer Manufacturer name (case-insensitive)
      * @param limit Maximum number of results
@@ -341,8 +413,8 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME +
-                      " WHERE " + COL_MANUFACTURER + " = ? LIMIT ?";
-        Cursor cursor = db.rawQuery(query, new String[]{manufacturer.toLowerCase(), String.valueOf(limit)});
+                      " WHERE " + COL_MANUFACTURER + " = ? AND " + COL_LOCALE + " = ? LIMIT ?";
+        Cursor cursor = db.rawQuery(query, new String[]{manufacturer.toUpperCase(), currentLocale, String.valueOf(limit)});
 
         while (cursor.moveToNext()) {
             results.add(new DTC(
@@ -407,6 +479,28 @@ public class DTCDatabase extends SQLiteOpenHelper {
      */
     public void clearCache() {
         descriptionCache.clear();
+    }
+
+    /**
+     * Set the current locale for code lookups
+     * Clears the cache when locale changes
+     *
+     * @param locale Locale code (e.g., "en", "es", "de")
+     */
+    public void setLocale(String locale) {
+        if (locale != null && !locale.equals(this.currentLocale)) {
+            this.currentLocale = locale;
+            clearCache();
+        }
+    }
+
+    /**
+     * Get the current locale
+     *
+     * @return Current locale code
+     */
+    public String getLocale() {
+        return currentLocale;
     }
 
     /**
