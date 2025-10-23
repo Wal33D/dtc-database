@@ -2,8 +2,6 @@
 
 Comprehensive OBD-II Diagnostic Trouble Code Database with 28,220+ codes including manufacturer-specific definitions.
 
-**Author**: Wal33D
-**Email**: aquataze@yahoo.com
 **License**: MIT
 
 ## Overview
@@ -271,8 +269,6 @@ Contributions welcome! To add new codes:
 For issues, questions, or feature requests:
 
 - **GitHub Issues**: https://github.com/Wal33D/dtc-database/issues
-- **Author**: Waleed Judah (Wal33D)
-- **Email**: aquataze@yahoo.com
 
 ## License
 
