@@ -1,0 +1,64 @@
+{
+  "name": "@wal33d/dtc-database",
+  "version": "1.0.0",
+  "description": "Comprehensive OBD-II Diagnostic Trouble Code database with 28,220+ codes. Supports generic SAE J2012 and manufacturer-specific codes.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "dtc",
+    "diagnostic-codes",
+    "obd2",
+    "obd-ii",
+    "obdii",
+    "car",
+    "vehicle",
+    "automotive",
+    "diagnostics",
+    "trouble-codes",
+    "sae-j2012",
+    "typescript",
+    "javascript"
+  ],
+  "author": "Wal33D <aquataze@yahoo.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wal33D/dtc-database.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wal33D/dtc-database/issues"
+  },
+  "homepage": "https://github.com/Wal33D/dtc-database#readme",
+  "dependencies": {
+    "better-sqlite3": "^9.6.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.10",
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.5.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist",
+    "../data/dtc_codes.db",
+    "README.md",
+    "LICENSE"
+  ]
+}
