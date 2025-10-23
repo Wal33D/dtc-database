@@ -58,8 +58,12 @@ export class DTCDatabase {
 
     try {
       this.db = new Database(dbPath, { readonly: readOnly, fileMustExist: true });
-      this.db.pragma('journal_mode = WAL');
-      this.db.pragma('synchronous = NORMAL');
+      // Only set WAL mode and synchronous pragma if not in read-only mode
+      // WAL mode requires write permissions which aren't available in read-only mode
+      if (!readOnly) {
+        this.db.pragma('journal_mode = WAL');
+        this.db.pragma('synchronous = NORMAL');
+      }
     } catch (error) {
       throw new Error(`Failed to open database at ${dbPath}: ${error}`);
     }
