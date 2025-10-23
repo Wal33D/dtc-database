@@ -10,6 +10,16 @@ Comprehensive OBD-II Diagnostic Trouble Code Database with 28,220+ codes includi
 
 The most complete open-source diagnostic trouble code database for OBD-II applications. Features both generic SAE J2012 standard codes and manufacturer-specific definitions for accurate vehicle diagnostics.
 
+## Sister Projects
+
+Part of the NHTSA automotive diagnostic toolkit:
+
+- **[nhtsa-vin-decoder](https://github.com/Wal33D/nhtsa-vin-decoder)** - Decode Vehicle Identification Numbers to get make/model/year
+- **[nhtsa-recall-lookup](https://github.com/Wal33D/nhtsa-recall-lookup)** - Look up safety recalls by vehicle
+- **[dtc-database](https://github.com/Wal33D/dtc-database)** - This project (DTC code database)
+
+See [INTEGRATION.md](INTEGRATION.md) for examples using all three together.
+
 ## Features
 
 - **28,220 diagnostic trouble codes** in SQLite database
