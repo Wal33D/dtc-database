@@ -2,6 +2,16 @@ import Database from 'better-sqlite3';
 import * as path from 'path';
 import { DTC, DTCType, DTCStatistics, DatabaseOptions } from './types';
 
+/** Database row structure */
+interface DTCRow {
+  code: string;
+  description: string;
+  type: string;
+  manufacturer: string;
+  is_generic?: number;
+  count?: number;
+}
+
 /**
  * DTC Database - OBD-II Diagnostic Trouble Code Database
  *
@@ -81,8 +91,8 @@ export class DTCDatabase {
         `);
 
     const result = manufacturer
-      ? stmt.get(normalizedCode, manufacturer)
-      : stmt.get(normalizedCode);
+      ? stmt.get(normalizedCode, manufacturer) as DTCRow | undefined
+      : stmt.get(normalizedCode) as DTCRow | undefined;
 
     if (!result) return null;
 
@@ -116,7 +126,7 @@ export class DTCDatabase {
 
     // Update cache (LRU-style)
     if (this.cache.size >= this.cacheSize) {
-      const firstKey = this.cache.keys().next().value;
+      const firstKey = this.cache.keys().next().value as string;
       this.cache.delete(firstKey);
     }
     this.cache.set(cacheKey, dtc.description);
@@ -141,7 +151,7 @@ export class DTCDatabase {
     `);
 
     const searchTerm = `%${keyword}%`;
-    const results = stmt.all(searchTerm, searchTerm, limit);
+    const results = stmt.all(searchTerm, searchTerm, limit) as DTCRow[];
 
     return results.map(row => ({
       code: row.code,
@@ -187,7 +197,7 @@ export class DTCDatabase {
       LIMIT ?
     `);
 
-    const results = stmt.all(type.toUpperCase(), limit);
+    const results = stmt.all(type.toUpperCase(), limit) as DTCRow[];
 
     return results.map(row => ({
       code: row.code,
@@ -214,7 +224,7 @@ export class DTCDatabase {
       LIMIT ?
     `);
 
-    const results = stmt.all(manufacturer.toUpperCase(), limit);
+    const results = stmt.all(manufacturer.toUpperCase(), limit) as DTCRow[];
 
     return results.map(row => ({
       code: row.code,
@@ -250,10 +260,10 @@ export class DTCDatabase {
       GROUP BY manufacturer
     `);
 
-    const total = totalStmt.get().count;
-    const generic = genericStmt.get().count;
-    const typeCounts = typeStmt.all();
-    const mfrCounts = mfrStmt.all();
+    const total = (totalStmt.get() as DTCRow).count!;
+    const generic = (genericStmt.get() as DTCRow).count!;
+    const typeCounts = typeStmt.all() as DTCRow[];
+    const mfrCounts = mfrStmt.all() as DTCRow[];
 
     const stats: DTCStatistics = {
       totalCodes: total,
@@ -268,15 +278,15 @@ export class DTCDatabase {
 
     for (const row of typeCounts) {
       switch (row.type) {
-        case 'P': stats.pCodes = row.count; break;
-        case 'B': stats.bCodes = row.count; break;
-        case 'C': stats.cCodes = row.count; break;
-        case 'U': stats.uCodes = row.count; break;
+        case 'P': stats.pCodes = row.count!; break;
+        case 'B': stats.bCodes = row.count!; break;
+        case 'C': stats.cCodes = row.count!; break;
+        case 'U': stats.uCodes = row.count!; break;
       }
     }
 
     for (const row of mfrCounts) {
-      stats.manufacturers[row.manufacturer] = row.count;
+      stats.manufacturers[row.manufacturer] = row.count!;
     }
 
     return stats;
