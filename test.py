@@ -1,48 +1,59 @@
 #!/usr/bin/env python3
 """
-Test script for DTC Database
-Author: Wal33D
+Basic runtime tests for the Python DTC database wrapper.
 """
 
-import sys
 import os
+import sys
+
 sys.path.insert(0, os.path.dirname(__file__))
 
 from python.dtc_database import DTCDatabase
 
+
 def test_dtc_database():
-    """Test basic DTC database functionality"""
     print("Testing DTC Database...")
     print("-" * 50)
 
-    # Initialize database
-    db = DTCDatabase(db_path='data/dtc_codes.db')
+    db = DTCDatabase(db_path="data/dtc_codes.db")
 
-    # Test generic codes
-    test_codes = ['P0171', 'P0300', 'B0001', 'C0035', 'U0100']
+    # Core generic lookups should resolve and keep expected code/type shape.
+    for code in ["P0171", "P0300", "B0001", "C0035", "U0100"]:
+        dtc = db.get_dtc(code)
+        assert dtc is not None, f"{code} should exist"
+        assert dtc.code == code, f"Expected normalized code {code}, got {dtc.code}"
+        assert dtc.type == code[0], f"Expected type {code[0]}, got {dtc.type}"
+        assert dtc.description, f"{code} should have description"
 
-    print("\nGeneric Code Lookups:")
-    for code in test_codes:
-        desc = db.get_description(code)
-        if desc:
-            print(f"  {code}: {desc[:60]}...")
-        else:
-            print(f"  {code}: Not found")
+    # Manufacturer fallback behavior.
+    ford_specific = db.get_description("P1690", "FORD")
+    assert ford_specific is not None, "FORD-specific P1690 should exist"
+    generic_fallback = db.get_description("P0171", "FORD")
+    assert generic_fallback is not None, "Generic fallback should exist for P0171"
 
-    # Test search
-    print("\nSearch for 'oxygen':")
-    results = db.search('oxygen')
-    for dtc in results[:3]:
-        print(f"  {dtc.code}: {dtc.description[:50]}...")
+    # Search should return meaningful rows.
+    results = db.search("oxygen", limit=10)
+    assert results, "Search for oxygen should return results"
+    assert all(item.description for item in results), "Search results should have descriptions"
 
-    # Test manufacturer-specific
-    print("\nManufacturer-specific codes:")
-    mfg_codes = db.get_manufacturer_codes('FORD')
-    if mfg_codes:
-        for dtc in mfg_codes[:3]:
-            print(f"  {dtc.code}: {dtc.description[:50]}...")
+    # Manufacturer query should return rows for uppercase manufacturer input.
+    ford_codes = db.get_manufacturer_codes("FORD", limit=20)
+    assert ford_codes, "FORD manufacturer query should return rows"
+    assert all(item.manufacturer == "FORD" for item in ford_codes), "Expected FORD rows only"
 
-    print("\n✓ All tests passed!")
+    # Statistics should match known schema expectations.
+    stats = db.get_statistics()
+    assert stats["total"] > 0, "Total row count should be > 0"
+    assert stats["generic"] > 0, "Generic row count should be > 0"
+    assert stats["manufacturer_specific"] > 0, "Manufacturer-specific count should be > 0"
+    assert stats["type_P"] > 0, "P-code count should be > 0"
+    assert stats["type_B"] > 0, "B-code count should be > 0"
+    assert stats["type_C"] > 0, "C-code count should be > 0"
+    assert stats["type_U"] > 0, "U-code count should be > 0"
+
+    db.close()
+    print("✓ All tests passed!")
+
 
 if __name__ == "__main__":
     test_dtc_database()

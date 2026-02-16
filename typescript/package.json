@@ -1,7 +1,7 @@
 {
   "name": "@wal33d/dtc-database",
   "version": "0.1.0",
-  "description": "Comprehensive OBD-II Diagnostic Trouble Code database with 28,220+ codes. Supports generic SAE J2012 and manufacturer-specific codes.",
+  "description": "Comprehensive OBD-II Diagnostic Trouble Code database with 18,805 definitions across generic SAE J2012 and manufacturer-specific sources.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

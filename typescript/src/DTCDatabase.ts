@@ -15,10 +15,10 @@ interface DTCRow {
 /**
  * DTC Database - OBD-II Diagnostic Trouble Code Database
  *
- * Provides access to 28,220+ diagnostic codes including:
+ * Provides access to 18,805 diagnostic code definitions including:
  * - 9,415 generic SAE J2012 codes
- * - 18,805 manufacturer-specific codes
- * - 33+ manufacturer brands
+ * - 9,390 manufacturer-specific definitions
+ * - 33 manufacturer brands
  *
  * Features:
  * - Fast lookups (<1ms with caching)

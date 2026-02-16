@@ -43,7 +43,7 @@ jobs:
       - name: Test Java Core
         working-directory: java
         run: |
-          javac -cp "../data/lib/*" DTCDatabaseCore.java
+          javac DTCDatabaseCore.java
           echo "Java compilation successful"
 
       - name: Set up Node.js

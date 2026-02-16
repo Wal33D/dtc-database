@@ -10,6 +10,8 @@ The DTC Database is part of a family of automotive diagnostic tools. This guide 
 
 ## Complete Diagnostic Workflow
 
+> The imports below assume you have each project available locally (or published in your internal package workflow).
+
 ### TypeScript/JavaScript Example
 
 ```typescript
@@ -64,7 +66,7 @@ fullDiagnostic('1HGCM82633A004352', ['P0420', 'P0300', 'P0171'])
 ```python
 from nhtsa_vin_decoder import NHTSAVinDecoder
 from nhtsa_recall_lookup import NHTSARecallLookup
-from dtc_database import DTCDatabase
+from python.dtc_database import DTCDatabase
 
 def full_diagnostic(vin, dtc_codes):
     # Step 1: Decode VIN
@@ -151,7 +153,7 @@ public class FullDiagnostic {
         );
 
         // Step 3: Decode DTCs
-        DTCDatabaseCore dtcDb = DTCDatabaseCore.getInstance();
+        DTCDatabaseCore dtcDb = new DTCDatabaseCore("data/dtc_codes.db");
         System.out.println("\nDiagnostic Trouble Codes:");
 
         for (String code : dtcCodes) {
@@ -202,20 +204,27 @@ Streamline diagnostics:
 
 ## Installation
 
-Install all three packages:
+Use source installs from each repository:
 
-### TypeScript/JavaScript
+### TypeScript/JavaScript (source workflow)
 ```bash
-npm install @wal33d/nhtsa-vin-decoder @wal33d/nhtsa-recall-lookup @wal33d/dtc-database
+# In each cloned repo:
+npm install
+npm run build
 ```
 
-### Python
+### Python (editable/local workflow)
 ```bash
-pip install nhtsa-vin-decoder nhtsa-recall-lookup dtc-database
+# Install repos that ship Python packaging metadata
+pip install -e /path/to/nhtsa-vin-decoder
+pip install -e /path/to/nhtsa-recall-lookup
+
+# Use dtc-database directly from source
+export PYTHONPATH="/path/to/dtc-database:$PYTHONPATH"
 ```
 
 ### Java/Android
-Add as Git submodules or copy source files into your project.
+Add as Git submodules (or copy source modules/classes) into your project.
 
 ## Data Flow
 

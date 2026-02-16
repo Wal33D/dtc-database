@@ -18,12 +18,12 @@ import java.util.Map;
 /**
  * DTC Database Helper for Android
  *
- * Provides access to 28,220+ OBD-II diagnostic trouble codes including
+ * Provides access to 18,805 OBD-II diagnostic code definitions including
  * generic SAE J2012 standard codes and manufacturer-specific definitions.
  *
  * Features:
  * - 9,415 generic OBD-II codes
- * - 18,805 manufacturer-specific codes for 33+ brands
+ * - 9,390 manufacturer-specific definitions across 33 manufacturers
  * - Fast lookup with built-in caching
  * - Full-text search capability
  * - Thread-safe singleton pattern
@@ -438,24 +438,33 @@ public class DTCDatabase extends SQLiteOpenHelper {
         Map<String, Integer> stats = new HashMap<>();
         SQLiteDatabase db = getReadableDatabase();
 
-        // Total codes
-        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_NAME, null);
+        // Total rows for the active locale.
+        Cursor cursor = db.rawQuery(
+            "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE " + COL_LOCALE + " = ?",
+            new String[]{currentLocale}
+        );
         if (cursor.moveToFirst()) {
             stats.put("total_codes", cursor.getInt(0));
         }
         cursor.close();
 
-        // Generic codes (no manufacturer)
-        cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_NAME +
-                           " WHERE " + COL_MANUFACTURER + " IS NULL", null);
+        // Generic rows are stored with manufacturer='GENERIC'.
+        cursor = db.rawQuery(
+            "SELECT COUNT(*) FROM " + TABLE_NAME +
+                " WHERE " + COL_MANUFACTURER + " = 'GENERIC' AND " + COL_LOCALE + " = ?",
+            new String[]{currentLocale}
+        );
         if (cursor.moveToFirst()) {
             stats.put("generic_codes", cursor.getInt(0));
         }
         cursor.close();
 
-        // Manufacturer-specific codes
-        cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_NAME +
-                           " WHERE " + COL_MANUFACTURER + " IS NOT NULL", null);
+        // Manufacturer-specific rows exclude GENERIC.
+        cursor = db.rawQuery(
+            "SELECT COUNT(*) FROM " + TABLE_NAME +
+                " WHERE " + COL_MANUFACTURER + " != 'GENERIC' AND " + COL_LOCALE + " = ?",
+            new String[]{currentLocale}
+        );
         if (cursor.moveToFirst()) {
             stats.put("manufacturer_codes", cursor.getInt(0));
         }
@@ -463,8 +472,11 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
         // Count by type
         for (char type : new char[]{'P', 'B', 'C', 'U'}) {
-            cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_NAME +
-                               " WHERE " + COL_TYPE + " = ?", new String[]{String.valueOf(type)});
+            cursor = db.rawQuery(
+                "SELECT COUNT(*) FROM " + TABLE_NAME +
+                    " WHERE " + COL_TYPE + " = ? AND " + COL_LOCALE + " = ?",
+                new String[]{String.valueOf(type), currentLocale}
+            );
             if (cursor.moveToFirst()) {
                 stats.put(type + "_codes", cursor.getInt(0));
             }
@@ -573,7 +585,9 @@ public class DTCDatabase extends SQLiteOpenHelper {
          * Check if this is a generic OBD-II code
          */
         public boolean isGeneric() {
-            return manufacturer == null || manufacturer.isEmpty();
+            return manufacturer == null
+                || manufacturer.isEmpty()
+                || "GENERIC".equalsIgnoreCase(manufacturer);
         }
 
         /**
@@ -587,7 +601,7 @@ public class DTCDatabase extends SQLiteOpenHelper {
         public String toString() {
             StringBuilder sb = new StringBuilder();
             sb.append(code).append(" - ").append(description);
-            if (manufacturer != null && !manufacturer.isEmpty()) {
+            if (!isGeneric()) {
                 sb.append(" [").append(manufacturer.toUpperCase()).append("]");
             }
             return sb.toString();

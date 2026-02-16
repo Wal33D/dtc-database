@@ -1,332 +1,464 @@
-package com.dtcdatabase.core;
+package com.dtcdatabase;
 
-import java.io.*;
-import java.nio.file.*;
-import java.sql.*;
-import java.util.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
- * Platform-independent DTC Database for Java applications
- * Can be used in Android, desktop Java, or server applications
+ * Platform-independent DTC database access for JVM applications.
  *
- * @author Wal33D
- * @email aquataze@yahoo.com
+ * This class reads from the repository schema in data/dtc_codes.db:
+ * - code
+ * - manufacturer
+ * - description
+ * - type
+ * - locale
+ * - is_generic
+ * - source_file
  */
-public class DTCDatabaseCore {
-    private static final String DB_NAME = "dtc_definitions.db";
-    private Connection connection;
-    private final Map<String, String> cache = new ConcurrentHashMap<>();
-    private static DTCDatabaseCore instance;
+public class DTCDatabaseCore implements AutoCloseable {
+    private static final String DEFAULT_DB_PATH = "data/dtc_codes.db";
+    private static final String DEFAULT_LOCALE = "en";
+    private static final int DEFAULT_CACHE_SIZE = 100;
 
-    // SQL queries
-    private static final String CREATE_TABLE =
-        "CREATE TABLE IF NOT EXISTS dtc_definitions (" +
-        "code TEXT PRIMARY KEY, " +
-        "description TEXT NOT NULL, " +
-        "type TEXT, " +
-        "manufacturer TEXT)";
+    private final Connection connection;
+    private final String locale;
+    private final int cacheSize;
+    private final Map<String, String> descriptionCache;
 
-    private static final String INSERT_CODE =
-        "INSERT OR REPLACE INTO dtc_definitions VALUES (?, ?, ?, ?)";
-
-    private static final String SELECT_DESCRIPTION =
-        "SELECT description FROM dtc_definitions WHERE code = ?";
-
-    private static final String SELECT_BY_TYPE =
-        "SELECT * FROM dtc_definitions WHERE type = ? LIMIT ?";
-
-    private static final String SEARCH_CODES =
-        "SELECT * FROM dtc_definitions WHERE code LIKE ? OR description LIKE ? LIMIT ?";
-
-    /**
-     * Singleton instance getter
-     */
-    public static synchronized DTCDatabaseCore getInstance() {
-        if (instance == null) {
-            instance = new DTCDatabaseCore();
-        }
-        return instance;
+    public DTCDatabaseCore() {
+        this(DEFAULT_DB_PATH, DEFAULT_LOCALE, DEFAULT_CACHE_SIZE);
     }
 
-    /**
-     * Constructor - initializes database
-     */
-    private DTCDatabaseCore() {
+    public DTCDatabaseCore(String dbPath) {
+        this(dbPath, DEFAULT_LOCALE, DEFAULT_CACHE_SIZE);
+    }
+
+    public DTCDatabaseCore(String dbPath, String locale) {
+        this(dbPath, locale, DEFAULT_CACHE_SIZE);
+    }
+
+    public DTCDatabaseCore(String dbPath, String locale, int cacheSize) {
+        if (dbPath == null || dbPath.trim().isEmpty()) {
+            throw new IllegalArgumentException("dbPath must not be empty");
+        }
+        if (locale == null || locale.trim().isEmpty()) {
+            throw new IllegalArgumentException("locale must not be empty");
+        }
+        if (cacheSize <= 0) {
+            throw new IllegalArgumentException("cacheSize must be > 0");
+        }
+
+        Path dbFile = Paths.get(dbPath);
+        if (!Files.exists(dbFile)) {
+            throw new IllegalArgumentException("Database not found at: " + dbPath);
+        }
+
+        this.locale = locale;
+        this.cacheSize = cacheSize;
+        this.connection = openConnection(dbPath);
+
+        this.descriptionCache = Collections.synchronizedMap(
+            new LinkedHashMap<String, String>(cacheSize, 0.75f, true) {
+                @Override
+                protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
+                    return size() > DTCDatabaseCore.this.cacheSize;
+                }
+            }
+        );
+    }
+
+    private Connection openConnection(String dbPath) {
         try {
-            initializeDatabase();
-        } catch (SQLException e) {
-            throw new RuntimeException("Failed to initialize DTC database", e);
+            return DriverManager.getConnection("jdbc:sqlite:" + dbPath);
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed to open database at " + dbPath, error);
         }
     }
 
-    /**
-     * Initialize SQLite database
-     */
-    private void initializeDatabase() throws SQLException {
-        // Load SQLite driver
-        try {
-            Class.forName("org.sqlite.JDBC");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException("SQLite JDBC driver not found", e);
-        }
-
-        // Create connection
-        String dbPath = getDBPath();
-        connection = DriverManager.getConnection("jdbc:sqlite:" + dbPath);
-
-        // Create table if needed
-        try (Statement stmt = connection.createStatement()) {
-            stmt.execute(CREATE_TABLE);
-        }
-
-        // Check if database is empty and needs loading
-        if (isDatabaseEmpty()) {
-            loadDataFromResources();
-        }
+    private static String normalizeCode(String code) {
+        return code == null ? "" : code.trim().toUpperCase();
     }
 
-    /**
-     * Get database path (can be overridden for different platforms)
-     */
-    protected String getDBPath() {
-        return DB_NAME;
+    private static String normalizeManufacturer(String manufacturer) {
+        if (manufacturer == null) {
+            return null;
+        }
+        String cleaned = manufacturer.trim().toUpperCase();
+        return cleaned.isEmpty() ? null : cleaned;
     }
 
-    /**
-     * Check if database is empty
-     */
-    private boolean isDatabaseEmpty() throws SQLException {
-        String query = "SELECT COUNT(*) FROM dtc_definitions";
-        try (Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
-            return rs.getInt(1) == 0;
+    private static String typeName(String type) {
+        if (type == null || type.isEmpty()) {
+            return "Unknown";
+        }
+        switch (type.charAt(0)) {
+            case 'P':
+                return "Powertrain";
+            case 'B':
+                return "Body";
+            case 'C':
+                return "Chassis";
+            case 'U':
+                return "Network";
+            default:
+                return "Unknown";
         }
     }
 
-    /**
-     * Load data from source files
-     */
-    private void loadDataFromResources() {
-        // This would be implemented differently for Android vs desktop
-        // For now, provides structure for loading
-        System.out.println("Database needs to be populated with DTC codes");
+    private DTC mapDTC(ResultSet resultSet) throws SQLException {
+        String manufacturerRaw = resultSet.getString("manufacturer");
+        boolean isGeneric = resultSet.getInt("is_generic") == 1 || "GENERIC".equals(manufacturerRaw);
+        String manufacturer = "GENERIC".equals(manufacturerRaw) ? null : manufacturerRaw;
+
+        return new DTC(
+            resultSet.getString("code"),
+            resultSet.getString("description"),
+            resultSet.getString("type"),
+            manufacturer,
+            isGeneric,
+            resultSet.getString("locale")
+        );
     }
 
-    /**
-     * Load codes from a text file
-     */
-    public void loadFromFile(String filePath, String manufacturer) throws IOException, SQLException {
-        Path path = Paths.get(filePath);
-        List<String> lines = Files.readAllLines(path);
-
-        try (PreparedStatement pstmt = connection.prepareStatement(INSERT_CODE)) {
-            for (String line : lines) {
-                if (line.contains(" - ")) {
-                    String[] parts = line.split(" - ", 2);
-                    if (parts.length == 2) {
-                        String code = parts[0].trim();
-                        String description = parts[1].trim();
-                        String type = code.substring(0, 1);
-
-                        pstmt.setString(1, code);
-                        pstmt.setString(2, description);
-                        pstmt.setString(3, type);
-                        pstmt.setString(4, manufacturer);
-                        pstmt.executeUpdate();
-                    }
+    private DTC runSingleLookup(String sql, List<String> params) {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            for (int i = 0; i < params.size(); i++) {
+                statement.setString(i + 1, params.get(i));
+            }
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return mapDTC(resultSet);
                 }
+                return null;
             }
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed DTC lookup query", error);
         }
     }
 
     /**
-     * Get description for a DTC code
+     * Look up a code using generic-first behavior.
      */
-    public String getDescription(String code) {
-        if (code == null) return null;
-        code = code.toUpperCase();
-
-        // Check cache
-        if (cache.containsKey(code)) {
-            return cache.get(code);
-        }
-
-        try (PreparedStatement pstmt = connection.prepareStatement(SELECT_DESCRIPTION)) {
-            pstmt.setString(1, code);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    String description = rs.getString(1);
-                    // Cache result
-                    if (cache.size() < 100) {
-                        cache.put(code, description);
-                    }
-                    return description;
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+    public DTC getDTC(String code) {
+        return getDTC(code, null);
     }
 
     /**
-     * Get multiple codes at once
+     * Look up a code with manufacturer context, then fall back to GENERIC.
      */
-    public Map<String, String> getDescriptions(List<String> codes) {
-        Map<String, String> results = new HashMap<>();
-        for (String code : codes) {
-            String desc = getDescription(code);
-            if (desc != null) {
-                results.put(code, desc);
-            }
-        }
-        return results;
-    }
-
-    /**
-     * Search codes by keyword
-     */
-    public List<DTC> search(String keyword, int limit) {
-        List<DTC> results = new ArrayList<>();
-
-        try (PreparedStatement pstmt = connection.prepareStatement(SEARCH_CODES)) {
-            String searchTerm = "%" + keyword + "%";
-            pstmt.setString(1, searchTerm);
-            pstmt.setString(2, searchTerm);
-            pstmt.setInt(3, limit);
-
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-                    results.add(new DTC(
-                        rs.getString("code"),
-                        rs.getString("description"),
-                        rs.getString("type"),
-                        rs.getString("manufacturer")
-                    ));
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public DTC getDTC(String code, String manufacturer) {
+        String normalizedCode = normalizeCode(code);
+        if (normalizedCode.isEmpty()) {
+            return null;
         }
 
-        return results;
-    }
-
-    /**
-     * Get codes by type
-     */
-    public List<DTC> getByType(char type, int limit) {
-        List<DTC> results = new ArrayList<>();
-
-        try (PreparedStatement pstmt = connection.prepareStatement(SELECT_BY_TYPE)) {
-            pstmt.setString(1, String.valueOf(type));
-            pstmt.setInt(2, limit);
-
-            try (ResultSet rs = pstmt.executeQuery()) {
-                while (rs.next()) {
-                    results.add(new DTC(
-                        rs.getString("code"),
-                        rs.getString("description"),
-                        rs.getString("type"),
-                        rs.getString("manufacturer")
-                    ));
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return results;
-    }
-
-    /**
-     * Get database statistics
-     */
-    public Map<String, Integer> getStatistics() {
-        Map<String, Integer> stats = new HashMap<>();
-
-        try (Statement stmt = connection.createStatement()) {
-            // Total count
-            ResultSet rs = stmt.executeQuery("SELECT COUNT(*) FROM dtc_definitions");
-            if (rs.next()) {
-                stats.put("total", rs.getInt(1));
-            }
-
-            // Count by type
-            for (String type : Arrays.asList("P", "B", "C", "U")) {
-                rs = stmt.executeQuery(
-                    "SELECT COUNT(*) FROM dtc_definitions WHERE type = '" + type + "'"
-                );
-                if (rs.next()) {
-                    stats.put("type_" + type, rs.getInt(1));
-                }
-            }
-
-            // Manufacturer-specific count
-            rs = stmt.executeQuery(
-                "SELECT COUNT(*) FROM dtc_definitions WHERE manufacturer IS NOT NULL"
+        String normalizedManufacturer = normalizeManufacturer(manufacturer);
+        if (normalizedManufacturer != null) {
+            DTC byManufacturer = runSingleLookup(
+                "SELECT code, description, type, manufacturer, is_generic, locale " +
+                    "FROM dtc_definitions " +
+                    "WHERE code = ? AND manufacturer = ? AND locale = ? " +
+                    "LIMIT 1",
+                java.util.Arrays.asList(normalizedCode, normalizedManufacturer, locale)
             );
-            if (rs.next()) {
-                stats.put("manufacturer_specific", rs.getInt(1));
+            if (byManufacturer != null) {
+                return byManufacturer;
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+
+            return runSingleLookup(
+                "SELECT code, description, type, manufacturer, is_generic, locale " +
+                    "FROM dtc_definitions " +
+                    "WHERE code = ? AND manufacturer = 'GENERIC' AND locale = ? " +
+                    "LIMIT 1",
+                java.util.Arrays.asList(normalizedCode, locale)
+            );
+        }
+
+        return runSingleLookup(
+            "SELECT code, description, type, manufacturer, is_generic, locale " +
+                "FROM dtc_definitions " +
+                "WHERE code = ? AND locale = ? " +
+                "ORDER BY is_generic DESC " +
+                "LIMIT 1",
+            java.util.Arrays.asList(normalizedCode, locale)
+        );
+    }
+
+    public String getDescription(String code) {
+        return getDescription(code, null);
+    }
+
+    public String getDescription(String code, String manufacturer) {
+        String normalizedCode = normalizeCode(code);
+        if (normalizedCode.isEmpty()) {
+            return null;
+        }
+
+        String normalizedManufacturer = normalizeManufacturer(manufacturer);
+        String cacheKey = normalizedCode + ":" + (normalizedManufacturer == null ? "GENERIC" : normalizedManufacturer) + ":" + locale;
+
+        if (descriptionCache.containsKey(cacheKey)) {
+            return descriptionCache.get(cacheKey);
+        }
+
+        DTC dtc = getDTC(normalizedCode, normalizedManufacturer);
+        if (dtc == null) {
+            return null;
+        }
+
+        descriptionCache.put(cacheKey, dtc.description);
+        return dtc.description;
+    }
+
+    public Map<String, String> getDescriptions(List<String> codes) {
+        Map<String, String> results = new LinkedHashMap<>();
+        if (codes == null) {
+            return results;
+        }
+
+        for (String code : codes) {
+            String normalizedCode = normalizeCode(code);
+            String description = getDescription(normalizedCode);
+            if (description != null) {
+                results.put(normalizedCode, description);
+            }
+        }
+        return results;
+    }
+
+    public List<DTC> search(String keyword) {
+        return search(keyword, 50);
+    }
+
+    public List<DTC> search(String keyword, int limit) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return Collections.emptyList();
+        }
+        if (limit <= 0) {
+            return Collections.emptyList();
+        }
+
+        List<DTC> results = new ArrayList<>();
+        String searchTerm = "%" + keyword + "%";
+
+        try (PreparedStatement statement = connection.prepareStatement(
+            "SELECT code, description, type, manufacturer, is_generic, locale " +
+                "FROM dtc_definitions " +
+                "WHERE (code LIKE ? OR description LIKE ?) AND locale = ? " +
+                "ORDER BY is_generic DESC, code ASC " +
+                "LIMIT ?"
+        )) {
+            statement.setString(1, searchTerm);
+            statement.setString(2, searchTerm);
+            statement.setString(3, locale);
+            statement.setInt(4, limit);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    results.add(mapDTC(resultSet));
+                }
+            }
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed search query", error);
+        }
+
+        return results;
+    }
+
+    public List<DTC> getByType(char type) {
+        return getByType(type, 100);
+    }
+
+    public List<DTC> getByType(char type, int limit) {
+        if (limit <= 0) {
+            return Collections.emptyList();
+        }
+
+        List<DTC> results = new ArrayList<>();
+        String normalizedType = String.valueOf(Character.toUpperCase(type));
+
+        try (PreparedStatement statement = connection.prepareStatement(
+            "SELECT code, description, type, manufacturer, is_generic, locale " +
+                "FROM dtc_definitions " +
+                "WHERE type = ? AND locale = ? " +
+                "ORDER BY is_generic DESC, code ASC " +
+                "LIMIT ?"
+        )) {
+            statement.setString(1, normalizedType);
+            statement.setString(2, locale);
+            statement.setInt(3, limit);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    results.add(mapDTC(resultSet));
+                }
+            }
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed type query", error);
+        }
+
+        return results;
+    }
+
+    public List<DTC> getManufacturerCodes(String manufacturer) {
+        return getManufacturerCodes(manufacturer, 200);
+    }
+
+    public List<DTC> getManufacturerCodes(String manufacturer, int limit) {
+        if (limit <= 0) {
+            return Collections.emptyList();
+        }
+
+        String normalizedManufacturer = normalizeManufacturer(manufacturer);
+        if (normalizedManufacturer == null) {
+            return Collections.emptyList();
+        }
+
+        List<DTC> results = new ArrayList<>();
+        try (PreparedStatement statement = connection.prepareStatement(
+            "SELECT code, description, type, manufacturer, is_generic, locale " +
+                "FROM dtc_definitions " +
+                "WHERE manufacturer = ? AND locale = ? " +
+                "ORDER BY code ASC " +
+                "LIMIT ?"
+        )) {
+            statement.setString(1, normalizedManufacturer);
+            statement.setString(2, locale);
+            statement.setInt(3, limit);
+
+            try (ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    results.add(mapDTC(resultSet));
+                }
+            }
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed manufacturer query", error);
+        }
+
+        return results;
+    }
+
+    public Map<String, Integer> getStatistics() {
+        Map<String, Integer> stats = new LinkedHashMap<>();
+
+        try {
+            int total = queryInt("SELECT COUNT(*) FROM dtc_definitions WHERE locale = ?", locale);
+            int generic = queryInt(
+                "SELECT COUNT(*) FROM dtc_definitions WHERE is_generic = 1 AND locale = ?",
+                locale
+            );
+
+            stats.put("total", total);
+            stats.put("unique_codes", queryInt(
+                "SELECT COUNT(DISTINCT code) FROM dtc_definitions WHERE locale = ?",
+                locale
+            ));
+            stats.put("generic", generic);
+            stats.put("generic_codes", generic);
+            stats.put("manufacturer_specific", total - generic);
+            stats.put("manufacturer_codes", total - generic);
+            stats.put("manufacturers", queryInt(
+                "SELECT COUNT(DISTINCT manufacturer) " +
+                    "FROM dtc_definitions " +
+                    "WHERE manufacturer != 'GENERIC' AND locale = ?",
+                locale
+            ));
+
+            for (String type : new String[]{"P", "B", "C", "U"}) {
+                stats.put("type_" + type, queryInt(
+                    "SELECT COUNT(*) FROM dtc_definitions WHERE type = ? AND locale = ?",
+                    type,
+                    locale
+                ));
+            }
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed statistics query", error);
         }
 
         return stats;
     }
 
-    /**
-     * Clear cache
-     */
-    public void clearCache() {
-        cache.clear();
+    private int queryInt(String sql, String... params) throws SQLException {
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            for (int i = 0; i < params.length; i++) {
+                statement.setString(i + 1, params[i]);
+            }
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return resultSet.getInt(1);
+                }
+                return 0;
+            }
+        }
     }
 
-    /**
-     * Close database connection
-     */
+    public void clearCache() {
+        descriptionCache.clear();
+    }
+
+    @Override
     public void close() {
         try {
             if (connection != null && !connection.isClosed()) {
                 connection.close();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException error) {
+            throw new RuntimeException("Failed closing database connection", error);
         }
     }
 
-    /**
-     * DTC data class
-     */
     public static class DTC {
         public final String code;
         public final String description;
         public final String type;
         public final String manufacturer;
+        public final boolean isGeneric;
+        public final String locale;
 
-        public DTC(String code, String description, String type, String manufacturer) {
-            this.code = code;
-            this.description = description;
-            this.type = type;
+        public DTC(
+            String code,
+            String description,
+            String type,
+            String manufacturer,
+            boolean isGeneric,
+            String locale
+        ) {
+            this.code = Objects.requireNonNull(code, "code");
+            this.description = Objects.requireNonNull(description, "description");
+            this.type = Objects.requireNonNull(type, "type");
             this.manufacturer = manufacturer;
+            this.isGeneric = isGeneric;
+            this.locale = locale;
         }
 
         public String getTypeName() {
-            switch (type) {
-                case "P": return "Powertrain";
-                case "B": return "Body";
-                case "C": return "Chassis";
-                case "U": return "Network";
-                default: return "Unknown";
-            }
+            return typeName(type);
+        }
+
+        public boolean isManufacturerSpecific() {
+            return !isGeneric;
         }
 
         @Override
         public String toString() {
-            return code + " - " + description;
+            StringBuilder builder = new StringBuilder();
+            builder.append(code).append(" - ").append(description);
+            if (manufacturer != null) {
+                builder.append(" [").append(manufacturer).append("]");
+            }
+            return builder.toString();
         }
     }
 }

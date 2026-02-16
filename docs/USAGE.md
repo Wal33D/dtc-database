@@ -5,7 +5,7 @@
 ### Python
 
 ```python
-from dtc_database import DTCDatabase
+from python.dtc_database import DTCDatabase
 
 # Initialize database
 db = DTCDatabase('data/dtc_codes.db')
@@ -26,17 +26,20 @@ db.close()
 ### Java
 
 ```java
+import com.dtcdatabase.DTCDatabaseCore;
+import java.util.List;
+
 public class QuickStart {
     public static void main(String[] args) {
-        DTCDatabase db = new DTCDatabase("data/dtc_codes.db");
+        DTCDatabaseCore db = new DTCDatabaseCore("data/dtc_codes.db");
 
         // Look up a code
-        DTC dtc = db.getDTC("P0420");
-        System.out.println(dtc.getCode() + ": " + dtc.getDescription());
+        DTCDatabaseCore.DTC dtc = db.getDTC("P0420");
+        System.out.println(dtc.code + ": " + dtc.description);
 
         // Search for codes
-        List<DTC> results = db.search("oxygen sensor");
-        for (DTC code : results) {
+        List<DTCDatabaseCore.DTC> results = db.search("oxygen sensor", 10);
+        for (DTCDatabaseCore.DTC code : results) {
             System.out.println(code);
         }
 
@@ -765,7 +768,7 @@ def diagnose_with_obd():
 
 ```python
 from flask import Flask, jsonify
-from dtc_database import DTCDatabase
+from python.dtc_database import DTCDatabase
 
 app = Flask(__name__)
 db = DTCDatabase()

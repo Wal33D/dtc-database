@@ -15,8 +15,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * DTC Database Helper for Android
- * Provides access to 18,821 OBD-II diagnostic trouble codes
+ * Legacy Android helper kept for backward compatibility.
+ * Prefer android/dtc-database-android/src/main/java/com/dtcdatabase/DTCDatabase.java.
  *
  * @author Wal33D
  * @email aquataze@yahoo.com
@@ -182,7 +182,7 @@ public class DTCDatabase extends SQLiteOpenHelper {
 
         String query = "SELECT * FROM " + TABLE_NAME +
                       " WHERE " + COL_MANUFACTURER + " = ? LIMIT 200";
-        Cursor cursor = db.rawQuery(query, new String[]{manufacturer.toLowerCase()});
+        Cursor cursor = db.rawQuery(query, new String[]{manufacturer.toUpperCase()});
 
         while (cursor.moveToNext()) {
             results.add(new DTC(
